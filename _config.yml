@@ -1,29 +1,41 @@
-# Permalinks
-#
-# Use of `relative_permalinks` ensures post links from the index work properly.
-permalink:           pretty
-relative_permalinks: true
+name: Your New Jekyll Site
+description: Blogging about stuffs
+meta_description: "Your New Jekyll Site, Blogging about stuffs"
 
-# Setup
-title:               Poole
-tagline:             The Jekyll Butler
-paginate:            1
-baseurl:             "http://evaneschneider.github.io/site/"
+aboutPage: true
 
-# Assets
-#
-# We specify the directory for Jekyll so we can use @imports.
-sass:
-  sass_dir:          _sass
-  style:            :compressed
+markdown: redcarpet
+highlighter: pygments
 
-# About/contact
-author:
-  name:              Mark Otto
-  url:               https://twitter.com/mdo
-  email:             markdotto@gmail.com
+paginate: 20
+baseurl: 'http://evaneschneider.github.io/site/' 
+google_analytics: 'UA-XXXXXXXX-X'
+disqus: false
+disqus_shortname: 'your-disqus-shortname'
 
-# Custom vars
-version:             2.0.0
-github:
-  repo:              https://github.com/poole/poole
+# Details for the RSS feed generator
+url:            'http://your-blog-url.example.com'
+author:         'Your Name'
+authorTwitter:  'YourTwitterUsername'
+
+permalink:       /:year/:title/
+
+defaults:
+    -
+        scope:
+            path: "" # empty string for all files
+            type: pages
+        values:
+            layout: default
+    -
+        scope:
+            path: "" # empty string for all files
+            type: posts
+        values:
+            layout: post
+    -
+        scope:
+            path: ""
+            type: drafts
+        values:
+            layout: post
