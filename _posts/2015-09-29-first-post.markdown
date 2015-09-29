@@ -12,7 +12,7 @@ Using the Trac & Pen shock tube test, with periodic boundaries, to allow for hig
 **Without Dual Energy**
 
 Figure 1: PPMP, exact Riemann solver, CTU
-![]({{ site.url }}/_posts/images/PPMP_exact.png)
+![]({{ site.url }}assests/images/PPMP_exact.png)
 
 Figure 2: same as Figure 1, but with bulk velocity 100 c_s
-![](/_posts/images/PPMP_exact_M100.png)
+![](/assests/images/PPMP_exact_M100.png)
