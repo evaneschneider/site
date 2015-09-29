@@ -1,6 +1,5 @@
-name: Your New Jekyll Site
+name: Devo site for Brant 
 description: Blogging about stuffs
-meta_description: "Your New Jekyll Site, Blogging about stuffs"
 
 aboutPage: true
 
@@ -14,8 +13,8 @@ disqus: false
 disqus_shortname: 'your-disqus-shortname'
 
 # Details for the RSS feed generator
-url:            'http://your-blog-url.example.com'
-author:         'Your Name'
+url:            'http://evaneschneider.github.io/site/'
+author:         'Evan Schneider'
 authorTwitter:  'YourTwitterUsername'
 
 permalink:       /:year/:title/
