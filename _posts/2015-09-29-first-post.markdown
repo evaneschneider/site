@@ -1,7 +1,18 @@
 ---
-title:  "First Post"
+title:  "Dual Energy tests"
 date:   2015-09-29 12:25:00
-description: Test Post 
+description: Experimenting with different dual energy formulations 
 ---
 
-This is a test post.
+Relevant equations:
+
+Using the Trac & Pen shock tube test, with periodic boundaries, to allow for high mach number bulk flow.
+
+
+**Without dual energy**
+
+Figure 1: PPMP, exact Riemann solver, CTU
+![Figure 1](/images/PPMP_exact.png)
+
+Figure 2: same as Figure 1, but with $v_{bulk} = 100 c_s$
+![Figure 2](/images/PPMP_exact_M100.png)
