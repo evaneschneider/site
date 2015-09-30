@@ -51,7 +51,7 @@ maximum nearby total energy is always much less than $$\eta_2$$.
 
 **The tests**
 
-We first investigate whether the statement above regarding dynamical impact is true for Cholla.
+Is the statement above regarding dynamical impact true for Cholla?
 
 The tests shown below consist of a shock tube with periodic boundaries, 
 to allow for high mach number bulk flow.
@@ -83,12 +83,12 @@ calculated internal energy.
 
 So what happens if we increase $$\eta_1$$?
 
-At $$\eta_1 = 10^{-5}$$ one cell every so often (not every time step) chooses the 
+With $$\eta_1 = 10^{-5}$$ one cell every so often (not every time step) chooses the 
 non-conservative internal energy update. The non-conservative $$e$$ in these cases is
 always slightly larger than the conservatively calculated $$e$$. Nevertheless, there is not
 a discernable dynamic impact.
 
-At $$\eta_1 = 10^{-4}$$ all cells to the right of the shock (where $$e = 0.075$$ initially) are
+With $$\eta_1 = 10^{-4}$$ all cells to the right of the discontinuity (where $$e = 0.075$$ initially) are
 using the non-conservative update. As the test begins, the two energies are the same for the majority of these, 
 because there is no energy flux or velocity gradient. For the cells within the shock, however,
 the two values differ. At first, the non-conservative update has higher internal energy values, but 
@@ -102,7 +102,7 @@ but the results are a mess in the regions where the non-conservative update was 
 Figure 3: Same as Figure 1 but with dual energy, $$\eta_1 = 10^{-4}$$
 <img src="{{ site.url }}assets/images/PPMP_exact_M100_etam4.png">
 
-Using $$\eta_1 = 10^{-3}$$ (the value given in B14), all cells are using the non-conservative energy 
+With $$\eta_1 = 10^{-3}$$ (the value given in B14), all cells are using the non-conservative energy 
 update, and the results are a complete disaster, including final pressures that are negative.
 
 Figure 4: Same as Figure 1 but with dual energy, $$\eta_1 = 10^{-3}$$
