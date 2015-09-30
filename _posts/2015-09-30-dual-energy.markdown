@@ -88,19 +88,37 @@ non-conservative internal energy update. The non-conservative $$e$$ in these cas
 always slightly larger than the conservatively calculated $$e$$. Nevertheless, there is not
 a discernable dynamic impact.
 
-At $$\eta_1 = 10^{-4}$$ all cells to the right of the shock (where $$e = 0.015$$ initially) are
-using the non-conservative update, but for the majority of these, the two energies are the same
-(because there is no energy flux or velocity gradient). For a few cells within the shock, however,
+At $$\eta_1 = 10^{-4}$$ all cells to the right of the shock (where $$e = 0.075$$ initially) are
+using the non-conservative update. As the test begins, the two energies are the same for the majority of these, 
+because there is no energy flux or velocity gradient. For the cells within the shock, however,
 the two values differ. At first, the non-conservative update has higher internal energy values, but 
-soon the behavior changes. It seems that the non-conservative internal energy values are beginning 
-to osciallate. Perhaps this is a result of instability in the centered-difference?
+as the test continues the values are sometimes lower. It seems that the non-conservative internal energy 
+values are suffering from osciallations. Perhaps the instability is a result of the centered-difference approximation?
 
 After time $$t = 0.1863830$$ the conservatively calculated internal energy is occasionally negative. 
 The test does run to completion without the non-conservative energy update producing negative pressures, 
-but the results are a mess anywhere that the non-conservative update was used.
+but the results are a mess in the regions where the non-conservative update was used.
 
 Figure 3: Same as Figure 1 but with dual energy, $$\eta_1 = 10^{-4}$$
 <img src="{{ site.url }}assets/images/PPMP_exact_M100_etam4.png">
+
+Using $$\eta_1 = 10^{-3}$$ (the value given in B14), all cells are using the non-conservative energy 
+update, and the results are a complete disaster, including final pressures that are negative.
+
+Figure 4: Same as Figure 1 but with dual energy, $$\eta_1 = 10^{-3}$$
+<img src="{{ site.url }}assets/images/PPMP_exact_M100_etam3.png">
+
+
+**Is it the way the divergence is approximated?**
+
+B14 have a slightly different way of estimating the $$P \nabla \cdot \mathbf{v}$$ term. They actually 
+use the velocities at the interface returned by the Riemann solver to approximate the derivative.
+Does using this version help?
+
+Figure 5: Same as Figure 4 but with the B14 internal energy update
+<img src="{{ site.url }}assets/images/PPMP_exact_M100_B14udpate.png">
+
+The results are strikingly similar to Figure 4. Evidently the Pdv approximation is not the problem.
 
 
 
