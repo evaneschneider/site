@@ -31,12 +31,12 @@ Cholla tracks $$ E $$ and $$ \rho e_{\mathrm{int}} $$.
 In Teyssier 2015, the switch is calculated using an estimate for the truncation error,
 but the given estimate doesn't take into account the order of the method.
 
-In Bryan 2014, the switch is made by taking a ratio of the internal energy to total energy.
+In Bryan 2014, the switch is made according to the ratio of internal energy to total energy.
 
 
 **The tests**
 
-The tests shown below consist of a shock tube test with periodic boundaries, 
+The tests shown below consist of a shock tube with periodic boundaries, 
 to allow for high mach number bulk flow.
 
 $$
