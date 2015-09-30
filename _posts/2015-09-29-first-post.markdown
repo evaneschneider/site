@@ -6,7 +6,20 @@ description: Experimenting with different dual energy formulations
 
 Relevant equations:
 
-Using the Trac & Pen shock tube test, with periodic boundaries, to allow for high mach number bulk flow.
+From Teyssier 2015, Equation 161
+$$
+\frac{e^{n+1}_{prim} - e^n}{\Delta t} = - \nabla \cdot F(e)^n - P^n \nabla \cdot u^n
+$$
+
+Using a shock tube test with periodic boundaries, to allow for high mach number bulk flow.
+
+<span>
+$$ \rho_L = 1.0, v_L = 0.0, p_L = 1.0 $$
+$$ \rho_R = 0.2, v_R = 0.0, p_R = 0.01 $$
+$$ \gamma = 1.4 $$
+</span>
+
+For the high mach number test, $$ v_L = v_R = 120 $$.
 
 
 **Without Dual Energy**
