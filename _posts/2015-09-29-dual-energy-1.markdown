@@ -1,7 +1,7 @@
 ---
-title:  "Dual Energy Tests"
+title:  "Dual Energy Tests (Part 1)"
 date:   2015-09-29 12:25:00
-description: Experimenting with different dual energy formulations 
+description: Descriptions of two dual energy formulations 
 ---
 
 **Internal energy equations**
@@ -28,8 +28,7 @@ $$e_{\mathrm{int}} = e_T - 0.5\mathbf{v}\cdot\mathbf{v}. $$
 Note: in Cholla notation, $$ E = \rho e_T $$, so $$ e_{\mathrm{int}} = \frac{p}{\rho (\gamma - 1.0)} $$.
 Cholla tracks $$ E $$ and $$ \rho e_{\mathrm{int}} $$.
 
-In Teyssier 2015, the switch is calculated using an estimate for the truncation error,
-but the given estimate doesn't take into account the order of the method.
+In Teyssier 2015, the switch is calculated using an estimate for the truncation error of the method.
 
 In Bryan 2014, the switch is made according to the ratio of internal energy to total energy.
 
