@@ -6,10 +6,19 @@ description: Experimenting with different dual energy formulations
 
 Relevant equations:
 
-From Teyssier 2015, Equation 161
+From Teyssier 2015, the nonconservative internal energy update (Equation 161): 
+<span>
 $$
-\frac{e^{n+1}_{prim} - e^n}{\Delta t} = - \nabla \cdot F(e)^n - P^n \nabla \cdot u^n
+\frac{e^{n+1}_{\mathrm{prim}} - e^n}{\Delta t} = - \nabla \cdot \bf{F}(e)^n - P^n \nabla \cdot \bf{u}^n
 $$
+</span>
+
+From Bryan et al. 2014, the nonconservative internal energy update (Equation 43)
+<span>
+$$
+\rho^{n+1}_j e^{n+1}_j = \rho^n_j e^n_j + \frac{\Delta t}{\Delta x_j} (\bar{\rho}_{j + \frac{1}{2}} \bar{v}_{j + \frac{1}{2}} \bar{e}_{j + \frac{1}{2}} - \bar{\rho}_{j - \frac{1}{2}} \bar{v}_{j - \frac{1}{2}} \bar{e}_{j - \frac{1}{2}}) - \frac{\Delta t}{\Delta x_j} p^n_j (\bar{v}_{j + \frac{1}{2}} - \bar{v}_{j - \frac{1}{2}})
+$$
+</span>
 
 Using a shock tube test with periodic boundaries, to allow for high mach number bulk flow.
 
