@@ -116,7 +116,7 @@ use the velocities at the interface returned by the Riemann solver to approximat
 Does using this version help?
 
 Figure 5: Same as Figure 4 but with the B14 internal energy update
-<img src="{{ site.url }}assets/images/PPMP_exact_M100_B14udpate.png">
+<img src="{{ site.url }}assets/images/PPMP_exact_M100_B14.png">
 
 The results are strikingly similar to Figure 4. Evidently the Pdv approximation is not the problem.
 
