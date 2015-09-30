@@ -10,7 +10,7 @@ From Teyssier 2015, the nonconservative internal energy update (Equation 161):
 
 <span>
 $$
-\frac{e^{n+1}_{\mathrm{prim}} - e^n}{\Delta t} = - \nabla \cdot \bf{F}(e)^n - P^n \nabla \cdot \bf{u}^n
+\frac{e^{n+1}_{\mathrm{prim}} - e^n}{\Delta t} = - \nabla \cdot \mathbf{F}(e)^n - P^n \nabla \cdot \mathbf{u}^n
 $$
 </span>
 
@@ -29,8 +29,8 @@ Using a shock tube test with periodic boundaries, to allow for high mach number 
 
 <span>
 $$
-\rho_L = 1.0, v_L = 0.0, p_L = 1.0 \\
-\rho_R = 0.2, v_R = 0.0, p_R = 0.01 \\
+\rho_L = 1.0,\quad v_L = 0.0,\quad p_L = 1.0 \\
+\rho_R = 0.2,\quad v_R = 0.0,\quad p_R = 0.01 \\
 \gamma = 1.4
 $$
 </span>
