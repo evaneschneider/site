@@ -4,7 +4,7 @@ date:   2015-09-29 12:25:00
 description: Experimenting with different dual energy formulations 
 ---
 
-**Relevant equations:**
+**Internal energy equations**
 
 From Teyssier 2015, the nonconservative internal energy update (Equation 161): 
 
@@ -21,6 +21,19 @@ $$
 \rho^{n+1}_j e^{n+1}_j = \rho^n_j e^n_j + \frac{\Delta t}{\Delta x_j} (\bar{\rho}_{j + \frac{1}{2}} \bar{v}_{j + \frac{1}{2}} \bar{e}_{j + \frac{1}{2}} - \bar{\rho}_{j - \frac{1}{2}} \bar{v}_{j - \frac{1}{2}} \bar{e}_{j - \frac{1}{2}}) - \frac{\Delta t}{\Delta x_j} p^n_j (\bar{v}_{j + \frac{1}{2}} - \bar{v}_{j - \frac{1}{2}})
 $$
 </span>
+
+
+**The switch**
+We need to decide when to use the nonconservative internal energy update, 
+instead of the conservatively calculated internal energy, 
+<span> $$e_{\mathrm{int}} = e_T - 0.5*\mathbf{v}\cdot\mathbf{v}. $$</span>
+
+Note: in Cholla notation, $$ E = \rho e_T $$, so $$ e_{\mathrm{int}} = p / \rho / (\gamma - 1.0) $$.
+
+In Teyssier 2015, the switch is calculated using an estimate for the truncation error,
+but the given estimate doesn't take into account the order of the method.
+
+In Bryan 2014, the switch is made by taking a ratio of the internal energy to total energy.
 
 
 **The tests**
