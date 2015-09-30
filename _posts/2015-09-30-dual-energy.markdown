@@ -111,7 +111,7 @@ Figure 4: Same as Figure 1 but with dual energy, $$\eta_1 = 10^{-3}$$
 
 **Is it the way the divergence is approximated?**
 
-B14 have a slightly different way of estimating the $$P \nabla \cdot \mathbf{v}$$ term. They actually 
+B14 have a slightly different way of estimating the $$P \nabla \cdot \mathbf{v}$$ term. They 
 use the velocities at the interface returned by the Riemann solver to approximate the derivative.
 Does using this version help?
 
