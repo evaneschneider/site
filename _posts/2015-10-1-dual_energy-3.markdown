@@ -5,7 +5,7 @@ description: High mach number square waves
 ---
 
 In an effort to discover why the dual energy formalism is producing such unsatisfactory 
-effects on the high mach number shock wave test, now I will look at a simpler case. In this 
+result on the high mach number shock tube, now I will look at a simpler test. In this 
 post, I will be testing an advected square wave (a density enhancement in pressure equilibrium 
 moving across a periodic grid).
 
@@ -28,7 +28,7 @@ crosses the grid 100 times.
 Figure 1: PPMP, exact solver, no dual energy, $$v \approx 8 c_s$$
 <img src="{{ site.url }}assets/images/PPMP_exact_M8_node.png">
 
-Figure 2: Same as figure one but with $$v = 75 c_s$$
+Figure 2: Same as Figure 1 but with $$v = 800 c_s$$
 <img src="{{ site.url }}assets/images/PPMP_exact_M800_node.png">
 
 PPMP fares quite well on this test, even at high mach number (not surprising,
@@ -37,4 +37,12 @@ Enzo dual energy switch?
 
 
 **With Dual Energy**
+
+At low mach number, the switch doesn't activate dual energy, and the results 
+are identical to Figure 1. At high mach number ($$v = 100 = 800 c_s$$), the 
+switch kicks in, and the results are a mess.
+
+Figure 3: Same as Figure 2 but with dual energy
+<img src="{{ site.url }}assets/images/PPMP_exact_M800_de.png">
+
 
