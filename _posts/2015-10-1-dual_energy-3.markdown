@@ -5,8 +5,8 @@ description: High mach number square waves
 ---
 
 In an effort to discover why the dual energy formalism is producing such unsatisfactory 
-result on the high mach number shock tube, now I will look at a simpler test. In this 
-post, I will be testing an advected square wave (a density enhancement in pressure equilibrium 
+results on the high mach number shock tube, now I will look at a simpler test. In this 
+post, I test an advected square wave (a density enhancement in pressure equilibrium 
 moving across a periodic grid).
 
 **The tests**
@@ -28,7 +28,7 @@ crosses the grid 100 times.
 Figure 1: PPMP, exact solver, no dual energy, $$v \approx 8 c_s$$
 <img src="{{ site.url }}assets/images/PPMP_exact_M8_node.png">
 
-Figure 2: Same as Figure 1 but with $$v = 800 c_s$$
+Figure 2: Same as Figure 1 but with $$v \approx 800 c_s$$
 <img src="{{ site.url }}assets/images/PPMP_exact_M800_node.png">
 
 PPMP fares quite well on this test, even at high mach number (not surprising,
@@ -39,10 +39,19 @@ Enzo dual energy switch?
 **With Dual Energy**
 
 At low mach number, the switch doesn't activate dual energy, and the results 
-are identical to Figure 1. At high mach number ($$v = 100 = 800 c_s$$), the 
+are identical to Figure 1. At high mach number $$(v = 100 \approx 800 c_s)$$, the 
 switch kicks in, and the results are a mess.
 
 Figure 3: Same as Figure 2 but with dual energy
 <img src="{{ site.url }}assets/images/PPMP_exact_M800_de.png">
 
 
+**The Internal Energy Update**
+
+The equation that is used to update the internal energy has two parts: a term that 
+represents the advected flux of internal energy, and a term that represents the gain 
+or loss of internal energy due to pressure and velocity gradients. In this case, the velocity
+is equal across all cells, so the second term should be 0. For the first time step, this criterion 
+holds, but by the second, there are already a few cells which show a very small velocity gradient.
+
+Is this because the first term isn't acting properly? Or because it's simply not accurate enough?
