@@ -32,4 +32,6 @@ total energy (shown above) is also fine, but as calculated from the internal
 energy (not shown) is the same as Figure 2. Interestingly, the internal energy 
 looks identical to that shown in Figure 2, despite the fact that the inputs to 
 the internal energy update (the P, $$v_{i-1}$$, $$v_{i+1}$$ terms, etc.) should 
-be different now that they are not getting perturbed...
+be different now that they are not getting perturbed.
+
+What if I only use the advected flux portion of the internal energy update?
