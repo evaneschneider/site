@@ -1,0 +1,35 @@
+---
+title:  "PLM tests (Part 2)"
+date:   2015-10-06 4:25:00
+description: Piecewise linear tests with varied switches 
+---
+
+In this post we focus on the high mach number square wave test from 
+previous posts, now trying to answer the question - how do we either 
+a) come up with a better approximation for the internal energy update 
+or b) at least come up with a switch that does not degrade the solution?
+
+Cholla seems to suffer only from diffusion in these tests, which isn't 
+a scenario we expect dual energy to improve. However, we certainly don't 
+want to employ a dual energy method that makes the solution worse:
+
+Figure 1: PLMC, exact solver, no dual energy, $$v \approx 800 c_s$$
+<img src="{{ site.url }}assets/images/PLMC_exact_M800_node.png">
+
+Figure 2: Same as Figure 1 but with dual energy
+<img src="{{ site.url }}assets/images/PLMC_exact_M800_de.png">
+
+So what can we do?
+
+First, what happens if we get rid of the total energy synchronization?
+
+Figure 3: Same as Figure 2 but without the total energy sync
+<img src="{{ site.url }}assets/images/PLMC_de_nosync.png">
+
+Now the internal energy update has no effect on the hydrodynamics, so the 
+perturbations in the velocity disappear. The pressure as calculated from the
+total energy (shown above) is also fine, but as calculated from the internal 
+energy (not shown) is the same as Figure 2. Interestingly, the internal energy 
+looks identical to that shown in Figure 2, despite the fact that the inputs to 
+the internal energy update (the P, $$v_{i-1}$$, $$v_{i+1}$$ terms, etc.) should 
+be different now that they are not getting perturbed...
