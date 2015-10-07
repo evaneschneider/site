@@ -45,6 +45,9 @@ switch kicks in, and the results are a mess.
 Figure 3: Same as Figure 2 but with dual energy
 <img src="{{ site.url }}assets/images/PPMP_exact_M800_de.png">
 
+Figure 4: Same as Figure 4 but with PPMC 
+<img src="{{ site.url }}assets/images/PPMC_exact_M800_de.png">
+
 
 **The Internal Energy Update**
 
