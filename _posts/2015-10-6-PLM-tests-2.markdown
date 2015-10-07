@@ -19,8 +19,8 @@ Figure 1: PLMC, exact solver, no dual energy, $$v \approx 800 c_s$$
 Figure 2: Same as Figure 1 but with dual energy
 <img src="{{ site.url }}assets/images/PLMC_exact_M800_de.png">
 
-Note: Previous versions of Figure 2 looked worse - I found a small bug 
-in the internal energy PLMC reconstruction that was allowing non-monotonic 
+Note: Previous versions of Figure 2 looked worse - I found a bug in the
+internal energy PLMC reconstruction that was allowing non-monotonic 
 reconstructions.
 
 **What can we do?**
@@ -40,4 +40,3 @@ the internal energy update (the P, $$v_{i-1}$$, $$v_{i+1}$$ terms, etc.) should
 be different now that they are not getting perturbed. This is probably just because 
 the perturbations are small in scale.
 
-What if I only use the advected flux portion of the internal energy update?
