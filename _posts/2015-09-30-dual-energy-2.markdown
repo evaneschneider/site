@@ -74,7 +74,7 @@ Figure 1: PPMP, exact solver, no dual energy, $$ v_{bulk} = 100 c_s $$
 **With Dual Energy**
 
 Figure 2: Same as figure one but with dual energy, $$\eta_1 = 10^{-6}$$
-<img src="{{ site.url }}assets/images/PPMP_exact_M100_etam6.png">
+<img src="{{ site.url }}assets/images/PPMP_exact_M100_eta6.png">
 
 As expected, the dual energy formalism has no effect in this case. Practically speaking,
 this is because the internal energy for each cell is reset to the conservatively calculated 
@@ -100,13 +100,13 @@ The test does run to completion without the non-conservative energy update produ
 but the results are a mess in the regions where the non-conservative update was used.
 
 Figure 3: Same as Figure 1 but with dual energy, $$\eta_1 = 10^{-4}$$
-<img src="{{ site.url }}assets/images/PPMP_exact_M100_etam4.png">
+<img src="{{ site.url }}assets/images/PPMP_exact_M100_eta4.png">
 
 With $$\eta_1 = 10^{-3}$$ (the value given in B14), all cells are using the non-conservative energy 
 update, and the results are a complete disaster, including final pressures that are negative.
 
 Figure 4: Same as Figure 1 but with dual energy, $$\eta_1 = 10^{-3}$$
-<img src="{{ site.url }}assets/images/PPMP_exact_M100_etam3.png">
+<img src="{{ site.url }}assets/images/PPMP_exact_M100_eta3.png">
 
 
 **Is it the way the divergence is approximated?**
