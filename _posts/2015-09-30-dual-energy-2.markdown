@@ -103,7 +103,7 @@ Figure 3: Same as Figure 1 but with dual energy, $$\eta_1 = 10^{-4}$$
 <img src="{{ site.url }}assets/images/PPMP_exact_M100_eta4.png">
 
 With $$\eta_1 = 10^{-3}$$ (the value given in B14), all cells are using the non-conservative energy 
-update, and the results are a complete disaster, including final pressures that are negative.
+update, and the results are a bit better (but still inferior to the non dual energy case).
 
 Figure 4: Same as Figure 1 but with dual energy, $$\eta_1 = 10^{-3}$$
 <img src="{{ site.url }}assets/images/PPMP_exact_M100_eta3.png">
