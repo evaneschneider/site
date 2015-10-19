@@ -29,17 +29,20 @@ Problems that I have looked into include:
 1) *The CTU and Van Leer integrators fail as a result of the transverse flux update 
 step.* I am unable to run this test in the adiabatic regime with either the CTU or VL integrator,
 regardless of the reconstruction technique or Riemann solver. However, I can run the test if I 
-leave out the transverse flux update step in CTU (i.e. just do normal PPM).
+leave out the transverse flux update step in CTU (i.e. just do normal PPM). I don't currently 
+have a fix for this.
 
-2) *Dual energy may be needed for cooling.* If I run this test with cooling, the code breaks relatively 
-quickly even without the transverse flux update. Negative pressures are produced after the final update 
-step, and eventually the code crashes as a result of negative densities in the final update. 
-With the current implementation of dual energy the situation is improved somewhat (see below), 
-but still not fixed.
+2) *Dual energy may be needed for cooling.* If I run this test with cooling, the code produces negative
+pressures relatively quickly even without the transverse flux update. Eventually the code crashes, but 
+I'm not clear on whether the crash is caused by negative densities after the final update, or a 
+failure of the Riemann solver in the lowest density regions. With the current implementation of dual energy 
+the situation is improved somewhat, in the sense that the internal energy gets corrected to a positive 
+number. However, the code still crashes, at around the same time it crashed without dual energy.
 
 3) *Unstable cooling?* With dual energy, the crash occurs not as a result of negative densities or 
 pressures after the final update, but because of a failure in the Riemann solver in a region 
-of very low density behind the cloud. I have not spent much time on this yet.
+of very low density behind the cloud. I have not spent much time on this yet, but it may be the 
+primary problem.
 
 **Current Results**
 
