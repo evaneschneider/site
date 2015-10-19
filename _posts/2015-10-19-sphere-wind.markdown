@@ -47,8 +47,8 @@ primary problem.
 **Current Results**
 
 A movie of the sphere/wind test without cooling, with PPMP, the exact solver, and a simple
-integrator can be found <a href="http://brown.as.arizona.edu/~evan/temp/sphere_wind_nocool.mov">here</a>.
+integrator can be found at brown.as.arizona.edu/~evan/temp/sphere_wind_nocool.mov
 
 A movie of the sphere/wind test as above but with cooling and dual energy (B14 switch) 
-can be found <a href="http://brown.as.arizona.edu/~evan/temp/sphere_wind_wcool.mov">here</a>.
+can be found at brown.as.arizona.edu/~evan/temp/sphere_wind_wcool.mov
 
