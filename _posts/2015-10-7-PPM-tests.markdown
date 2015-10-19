@@ -41,5 +41,5 @@ Figure 3a: PPMP, exact solver, dual energy, sampled e
 Figure 3b: PPMc, exact solver, dual energy, sampled e
 <img src="{{ site.url }}assets/images/PPMC_exact_M800_se.png">
 
-This certainly helps, but I'm not sure it would work in a scenario where dual enrgy 
+This certainly helps, but I'm not sure it would work in a scenario where dual energy 
 is actually needed.
