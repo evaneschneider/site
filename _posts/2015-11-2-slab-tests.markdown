@@ -10,5 +10,3 @@ Below are two images from the sphere-wind test with cooling and dual energy. The
 <img style="float: left; width: 48%; margin-right: 1%; margin-bottom: 0.5em;" src="{{ site.url }}assets/images/cloud_roe_ppmp.png">
 <img style="float: left; width: 48%; margin-right: 1%; margin-bottom: 0.5em;" src="{{ site.url }}assets/images/cloud_roe_plmc.png">
 
-There seems to be more assymetry in the left image. Additionally, the PPMP reconstruction seems to be 
-inhibiting the Kelvin-Helmholtz instabilities.
