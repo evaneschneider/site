@@ -39,8 +39,8 @@ failure of the Riemann solver in the lowest density regions. With the current im
 the situation is improved somewhat, in the sense that the internal energy gets corrected to a positive 
 number. However, the code still crashes, at around the same time it crashed without dual energy.
 
-3) *Unstable cooling?* With dual energy, the crash occurs not as a result of negative densities or 
-pressures after the final update, but because of a failure in the Riemann solver in a region 
+3) *Failure of the exact solver?* With dual energy, the crash occurs not as a result of negative densities or 
+pressures after the final update, but because of a failure in the exact Riemann solver in a region 
 of very low density behind the cloud. I have not spent much time on this yet, but it may be the 
 primary problem.
 
