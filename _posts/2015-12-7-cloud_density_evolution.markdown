@@ -30,4 +30,4 @@ Below is a density pdf showing all the material in the simulation. Lines corresp
 four snapshots above, with the color gradient going from darkest (snapshot 0) to lightest 
 (snapshot 400k).
 
-<img src="{{ site.url }}assets/images/cloud_wind_density.eps">
+<img src="{{ site.url }}assets/images/cloud_wind_density.png">
