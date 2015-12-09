@@ -30,5 +30,5 @@ To compile a single sample program (e.g. hazy_coolingcurve) do:
 g++ -ansi -O3 -ftrapping-math -fno-math-errno  -Wall -W -g hazy_coolingcurve.cpp -o hazy_coolingcurve.exe -I../../../source -L../../../source/ -lcloudy
 
 The following plot is produced with the default settings from the 
-hazy_coolingcurve program (solar abundances, no photoionzation, $$n_h = 1 / cc$$).
-<img source="{{ site.url }}assets/images/hazy_coolingcurve.png">
+hazy_coolingcurve program (solar abundances, no photoionzation, $$n_h = 1 /, /mathrm{cm}^{-3}$$).
+<img src="{{ site.url }}assets/images/hazy_coolingcurve.png">
