@@ -15,7 +15,7 @@ The workaround suggested on the wiki did work for me. I had to install gcc mysel
 which I did using Homebrew. The first version I tried (4-8) didn't work, but when I built the most 
 recent version from source, it fixed things.
 
-brew reinstall --build-from-source gcc
+``brew reinstall --build-from-source gcc``
 
 Make sure that this is the version of gcc that gets called when you compile (do "which gcc"), 
 and create the appropriate aliases in /usr/local/bin (and update your path) if necessary. 
