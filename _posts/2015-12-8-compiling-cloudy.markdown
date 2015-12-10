@@ -28,7 +28,7 @@ programs directory. This script compiles and runs each of the programs listed in
 
 To compile a single sample program (e.g. hazy_coolingcurve) do:
 
-$$\texttt{g++ -ansi -O3 -ftrapping-math -fno-math-errno  -Wall -W -g hazy_coolingcurve.cpp -o hazy_coolingcurve.exe -I../../../source -L../../../source/ -lcloudy$$
+``g++ -ansi -O3 -ftrapping-math -fno-math-errno  -Wall -W -g hazy_coolingcurve.cpp -o hazy_coolingcurve.exe -I../../../source -L../../../source/ -lcloudy``
 
 The following plot is produced with the default settings from the 
 hazy_coolingcurve program (solar abundance, $$n_h = 1 \, \mathrm{cm}^{-3}$$).
