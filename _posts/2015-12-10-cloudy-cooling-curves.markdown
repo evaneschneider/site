@@ -4,7 +4,7 @@ date:   2015-12-10
 description: Details of various cooling curves
 ---
 
-The following plot shows three cooling / heating curves generated with
+The following plots show cooling / heating curves generated with
 Cloudy. Spefically, they are the result of modifying the
 hazy_coolingcurve program to take into account the Haardt & Madauu 
 background.
@@ -19,3 +19,10 @@ dominates the chemistry of the molecular gas.
 The following plot modifies the background described above. Instead of the default 
 background, it uses the Haardt & Madauu background (HM05). The CMB and cosmic rays 
 are still included.
+<img src="{{ site.url }}assets/images/coolingcurve_solar_PIE.png">
+
+So, the question is - do we need to include cooling for gas below 
+$$10^4$$ K? At low densities it won't be able to cool, so it is probably okay to 
+neglect it. At densities greater than $$n_h \approx 0.1$$ the gas is clearly still 
+able to cool, but the efficiency has dropped by 2-3 orders of magnitude, so perhaps the 
+cooling times are long enough that we can still safely ignore cooling in this regime?

@@ -15,7 +15,7 @@ The workaround suggested on the wiki did work for me. I had to install gcc mysel
 which I did using Homebrew. The first version I tried (4-8) didn't work, but when I built the most 
 recent version from source, it fixed things.
 
-``brew reinstall --build-from-source gcc``
+brew reinstall --build-from-source gcc
 
 Make sure that this is the version of gcc that gets called when you compile (do "which gcc"), 
 and create the appropriate aliases in /usr/local/bin (and update your path) if necessary. 
@@ -28,7 +28,7 @@ programs directory. This script compiles and runs each of the programs listed in
 
 To compile a single sample program (e.g. hazy_coolingcurve) do:
 
-``g++ -ansi -O3 -ftrapping-math -fno-math-errno  -Wall -W -g hazy_coolingcurve.cpp -o hazy_coolingcurve.exe -I../../../source -L../../../source/ -lcloudy``
+g++ -ansi -O3 -ftrapping-math -fno-math-errno  -Wall -W -g hazy_coolingcurve.cpp -o hazy_coolingcurve.exe -I../../../source -L../../../source/ -lcloudy
 
 The following plot is produced with the default settings from the 
 hazy_coolingcurve program (solar abundance, $$n_h = 1 \, \mathrm{cm}^{-3}$$).
