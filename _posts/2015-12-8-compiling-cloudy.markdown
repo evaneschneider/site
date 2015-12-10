@@ -1,7 +1,7 @@
 ---
 title:  "Compiling cloudy"
 date:   2015-12-08
-description: Compiling the Cloudy code on a Mac running El Capitan 
+description: Compiling the Cloudy code on a Mac 
 ---
 
 For future reference...
@@ -27,8 +27,9 @@ programs directory. This script compiles and runs each of the programs listed in
 "programs.dat" file.
 
 To compile a single sample program (e.g. hazy_coolingcurve) do:
-g++ -ansi -O3 -ftrapping-math -fno-math-errno  -Wall -W -g hazy_coolingcurve.cpp -o hazy_coolingcurve.exe -I../../../source -L../../../source/ -lcloudy
+
+$$\texttt{g++ -ansi -O3 -ftrapping-math -fno-math-errno  -Wall -W -g hazy_coolingcurve.cpp -o hazy_coolingcurve.exe -I../../../source -L../../../source/ -lcloudy$$
 
 The following plot is produced with the default settings from the 
-hazy_coolingcurve program (solar abundances, no photoionzation, $$n_h = 1 \, \mathrm{cm}^{-3}$$).
+hazy_coolingcurve program (solar abundance, $$n_h = 1 \, \mathrm{cm}^{-3}$$).
 <img src="{{ site.url }}assets/images/hazy_coolingcurve.png">
