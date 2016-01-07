@@ -34,5 +34,7 @@ The higher density gas cools faster due to the $$n^2$$ dependence of the cooling
 just above $$10^3$$ K. The lower density gas equilibrates at a much higher temperature.
 
 <img src="{{ site.url }}assets/images/cooling_n0.png">
+
+
 <img src="{{ site.url }}assets/images/cooling_nm3.png">
 
