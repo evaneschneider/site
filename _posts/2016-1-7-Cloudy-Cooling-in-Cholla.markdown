@@ -23,7 +23,7 @@ the cooling curves in the plot above. The blue lines that appear below $$10^5$$ 
 the result of the 2D interpolation. Above this temperature Cholla uses the 1D spline described
 in a previous post.
 
-<img src="{{ site.url }}assets/images/spline_coolingcurve.png">
+<img src="{{ site.url }}assets/images/spline2d_coolingcurve.png">
 
 
 I have also tested the behavior of the cooling function in Cholla. Both the heating and cooling functions 
