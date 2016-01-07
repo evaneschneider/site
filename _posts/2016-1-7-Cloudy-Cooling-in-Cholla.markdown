@@ -29,10 +29,10 @@ in a previous post.
 I have also tested the behavior of the cooling function in Cholla. Both the heating and cooling functions 
 have a density dependence, with a different temperature equilibrium for gas of different densities. This 
 behavior can be seen in the plots below, which show the temperature as a function of time for gas of 
-two different densities, $$n_h = 1.0$$ and $$n_h = 0.001$$ (corresponding to the left and right plots).
+two different densities, $$n_h = 1.0$$ and $$n_h = 0.001$$ (corresponding to the first and second plots).
 The higher density gas cools faster due to the $$n^2$$ dependence of the cooling rate, and equilibrates at 
 just above $$10^3$$ K. The lower density gas equilibrates at a much higher temperature.
 
-<img style="float: left; width: 48%; margin-right: 1%; margin-bottom: 0.5em;" src="{{ site.url }}assets/images/cooling_n0.png">
-<img style="float: left; width: 48%; margin-right: 1%; margin-bottom: 0.5em;" src="{{ site.url }}assets/images/cooling_nm3.png">
+<img src="{{ site.url }}assets/images/cooling_n0.png">
+<img src="{{ site.url }}assets/images/cooling_nm3.png">
 
