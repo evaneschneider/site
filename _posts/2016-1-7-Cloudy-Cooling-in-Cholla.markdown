@@ -7,13 +7,13 @@ description: A description of the CPU cooling function in Cholla
 The plot below shows cooling / heating curves generated with
 Cloudy for three different densities: $$n_h = 0.001$$, $$n_h = 1$$, and $$n_h = 1000$$.
 Cosmic rays, the CMB, and the Haardt & Madau background (HM05)
-are assumed. The gas was assumed to have solar metallicty (GASS10).
+are included. The gas was assumed to have solar metallicty (GASS10).
 
 <img src="{{ site.url }}assets/images/coolingcurve_HM_PIE.png">
 
-Based on these curves, a reasonable approach is to do a 2D interpolation (and account
-for heating) for temperatures below $$10^{5}$$ K. Above this temperature, only a 1D
-interpolation is needed to calculate the cooling.
+Based on these curves, a reasonable approach is to do a 2D interpolation (and include heating) 
+for temperatures below $$10^{5}$$ K. Above this temperature, only a 1D
+interpolation is needed to calculate the cooling rate.
 
 The figure below shows the results of this approach, using a standalone version of
 the CPU cooling function in Cholla. Below temperatures of $$10^5$$ K, a 2D interpolation 
