@@ -12,5 +12,5 @@ galaxy to give a reasonable set of densities, veloicties, and temperatures.
 
 The CC85 model with default parameters is shown below:
 
-<img src="{{ site.url }}assets/images/Chevalier.png">
+<img src="{{ site.url }}assets/images/chevalier.png">
 
