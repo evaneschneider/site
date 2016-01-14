@@ -15,6 +15,11 @@ The CC85 model with default parameters is shown below:
 <img src="{{ site.url }}assets/images/chevalier.png">
 
 
+And a version with each variable normalized to the value at $r = 0$:
+
+<img src="{{ site.url }}assets/images/chevalier_norm.png">
+
+
 These parameters include a driving region of size $$R = 200$$ pc, mass input
 rate $$\dot{M} = 1.0 \, \mathrm{M}_{\odot} \, \mathrm{yr}^{-1}$$, and energy input rate
 $$\dot{E} = 10^{43} \, \mathrm{erg} \, \mathrm{s}^{-1}$$.
