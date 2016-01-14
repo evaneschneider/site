@@ -15,7 +15,7 @@ The CC85 model with default parameters is shown below:
 <img src="{{ site.url }}assets/images/chevalier.png">
 
 
-And a version with each variable normalized to the value at $r = 0$:
+And a version with each variable normalized to the value at $$r = 0$$:
 
 <img src="{{ site.url }}assets/images/chevalier_norm.png">
 
