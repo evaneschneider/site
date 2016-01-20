@@ -15,7 +15,7 @@ the following parameters:
 0.3-1.0
 * $$R_{*} \approx 300$$ pc
 
-
+***
 
 Physical parameters of interest for the CC85 model with these parameters are shown in the plots below.
 
