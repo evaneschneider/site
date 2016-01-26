@@ -50,3 +50,7 @@ This evolution can be contrasted with the radiatively cooling case:
 <img src="{{ site.url }}assets/images/sphere_wind_7r.png">
 
 <img src="{{ site.url }}assets/images/sphere_wind_8r.png">
+
+<img src="{{ site.url }}assets/images/sphere_wind_9r.png">
+
+<img src="{{ site.url }}assets/images/sphere_wind_10r.png">
