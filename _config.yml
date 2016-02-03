@@ -4,7 +4,7 @@ description: Blogging about stuff
 aboutPage: true
 
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge 
 
 paginate: 20
 baseurl: 'http://evaneschneider.github.io/site/' 
