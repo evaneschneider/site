@@ -1,7 +1,7 @@
 ---
 title:  "Phase Diagrams"
 date:   2016-2-3
-description: Several examples of phase diagrams for a sphere-wind test
+description: Several examples of phase diagrams for a sphere-wind simulation 
 ---
 
 Simulation paratmeters:
@@ -32,7 +32,8 @@ A velocity-weighted density-temperature phase diagram using the full simulation 
 
 
 In order to more clearly see how the regions of the phase diagram are populated, I have also plotted 
-density-temperature diagrams which correspond to the regions marked on the initial snapshot.
+density-temperature diagrams which correspond to the regions marked on the initial snapshot (shown again here).
+<img src="{{ site.url }}assets/images/sphere_wind_n1_100.png">
 
 <img src="{{ site.url }}assets/images/subregions_100.png">
 
