@@ -15,7 +15,7 @@ disqus_shortname: 'your-disqus-shortname'
 # Details for the RSS feed generator
 url:            'http://evaneschneider.github.io/site/'
 author:         'Evan Schneider'
-authorTwitter:  'YourTwitterUsername'
+authorTwitter:  'navelation'
 
 permalink:       /:year/:title/
 
