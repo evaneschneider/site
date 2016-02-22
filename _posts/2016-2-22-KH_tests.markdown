@@ -1,0 +1,18 @@
+---
+title:  "KH tests"
+date:   2016-2-22
+description: Tests of the 2D integration schemes 
+---
+
+A high cloud-density 2D sphere-wind simulation with GPU cooling exhibited some strange behavior,
+namely the timestep abruptly shrank from ~$$10^{-2}$$ to ~$$10^{-4}$$. I ran the 
+sim again with CPU cooling and things seem okay, so maybe there is a bug in the GPU cooling,
+but it got me worried about the integration scheme, so I ran some KH tests. I'm not sure if we've
+run these before, but I'm a little concerned with the results.
+
+<img src="{{ site.url }}assets/images/KH_PPMP_noCTU.png">
+<img src="{{ site.url }}assets/images/KH_PPMC_noCTU.png">
+<img src="{{ site.url }}assets/images/KH_PPMP_CTU.png">
+<img src="{{ site.url }}assets/images/KH_PPMC_CTU.png">
+
+
