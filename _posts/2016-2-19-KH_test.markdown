@@ -1,6 +1,6 @@
 ---
 title:  "KH tests"
-date:   2016-2-22
+date:   2016-2-19
 description: Tests of the 2D integration schemes 
 ---
 
