@@ -36,4 +36,9 @@ Maybe some of the excess pressure is real, resulting from the interacting bow sh
 
 Given these results, how big a box is needed in 3D, for a simulation with 
 $$10\times$$ higher density? The simulation above has dimensions $$300\times120$$ pc,
-but the mach cone has a wider opening angle in 2D.
+but the mach cone has a wider opening angle in 2D. That size box is *not* big enough for
+a 2D simulation with $$10\times$$ higher density:
+
+<img src="{{ site.url }}assets/images/circle_wind_n10_big_250.png">
+<img src="{{ site.url }}assets/images/circle_wind_n10_big_nT_250.png">
+
