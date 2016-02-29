@@ -4,7 +4,8 @@ date:   2016-2-19
 description: Tests of the 2D integration schemes 
 ---
 
-KH tests with different reconstruction / integrations schemes.
+KH tests with different reconstruction / integrations schemes. The CFL
+number is 0.4 and Riemann solver is exact, unless otherwise specified.
 
 <img src="{{ site.url }}assets/images/KH_PPMP_noCTU.png">
 <img src="{{ site.url }}assets/images/KH_PPMC_noCTU.png">
