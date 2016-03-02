@@ -7,9 +7,9 @@ description: Demonstration of the HLLC Riemann solver
 I wrote a new HLLC Riemann solver for Cholla. It is 
 based on Toro's extension to the HLL solver that incoporates a contact wave (so
 there are two intermediate states, instead of just one), and uses estimates for the
-wave speeds described in Batten 1997. Advantages of this solver include the fact that
-it does not require an iterative scheme to calculate the pressure (so is less expensive
-than the exact solver), is positive definite (unlike a linearized solver), and is generally
+signal speeds described in Batten 1997. Advantages of this solver include the fact that
+it does not require an iterative scheme to calculate the pressure (so is less computationally expensive
+than the exact solver), it is positive definite (unlike a linearized solver), and it is generally
 less complicated than the Roe solver. Claims in the literature indicate that it is also 
 highly robust and produces results that are competitive with an exact solver.
 
@@ -33,7 +33,7 @@ Roe:
 
 
 Maybe a little worse on the internal energy, but I'd say they all handle that one okay, as well.
-Now let's try an implosion test. Again using PPMC, also with
+Now let's try a $$400\times400$$ implosion test. Again using PPMC, also with
 and without CTU.
 
 
@@ -43,11 +43,16 @@ Exact, early, without CTU (but with a CFL number = 0.1):
 HLLC, early, without CTU (but with a CFL number = 0.1):
 <img src="{{ site.url }}assets/images/implosion_early_hllc.png">
 
+Roe, early, without CTU (but with a CFL number = 0.1):
+<img src="{{ site.url }}assets/images/implosion_early_roe.png">
+
 Exact, late, without CTU (but with a CFL number = 0.1):
 <img src="{{ site.url }}assets/images/implosion_late_exact.png">
 
 HLLC, late, without CTU (but with a CFL number = 0.1):
 <img src="{{ site.url }}assets/images/implosion_late_hllc.png">
+
+The results with the exact solver and HLLC look *strikingly* similar.
 
 Note - the PPMC test looks better at late times than the PPMP test from the last post, 
 even without CTU. I'm looking into whether the problem was PPMP, the cfl number (0.25 vs 0.1),
