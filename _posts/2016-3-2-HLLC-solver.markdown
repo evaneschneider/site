@@ -37,31 +37,34 @@ Now let's try a $$400\times400$$ implosion test. Again using PPMC, also with
 and without CTU.
 
 
-Exact, early, without CTU (but with a CFL number = 0.1):
+Exact, $$t = 0.045$$, without CTU (but with a CFL number = 0.1):
 <img src="{{ site.url }}assets/images/implosion_early_exact.png">
 
-HLLC, early, without CTU (but with a CFL number = 0.1):
+HLLC, $$t = 0.045$$, without CTU (but with a CFL number = 0.1):
 <img src="{{ site.url }}assets/images/implosion_early_hllc.png">
 
-Roe, early, without CTU (but with a CFL number = 0.1):
+Roe, $$t = 0.045$$, without CTU (but with a CFL number = 0.1):
 <img src="{{ site.url }}assets/images/implosion_early_roe.png">
 
-Exact, late, without CTU (but with a CFL number = 0.1):
+Exact, $$t = 2.5$$, without CTU (but with a CFL number = 0.1):
 <img src="{{ site.url }}assets/images/implosion_late_exact.png">
 
-HLLC, late, without CTU (but with a CFL number = 0.1):
+HLLC, $$t = 2.5$$, without CTU (but with a CFL number = 0.1):
 <img src="{{ site.url }}assets/images/implosion_late_hllc.png">
 
-Roe, late, without CTU (but with a CFL number = 0.1):
+Roe, $$t = 2.5$$, without CTU (but with a CFL number = 0.1):
 <img src="{{ site.url }}assets/images/implosion_late_hllc.png">
 
 The results look *strikingly* similar.
 
-Here's the same implosion test at the late time with HLLC, CTU, and a CFL number = 0.4:
+Here's the same implosion test at $$t = 2.5$$ with HLLC, CTU, and a CFL number = 0.4:
 <img src="{{ site.url }}assets/images/implosion_late_hllc_CTU.png">
 
+And at $$t = 2.5$$ with HLLC, VL, and a CFL number = 0.4: 
+<img src="{{ site.url }}assets/images/implosion_late_hllc_VL.png">
 
-Note - the PPMC test looks better at late times than the PPMP test from the last post, 
-even without CTU. I'm looking into whether the problem was PPMP or the cfl number (0.25 vs 0.1). 
-Doesn't seem to be related to the Riemann solver.
+Interestingly, all these tests look better at late times than the PPMP test from the last post, 
+even without CTU. Additionaly, the VL test looks more symmetric, although it is still not *exactly*
+symmetric like CTU. I'm looking into whether the problem in the last test was PPMP or the cfl number (0.25 vs 0.1). 
+It doesn't seem to be related to the Riemann solver.
 
