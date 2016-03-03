@@ -62,6 +62,6 @@ Here's the same implosion test at the late time with HLLC, CTU, and a CFL number
 
 
 Note - the PPMC test looks better at late times than the PPMP test from the last post, 
-even without CTU. I'm looking into whether the problem was PPMP, the cfl number (0.25 vs 0.1),
-or the Riemann solver.
+even without CTU. I'm looking into whether the problem was PPMP or the cfl number (0.25 vs 0.1). 
+Doesn't seem to be related to the Riemann solver.
 
