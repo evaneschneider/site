@@ -52,7 +52,13 @@ Exact, late, without CTU (but with a CFL number = 0.1):
 HLLC, late, without CTU (but with a CFL number = 0.1):
 <img src="{{ site.url }}assets/images/implosion_late_hllc.png">
 
-The results with the exact solver and HLLC look *strikingly* similar.
+Roe, late, without CTU (but with a CFL number = 0.1):
+<img src="{{ site.url }}assets/images/implosion_late_hllc.png">
+
+The results look *strikingly* similar.
+
+Here's the same implosion test with HLLC but with CTU and a CFL number = 0.4:
+
 
 Note - the PPMC test looks better at late times than the PPMP test from the last post, 
 even without CTU. I'm looking into whether the problem was PPMP, the cfl number (0.25 vs 0.1),
