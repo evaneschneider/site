@@ -57,7 +57,8 @@ Roe, late, without CTU (but with a CFL number = 0.1):
 
 The results look *strikingly* similar.
 
-Here's the same implosion test with HLLC but with CTU and a CFL number = 0.4:
+Here's the same implosion test at the late time with HLLC, CTU, and a CFL number = 0.4:
+<img src="{{ site.url }}assets/images/implosion_late_hllc_CTU.png">
 
 
 Note - the PPMC test looks better at late times than the PPMP test from the last post, 
