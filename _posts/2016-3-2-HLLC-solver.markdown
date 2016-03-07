@@ -68,3 +68,8 @@ even without CTU. Additionaly, the VL test looks more symmetric, although it is 
 symmetric like CTU. I'm looking into whether the problem in the last test was PPMP or the cfl number (0.25 vs 0.1). 
 It doesn't seem to be related to the Riemann solver.
 
+UPDATE: It looks like the problem was the CFL number.
+
+At $$t = 2.5$$ with PPMP, HLLC, and no CTU (but with a CFL number 0.1):
+<img src="{{ site.url }}assets/images/implosion_late_PPMP_hllc.png">
+
