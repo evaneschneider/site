@@ -20,7 +20,7 @@ Snapshots of the two clouds at 200 kyr:
 <img src="{{ site.url }}assets/images/swn1_lowres_200.png">
 <img src="{{ site.url }}assets/images/swn1_highres_200.png">
 
-Density-temperature plots:
+Density-temperature plots (low res followed by high res):
 <img src="{{ site.url }}assets/images/swn1_lowres_nT_200.png">
 <img src="{{ site.url }}assets/images/swn1_highres_nT_20.png">
 
