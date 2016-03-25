@@ -18,14 +18,15 @@ a 1D slice through the center of the cloud, zoomed in on the outer edge.
 <img src="{{ site.url }}assets/images/density_profiles.png">
 
 
-Snapshots of the three simulations clouds at 200 kyr:
+Snapshots of the three simulations clouds at 200 kyr (low res followed by high res with the old
+density profile followed by high res with the new density profile):
 <img src="{{ site.url }}assets/images/swn1_lowres_200.png">
 <img src="{{ site.url }}assets/images/swn1_highres_200.png">
 <img src="{{ site.url }}assets/images/swn1_highres_old_200.png">
 
 
 Density-temperature plots (low res followed by high res with the old
-density profile foloowed by high res with the new density profile):
+density profile followed by high res with the new density profile):
 <img src="{{ site.url }}assets/images/swn1_lowres_nT_200.png">
 <img src="{{ site.url }}assets/images/swn1_highres_old_nT_20.png">
 <img src="{{ site.url }}assets/images/swn1_highres_nT_20.png">
