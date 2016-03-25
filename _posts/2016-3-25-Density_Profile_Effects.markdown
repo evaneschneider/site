@@ -7,7 +7,7 @@ description: A comparison of clouds with different density profiles
 In the last post I noted that there were clear differences between the 
 low and high resolution $$n_h = 1$$ cloud simulations at 200 kyr. However,
 the fact that the clouds started with different density profiles and therefore,
-different masses was a confounded variable in determining the cause of the
+different masses was a confounding variable in determining the cause of the
 different morphologies. Hence, I have rerun the high resolution simulation 
 to 200 kyr with the old density profile. 
 
