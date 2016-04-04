@@ -14,8 +14,8 @@ new initial cloud density profile, which tapers exponentially to the wind densit
 at a cloud radius of 4.5 pc. The center of the cloud has a constant density. Both clouds have
 a mass of $$\approx$$ 10 solar masses.
 
-Movies of both simulations are available: <a href="brown.as.arizona.edu/~evan/temp/swn1_lowres.mov">
-low resolution</a> and <a href="brown.as.arizona.edu/~evan/temp/swn1_highres.mov">high resolution</a>.
+Movies of both simulations are available: <a href="http://brown.as.arizona.edu/~evan/temp/swn1_lowres.mov">
+low resolution</a> and <a href="http://brown.as.arizona.edu/~evan/temp/swn1_highres.mov">high resolution</a>.
 
 Snapshots of the two clouds at 200, 400, 600, and 800 kyr:
 <img src="{{ site.url }}assets/images/swn1_lowres_new_200.png">
