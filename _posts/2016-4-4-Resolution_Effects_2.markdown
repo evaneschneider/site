@@ -37,5 +37,5 @@ Velocity-weighted density-temperature plots:
 
 Density-velocity plots:
 <img src="{{ site.url }}assets/images/swn1_lowres_new_nv_200.png">
-<img src="{{ site.url }}assets/images/swn1_highres_new_nv_20.png">
+<img src="{{ site.url }}assets/images/swn1_highres_new_nv_200.png">
 
