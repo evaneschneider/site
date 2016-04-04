@@ -41,4 +41,15 @@ Density-velocity plots:
 <img src="{{ site.url }}assets/images/swn1_highres_old_nv_20.png">
 <img src="{{ site.url }}assets/images/swn1_highres_nv_20.png">
 
+1D histograms of density and temperature:
+<img src="{{ site.url }}assets/images/swn1_lowres_n_200.png">
+<img src="{{ site.url }}assets/images/swn1_highres_old_n_20.png">
+<img src="{{ site.url }}assets/images/swn1_highres_n_20.png">
+
+<img src="{{ site.url }}assets/images/swn1_lowres_T_200.png">
+<img src="{{ site.url }}assets/images/swn1_highres_old_T_20.png">
+<img src="{{ site.url }}assets/images/swn1_highres_T_20.png">
+
+
+
 
