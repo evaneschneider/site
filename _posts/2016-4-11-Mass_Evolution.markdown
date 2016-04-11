@@ -4,7 +4,7 @@ date:   2016-4-11
 description: Some prelimnary mass evolution plots 
 ---
 
-I've now run low resolution (32 cells / $$R_{cloud]$$) sphere-wind simulations
+I've now run low resolution (32 cells / $$R_{cloud}$$) sphere-wind simulations
 for spheres with mean density $$n_h = 1.0$$, $$n_h = 0.5$$, and $$n_h = 0.1$$.
 
 Movies of these simulations are available:  <a href="http://brown.as.arizona.edu/~evan/temp/swn1_lowres.mov">
