@@ -33,7 +33,7 @@ intial density contrasts.
 
 As expected, the evolution of the $$n_h = 0.2$$ sphere falls between the $$n_h = 0.1$$ and 
 $$n_h = 1.0$$ cases. Watching a movie of the simulation 
-(<a href="https://brown.as.arizona.edu/~evan/temp/swn02_lowres.mov">here</a>), we see that the $$n_h = 0.2$$
+(<a href="http://brown.as.arizona.edu/~evan/temp/swn02_lowres.mov">here</a>), we see that the $$n_h = 0.2$$
 cloud cools more effectively than the $$n_h = 0.1$$ cloud, but it loses significantly more
 of its initial mass than the $$n_h =0.5$$ case. To me, it looks like about half the cloud follows
 the adiabatic track, as indicated by the initial steep dropoff a $$t \sim 5 t_{cc}$$, and the
