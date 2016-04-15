@@ -5,6 +5,7 @@ description: Further exploration of mass evolution
 ---
 
 This post adresses two questions:
+
 * Are the simulations converged for mass evolution?
 * How does the initial density contrast affect the mass evolution?
 
