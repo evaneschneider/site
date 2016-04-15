@@ -11,7 +11,7 @@ How does the initial density contrast affect the mass evolution?
 I attempt to answer the first question with the following plot, which shows the mass
 evolution as a function of cloud crushing time for the $$n_h = 1$$ sphere simulation
 at 3 different resolutions: 16, 32, and 64 cells / $$R_{cl}$$. The mass fraction is calculated
-as the amount of material above a given density threshold (in this case $$n = 0.05 cm^{-3}$$
+as the amount of material above a given density threshold (in this case $$n = 0.05$$ $$\mathrm{cm}^{-3}$$)
 as compared to the intial mass of the cloud.
 
 <img src="{{ site.url }}assets/images/041516_swn1_mass.png">
