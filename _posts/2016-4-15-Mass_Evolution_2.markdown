@@ -16,9 +16,7 @@ as compared to the intial mass of the cloud.
 
 <img src="{{ site.url }}assets/images/041516_swn1_mass.png">
 
-From this plot, I don't know if we're converged. It's maybe worth noting that Scannapieco's 
-convergence tests measured "mix fractions" not mass fractions, which may make a difference
-in a convergence study.
+From this plot, I don't know if we're converged.
 
 I can make the same plot using different density thresholds to measure the cloud mass,
 <img src="{{ site.url }}assets/images/041516_swn1_mass_thresholds.png">
