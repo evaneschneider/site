@@ -28,7 +28,7 @@ that we have chosen a slightly overdense region for the cloud ICs.
 We'd like to match the cloud ICs to the sphere ICs as best we can, in terms of mean density and 
 (if possible) cloud mass. What happens if I apply a linear scaling to the cloud density distribution 
 shown in the first figure? Below is a PDF created by multiplying the original turbulence data 
-by a constant factor (in this case 0.4), in order to match the mean and initial mass of 
+by a constant factor (in this case 0.4), in order to match the mean density and initial mass of 
 the $$n_h = 1$$ sphere simulation.
 
 <img src="{{ site.url }}assets/images/scaled_PDF.png">
