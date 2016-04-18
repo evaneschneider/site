@@ -16,7 +16,8 @@ as compared to the intial mass of the cloud.
 
 <img src="{{ site.url }}assets/images/041516_swn1_mass.png">
 
-From this plot, I don't know if we're converged.
+From this plot, I don't know if we're converged. The lines certainly aren't lying on top of one 
+another, nor are they approaching a common solution.
 
 I can make the same plot using different density thresholds to measure the cloud mass,
 <img src="{{ site.url }}assets/images/041516_swn1_mass_thresholds.png">
