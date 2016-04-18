@@ -23,8 +23,8 @@ in a convergence study.
 I can make the same plot using different density thresholds to measure the cloud mass,
 <img src="{{ site.url }}assets/images/041516_swn1_mass_thresholds.png">
 but that doesn't change the convergence much. In the plot above, the solid line represents a 
-threshold of 1/20 the initial cloud density, while the dotted and dot-dash lines represent
-1/10 and 1/3, respectively.
+threshold of 1/20th the initial cloud density, while the dashed and dot-dash lines represent
+1/10th and 1/3rd, respectively.
 
 To address the second question, I plot below the mass evolution for simulations with different
 intial density contrasts.
