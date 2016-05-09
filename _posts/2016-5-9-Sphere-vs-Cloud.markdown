@@ -32,3 +32,10 @@ density-temperature and density-velocity diagrams for each simulation at $$\sim 
 <img src="{{ site.url }}assets/images/050916_swn1_mnv_250.png">
 <img src="{{ site.url }}assets/images/050916_cwn1_mnv_250.png">
 
+
+The first thing that was obvious to me is the fact that gas at a given density threshold
+tends to be moving faster in the sphere simulation, indicating that momentum has been transferred
+more effectively to the high density gas in the spherical cloud. I'm not exactly sure why this is. 
+After the shock has passed through the cloud, the maximum column densities are actually higher 
+in the sphere, but the original surface density (calculated as total mass in the cloud divided
+by the diameter) is larger for the turbulent cloud.
