@@ -39,3 +39,11 @@ more effectively to the high density gas in the spherical cloud. I'm not exactly
 After the shock has passed through the cloud, the maximum column densities are actually higher 
 in the sphere, but the original surface density (calculated as total mass in the cloud divided
 by the diameter) is larger for the turbulent cloud.
+
+It seems perhaps a lot of the wind momentum in the cloud case is efficiently transferred to lower
+density material, which is quickly carried off the grid. The difference in the momentum column
+densities is clearly apparent in the x-axis projection below.
+
+<img src="{{ site.url }}assets/images/050916_swn1_mvsd_250.png">
+<img src="{{ site.url }}assets/images/050916_cwn1_mvsd_250.png">
+
