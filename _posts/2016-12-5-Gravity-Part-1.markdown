@@ -8,8 +8,8 @@ The time has come to implement a gravitational potential in *Cholla*.
 To do this, I'll need to couple the gravitational source terms to the
 momentum and energy equations:
 
-$$ \mathbf{S}_m = \rho \mathbf{\nabla \phi} $$ and $$ S_E = \rho \mathbf{v \cdot \nabla \phi}$$,
-where $$\mathbf{\nabla \cdot \phi} = \mathbf{g}$$ is the gradient of the gravitational 
+$$ \mathbf{S}_m = \rho \nabla \phi $$ and $$ S_E = \rho \mathbf{v} \cdot \nabla \phi$$,
+where $$\nabla \phi = \mathbf{g}$$ is the gradient of the gravitational 
 potential (i.e. the gravitational acceleration).
 
 To start, I've tried coupling the gravitational source terms
