@@ -30,8 +30,8 @@ where $$P_0 = 1.0/\gamma + \frac{1}{2} \rho_{lower} g$$ is set such that the
 sound speed in the lower fluid, $$c_s = 1.0$$ at the interface. The inital velocities
 are perturbed according to $$v_y = 0.01 cos(6\pi x) exp(-\frac{(y-0.5)^{2}}{0.1})$$, a
 single mode perturbation that tapers off from the interface. The test is run in a
-domain $$x = [0.0, \frac{1}{3}]$$, $$y = [0.0, 1.0]$$, with period x-boundaries and
-reflecting y-boundaries.
+domain $$x = [0.0, \frac{1}{3}]$$, $$y = [0.0, 1.0]$$, with periodic x-boundaries and
+reflecting y-boundaries. For this run, I used 200x400 cells.
 
 Below is a movie showing the evolution of the fluid until $$t = 8.5$$. The color-scale 
 represents the density from $$\rho = 1.0$$ to $$\rho = 2.0$$.
