@@ -17,7 +17,8 @@ in the simplest way possible to the hydro equations, via an the operator-split
 update at the end of the hydro step. This takes the form (in 1D):
 
 $$(\rho v)^{n+1}_{i} = (\rho v)^{n}_{i} + \frac{\Delta t}{2} g^{n+1}_{i} (\rho^{n}_{i} + \rho^{n+1}_{i})$$
-$$(\rho E)^{n+1}_{i} = (\rho E)^{n}_{i} + \frac{\Delta t}{4} g^{n+1}_{i} (\rho^{n}_{i} + \rho^{n+1}_{i})(v^{n}_{i} + v^{n+1}_{i}).
+
+$$(\rho E)^{n+1}_{i} = (\rho E)^{n}_{i} + \frac{\Delta t}{4} g^{n+1}_{i} (\rho^{n}_{i} + \rho^{n+1}_{i})(v^{n}_{i} + v^{n+1}_{i})$$.
 
 To test this, I'll start with the simplest potential, a 
 1D constant gravitational acceleration in the y-direction. 
