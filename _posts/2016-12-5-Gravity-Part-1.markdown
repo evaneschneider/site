@@ -46,7 +46,7 @@ represents the density from $$\rho = 1.0$$ to $$\rho = 2.0$$.
 While the instability does develop, the overall evolution of the fluid is quite bouncy. This is
 likely because the operator-split gravity update does not couple the hydro and gravity fluxes
 closely enough to preserve hydrostatic equilibrium. As a result, the fluid oscillates about the initial 
-equilibrium solution. We can see this clearly if we initialize the fluid without the velocity perturbations:
+equilibrium solution. The problem is clearly visible if I initialize the fluid without the velocity perturbations:
 
 <div style="text-align: center">
 <video src="{{ site.url }}assets/movies/bouncy_equilibrium.mov" width="200" height="600" controls preload></video>
