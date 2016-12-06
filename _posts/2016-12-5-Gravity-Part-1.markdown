@@ -16,9 +16,11 @@ To start, I've tried coupling the gravitational source terms
 in the simplest way possible to the hydro equations, via an the operator-split
 update at the end of the hydro step. This takes the form (in 1D):
 
+<div style="text-align: center">
 $$(\rho v)^{n+1}_{i} = (\rho v)^{n}_{i} + \frac{\Delta t}{2} g (\rho^{n}_{i} + \rho^{n+1}_{i})$$
 
 $$(\rho E)^{n+1}_{i} = (\rho E)^{n}_{i} + \frac{\Delta t}{4} g (\rho^{n}_{i} + \rho^{n+1}_{i})(v^{n}_{i} + v^{n+1}_{i})$$.
+</div>
 
 To test this, I'll start with the simplest potential, a 
 1D constant gravitational acceleration in the y-direction. 
@@ -42,7 +44,7 @@ represents the density from $$\rho = 1.0$$ to $$\rho = 2.0$$.
 </div>
 
 While the instability does develop, the overall evolution of the fluid is quite bouncy. This is
-likely because operator-split gravity update does not couple the hydro and gravity fluxes
+likely because the operator-split gravity update does not couple the hydro and gravity fluxes
 closely enough to preserve hydrostatic equilibrium. As a result, the fluid oscillates about the initial 
 equilibrium solution. We can see this clearly if we initialize the fluid without the velocity perturbations:
 
