@@ -27,9 +27,9 @@ To test this, I'll start with the simplest potential, a
 
 Below is a test of a 2D Rayleigh-Taylor instability
 with the following parameters: $$\rho_{upper} = 2.0$$, $$\rho_{lower} = 1.0$$,
-$$g_{y} = 0.1$$, $$\gamma = 1.4$$. The two fluids are initally in
-hydrostatic equilibrium, so the initial pressure, $$P = P_0 - \rho g y$$,
-where $$P_0 = 1.0/\gamma + \frac{1}{2} \rho g$$ is set such that the
+$$g_{y} = -0.1$$, $$\gamma = 1.4$$. The two fluids are initally in
+hydrostatic equilibrium, so the initial pressure, $$P = P_0 + \rho g y$$,
+where $$P_0 = 1.0/\gamma - \frac{1}{2} \rho g$$ is set such that the
 sound speed $$c_s = 1.0$$ at the interface. The inital velocities
 are perturbed according to $$v_y = 0.01 cos(6\pi x) exp(-\frac{(y-0.5)^{2}}{0.1})$$, a
 single mode perturbation that tapers off from the interface. The test is run in a
@@ -43,13 +43,5 @@ represents the density from $$\rho = 1.0$$ to $$\rho = 2.0$$.
 <video src="{{ site.url }}assets/movies/rayleigh_taylor.mov" width="200" height="600" controls preload></video>
 </div>
 
-While the instability does develop, the overall evolution of the fluid is quite bouncy. This is
-likely because the operator-split gravity update does not couple the hydro and gravity fluxes
-closely enough to preserve hydrostatic equilibrium. As a result, the fluid oscillates about the initial 
-equilibrium solution. The problem is clearly visible if I initialize the fluid without the velocity perturbations:
-
-<div style="text-align: center">
-<video src="{{ site.url }}assets/movies/bouncy_equilibrium.mov" width="200" height="600" controls preload></video>
-</div>
-
-
+[EDIT: The earlier problems with the fluid bouncing around were due to a flipped sign in the 
+initial conditions for the pressure.]
