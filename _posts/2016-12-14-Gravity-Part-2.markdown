@@ -40,4 +40,7 @@ difference between the two methods. The plot below shows the rms velocities
 for the original version - the corrected version looks exactly the same. 
 All tests so far have been run using PPMC, an exact Riemann solver, and CTU.
 
+<div style="text-align: center">
 <img src="{{ site.url }}assets/images/rms_velocities.png">
+</div>
+
