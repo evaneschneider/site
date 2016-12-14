@@ -27,7 +27,7 @@ $$(\rho_L v_{z_L}) += \Delta t \rho_{L} g_{z}$$
 $$(\rho_L E_{L}) += \Delta t \rho_{L} (v_{x, L} g_x + v_{y, L} g_y + v_{z, L} g_z),$$
 </div>
 
-where $g_x$, $g_y$, and $g_z$ are the three components of the gravitational
+where $$g_x$$, $$g_y$$, and $$g_z$$ are the three components of the gravitational
 acceleration.
 
 I've tested the two versions (the original update versus
