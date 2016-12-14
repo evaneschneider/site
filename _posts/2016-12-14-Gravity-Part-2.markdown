@@ -4,10 +4,10 @@ date:   2016-12-14
 description: Implementing Static Gravity in Cholla 
 ---
 
-In addition to the operator-split source term update I added last week:
+In addition to the operator-split source term update I added last week,
 
 <div style="text-align: center">
-$$(\rho v)^{n+1}_{i} = (\rho v)^{n}_{i} + \frac{\Delta t}{2} g (\rho^{n}_{i} + \rho^{n+1}_{i})$$
+$$(\rho v)^{n+1}_{i} = (\rho v)^{n}_{i} + \frac{\Delta t}{2} g (\rho^{n}_{i} + \rho^{n+1}_{i}),$$
 
 $$(\rho E)^{n+1}_{i} = (\rho E)^{n}_{i} + \frac{\Delta t}{4} g (\rho^{n}_{i} + \rho^{n+1}_{i})(v^{n}_{i} + v^{n+1}_{i}),$$
 </div>
