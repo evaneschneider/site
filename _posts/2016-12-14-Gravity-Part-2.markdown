@@ -15,16 +15,16 @@ $$(\rho E)^{n+1}_{i} = (\rho E)^{n}_{i} + \frac{\Delta t}{4} g (\rho^{n}_{i} + \
 I've now tried correcting the velocities and total energy before the input
 states are passed to the Riemann solver. The correction takes the same
 form as the source terms, so for example, the correction to the left states
-at an x-interface would be:
+would be:
 
 <div style="text-align: center">
-$$(\rho v_x)_{Lx} += \Delta t \rho_{L} g_{x}$$
+$$(\rho_L v_{x_L}) += \Delta t \rho_{L} g_{x}$$
 
-$$(\rho v_y)_{Lx} += \Delta t \rho_{L} g_{y}$$
+$$(\rho_L v_{y_L}) += \Delta t \rho_{L} g_{y}$$
 
-$$(\rho v_z)_{Lx} += \Delta t \rho_{L} g_zy}$$
+$$(\rho_L v_{z_L}) += \Delta t \rho_{L} g_{z}$$
 
-$$(\rho E)_{Lx} += \Delta t \rho_{L} (v_x g_x + v_y g_y + v_z g_z),$$
+$$(\rho_L E_{L}) += \Delta t \rho_{L} (v_{x, L} g_x + v_{y, L} g_y + v_{z, L} g_z),$$
 </div>
 
 where $g_x$, $g_y$, and $g_z$ are the three components of the gravitational
