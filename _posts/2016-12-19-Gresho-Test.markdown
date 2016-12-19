@@ -17,7 +17,7 @@ I'm running the test until t = 3.0 on a 40x40 grid with transmissive boundaries.
 exact solver, CTU. Things don't look so good. At the moment I'm not sure whether the 
 problem is the initial conditions, the boundaries, or the hydro integrator, but if the
 L1 errors in LW03 really are listed in percentages, then my densitiy error is
-over two orders of magnitudes worse than the one they get for PPM, which doesn't seem
+over two orders of magnitude worse than the one they get for PPM, which doesn't seem
 right.
 
 <div style="text-align: center">
