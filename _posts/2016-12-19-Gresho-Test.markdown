@@ -21,6 +21,6 @@ over two orders of magnitude worse than the one they get for PPM, which doesn't 
 right.
 
 <div style="text-align: center">
-<video src="{{ site.url }}assets/movies/gresho_line.mov" width="400" height="200" controls preload></video>
-<video src="{{ site.url }}assets/movies/gresho_image.mov" width="400" height="200" controls preload></video>
+<video src="{{ site.url }}assets/movies/gresho_line.mov" width="600" height="300" controls preload></video>
+<video src="{{ site.url }}assets/movies/gresho_image.mov" width="600" height="300" controls preload></video>
 </div>
