@@ -38,4 +38,4 @@ $$v_{\theta}$$. After a similar derivative analysis, I get
 $$v_{\theta} = (x v_y - y v_x) / (x^2 + y^2)$$.
 
 How about the vorticity? Vorticity is the curl of the velocity field, so in 2D it's 
-$$\omega = \del x v = (d(v_y)/dx - d(v_x)/dy)$$ in the z direction.
+$$\omega = \nabla x v = (d(v_y)/dx - d(v_x)/dy)\hat{z}$$.
