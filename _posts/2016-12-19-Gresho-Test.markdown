@@ -17,7 +17,7 @@ the plot below, something still isn't right, because the vorticity is incorrect.
 Let's check the math. The velocity in the gresho problem is specified in polar
 coordinates, which I need to convert to Cartesian. Given $$x = r \mathrm{cos}\theta$$, 
 $$y = r \mathrm{sin}\theta$$, I get $$v_{x} = v_{r}\mathrm{cos}\theta - r v_{\theta} \mathrm{sin}\theta$$, 
-$$v_{y} = v_{r}\mathrm{sin}\theta + r v_{\theta}\mathrm{cos}\theta$$. Given that $$v_{r} = 0$$,
+$$v_{y} = v_{r}\mathrm{sin}\theta + r v_{\theta}\mathrm{cos}\theta$$. Since $$v_{r} = 0$$,
 that gives $$v_{x} = -r \mathrm{cos}\theta v_{\theta}$$ and $$v_{y} = r \mathrm{cos}\theta v_{\theta}$$.
 I calculate $$\theta$$ from $$x$$ and $$y$$ using $$\theta = \mathrm{arctan}(y/x)$$.
 
