@@ -42,7 +42,7 @@ v_{y} = v_{r}\mathrm{sin}(\phi) + v_{\phi}\mathrm{cos}(\phi)$$
 that gives
 
 <div style="text-align: center">
-$$v_{x} = -\mathrm{cos}(\phi) v_{\phi}$$, $$v_{y} = \mathrm{cos}(\phi) v_{\phi}$$.
+$$v_{x} = -\mathrm{cos}(\phi) v_{\phi}, v_{y} = \mathrm{cos}(\phi) v_{\phi}.$$
 </div>
 
 I calculate $$\phi$$ from $$x$$ and $$y$$ using $$\phi= \mathrm{arctan}(\frac{y}{x})$$ and 
