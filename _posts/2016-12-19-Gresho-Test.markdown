@@ -30,8 +30,12 @@ coordinates, which I need to convert to Cartesian. Given $$x = r \mathrm{cos}\th
 $$y = r \mathrm{sin}\theta$$, I get $$v_{x} = v_{r}\mathrm{cos}\theta - r v_{\theta} \mathrm{sin}\theta$$, 
 $$v_{y} = v_{r}\mathrm{sin}\theta + r v_{\theta}\mathrm{cos}\theta$$. Since $$v_{r} = 0$$,
 that gives $$v_{x} = -r \mathrm{cos}\theta v_{\theta}$$ and $$v_{y} = r \mathrm{cos}\theta v_{\theta}$$.
-I calculate $$\theta$$ from $$x$$ and $$y$$ using $$\theta = \mathrm{arctan}(y/x)$$.
+I calculate $$\theta$$ from $$x$$ and $$y$$ using $$\theta = \mathrm{arctan}(y/x)$$ and 
+$$r$$ using $$r^2 = x^2 + y^2$$.
 
 In plotting the data, I have to convert the other direction, from $$v_{x}, v_{y}$$ to 
 $$v_{\theta}$$. After a similar derivative analysis, I get 
 $$v_{\theta} = (x v_y - y v_x) / (x^2 + y^2)$$.
+
+How about the vorticity? Vorticity is the curl of the velocity field, so in 2D it's 
+$$\omega = \del x v = (d(v_y)/dx - d(v_x)/dy)$$ in the z direction.
