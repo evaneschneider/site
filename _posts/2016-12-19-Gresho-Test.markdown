@@ -28,14 +28,14 @@ The velocity in the gresho problem is specified in polar
 coordinates, which I convert to Cartesian. Given 
 
 <div style="text-align: center">
-$$x = r \mathrm{cos}(\phi)$$, $$y = r \mathrm{sin}(\phi)$$,
+$$x = r \mathrm{cos}(\phi), y = r \mathrm{sin}(\phi)$$,
 </div>
 
 I get 
 
 <div style="text-align: center">
-$$v_{x} = v_{r}\mathrm{cos}\phi - v_{\phi} \mathrm{sin}(\phi)$$, 
-$$v_{y} = v_{r}\mathrm{sin}(\phi) + v_{\phi}\mathrm{cos}(\phi)$$
+$$v_{x} = v_{r}\mathrm{cos}\phi - v_{\phi} \mathrm{sin}(\phi), 
+v_{y} = v_{r}\mathrm{sin}(\phi) + v_{\phi}\mathrm{cos}(\phi)$$
 </div>
 
 (where $$v_{\phi} = r \frac{d(\phi)}{dt}$$). Since $$v_{r} = 0$$,
