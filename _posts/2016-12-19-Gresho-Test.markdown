@@ -31,3 +31,7 @@ $$y = r \mathrm{sin}\theta$$, I get $$v_{x} = v_{r}\mathrm{cos}\theta - r v_{\th
 $$v_{y} = v_{r}\mathrm{sin}\theta + r v_{\theta}\mathrm{cos}\theta$$. Since $$v_{r} = 0$$,
 that gives $$v_{x} = -r \mathrm{cos}\theta v_{\theta}$$ and $$v_{y} = r \mathrm{cos}\theta v_{\theta}$$.
 I calculate $$\theta$$ from $$x$$ and $$y$$ using $$\theta = \mathrm{arctan}(y/x)$$.
+
+In plotting the data, I have to convert the other direction, from $$v_{x}, v_{y}$$ to 
+$$v_{\theta}$$. After a similar derivative analysis, I get 
+$$v_{\theta} = (x v_y - y v_x) / (x^2 + y^2)$$.
