@@ -7,8 +7,7 @@ description: The Gresho vortex test with Cholla
 The Gresho vortex test is a notoriously difficult problem for grid-based (and SPH) 
 codes. A rotating vortex is initialized such that the centrifugal force is balanced 
 by the pressure gradient. The solution is time-independent. For these tests, I used
-the initial conditions described in Liska & Wendroff (2003). As you can see from
-the plot below, something still isn't right, because the vorticity is incorrect.
+the initial conditions described in Liska & Wendroff (2003). 
 
 <div style="text-align: center">
 <img src="{{ site.url }}assets/images/gresho_init.png">
@@ -25,17 +24,17 @@ balancing the velocities, so perhaps I'm calculating the initial velocities wron
 </div>
 
 
-Let's check the math. The velocity in the gresho problem is specified in polar
-coordinates, which I need to convert to Cartesian. Given $$x = r \mathrm{cos}\theta$$, 
-$$y = r \mathrm{sin}\theta$$, I get $$v_{x} = v_{r}\mathrm{cos}\theta - r v_{\theta} \mathrm{sin}\theta$$, 
-$$v_{y} = v_{r}\mathrm{sin}\theta + r v_{\theta}\mathrm{cos}\theta$$. Since $$v_{r} = 0$$,
-that gives $$v_{x} = -r \mathrm{cos}\theta v_{\theta}$$ and $$v_{y} = r \mathrm{cos}\theta v_{\theta}$$.
-I calculate $$\theta$$ from $$x$$ and $$y$$ using $$\theta = \mathrm{arctan}(y/x)$$ and 
+The velocity in the gresho problem is specified in polar
+coordinates, which I convert to Cartesian. Given $$x = r \mathrm{cos}(\phi)$$, 
+$$y = r \mathrm{sin}(\phi)$$, I get $$v_{x} = v_{r}\mathrm{cos}\phi - v_{\phi} \mathrm{sin}(\phi)$$, 
+$$v_{y} = v_{r}\mathrm{sin}(\phi) + v_{\phi}\mathrm{cos}(\phi)$$ (where $$v_{\phi} = r \frac{d(\phi)}{dt}$$). Since $$v_{r} = 0$$,
+that gives $$v_{x} = -\mathrm{cos}(\phi) v_{\phi}$$ and $$v_{y} = \mathrm{cos}(\phi) v_{\phi}$$.
+I calculate $$\phi$$ from $$x$$ and $$y$$ using $$\phi= \mathrm{arctan}(\frac{y}{x})$$ and 
 $$r$$ using $$r^2 = x^2 + y^2$$.
 
 In plotting the data, I have to convert the other direction, from $$v_{x}, v_{y}$$ to 
-$$v_{\theta}$$. After a similar derivative analysis, I get 
-$$v_{\theta} = (x v_y - y v_x) / (x^2 + y^2)$$.
+$$v_{\phi}$$. After a similar derivative analysis, I get 
+$$v_{\phi} = r \frac{x v_y - y v_x}{x^2 + y^2}$$.
 
 How about the vorticity? Vorticity is the curl of the velocity field, so in 2D it's 
-$$\omega = \nabla x v = (d(v_y)/dx - d(v_x)/dy)\hat{z}$$.
+$$\omega = \nabla \times v = (\frac{d(v_y)}{dx} - \frac{d(v_x)}{dy})\hat{z}$$.
