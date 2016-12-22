@@ -13,22 +13,22 @@ the initial conditions described in Liska & Wendroff (2003).
 <img src="{{ site.url }}assets/images/gresho_init.png">
 </div>
 
-** Definitions **
+**Definitions**
 
 The velocity in the gresho problem is specified in polar
 coordinates, which I convert to Cartesian to initialize the voretx. Given 
 <div style="text-align: center">
-$$x = r \mathrm{cos}(\phi),\quad\mathrm{and}\quad y = r \mathrm{sin}(\phi),$$
+$$x = r \mathrm{cos}(\phi) \quad \mathrm{and} \quad y = r \mathrm{sin}(\phi),$$
 </div>
 I get
 <div style="text-align: center">
-$$v_{x} = v_{r}\mathrm{cos}\phi - v_{\phi} \mathrm{sin}(\phi),\quad\mathrm{and}\quad 
+$$v_{x} = v_{r}\mathrm{cos}\phi - v_{\phi} \mathrm{sin}(\phi) \quad \mathrm{and} \quad 
 v_{y} = v_{r}\mathrm{sin}(\phi) + v_{\phi}\mathrm{cos}(\phi)$$
 </div>
 (where $$v_{\phi} = r \frac{d(\phi)}{dt}$$). Since $$v_{r} = 0$$ for the Gresho problem,
 that gives
 <div style="text-align: center">
-$$v_{x} = -v_{\phi}\mathrm{cos}(\phi),\quad\mathrm{and}\quad v_{y} = v_{\phi}\mathrm{cos}(\phi).$$
+$$v_{x} = -v_{\phi}\mathrm{cos}(\phi) \quad \mathrm{and} \quad v_{y} = v_{\phi}\mathrm{cos}(\phi).$$
 </div>
 $$\phi$$ is calculated from $$x$$ and $$y$$ using $$\phi= \mathrm{arctan}(\frac{y}{x})$$ and 
 $$r$$ using $$r^2 = x^2 + y^2$$.
@@ -49,7 +49,7 @@ $$\omega = \nabla \times v = \frac{1}{r}\left(\frac{\delta(r v_\phi)}{\delta r} 
 </div>
 
 
-** Results **
+**Results**
 
 I'm running the test until t = 3.0 on a 40x40 grid with transmissive boundaries, PPMC,
 the exact solver, and CTU. The domain is x = [0, 1], y = [0, 1], with the vortex centered 
@@ -65,3 +65,12 @@ shown.
 
 **L1 error**
 
+The L1 error is a useful measurement of how well the code is doing, as well as the convergence rate for this test.
+I calculate the L1 error for vorticity and density using the standard definition
+
+<div style="text-align: center">
+$$\delta\mathbf{q} = \frac{1}{N}\sum|\mathbf{q}_i - \mathbf{q}_i^0|,$$
+</div>
+
+where $$\mathbf{q}_i^0$$ is the initial solution, and $$N$$ is the total number of points. The L1 errors
+for density and vorticity are 0.14\% and 135\% on a $$20\times20$$ grid, and 0.04\% and 80\% on a $$40\times40$$ grid. 
