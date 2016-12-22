@@ -40,7 +40,7 @@ Below is a movie showing the evolution of the fluid until $$t = 8.5$$. The color
 represents the density from $$\rho = 1.0$$ to $$\rho = 2.0$$.
 
 <div style="text-align: center">
-<video src="{{ site.url }}assets/movies/rayleigh_taylor.mov" width="200" height="600" controls preload></video>
+<video src="{{ site.url }}assets/movies/rayleigh_taylor.mp4" width="200" height="600" controls preload></video>
 </div>
 
 [EDIT: The earlier problems with the fluid bouncing around were due to a flipped sign in the 
