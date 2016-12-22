@@ -73,4 +73,4 @@ $$\delta\mathbf{q} = \frac{1}{N}\sum|\mathbf{q}_i - \mathbf{q}_i^0|,$$
 </div>
 
 where $$\mathbf{q}_i^0$$ is the initial solution, and $$N$$ is the total number of points. The L1 errors
-for density and vorticity are 0.14\% and 135\% on a $$20\times20$$ grid, and 0.04\% and 80\% on a $$40\times40$$ grid. 
+for density and vorticity are 0.14% and 135% on a $$20\times20$$ grid, and 0.04% and 80% on a $$40\times40$$ grid. 
