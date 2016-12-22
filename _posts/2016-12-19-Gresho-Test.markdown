@@ -41,11 +41,11 @@ $$v_{\phi} = \sqrt{x^2 + y^2} \frac{x v_y - y v_x}{x^2 + y^2}.$$
 
 How about the vorticity? Vorticity is the curl of the velocity field, so in 2D it's 
 <div style="text-align: center">
-$$\omega = \nabla \times v = (\frac{\delta(v_y)}{\delta x} - \frac{\delta(v_x)}{\delta y})\hat{z},$$
+$$\omega = \nabla \times v = \left(\frac{\delta(v_y)}{\delta x} - \frac{\delta(v_x)}{\delta y}\right)\hat{z},$$
 </div>
 or in polar coordinates
 <div style="text-align: center">
-$$\omega = \nabla \times v = \frac{1}{r}(\frac{\delta(r v_\phi)}{\delta r} - \frac{\delta(v_r)}{\delta\phi})\hat{z}.$$
+$$\omega = \nabla \times v = \frac{1}{r}\left(\frac{\delta(r v_\phi)}{\delta r} - \frac{\delta(v_r)}{\delta\phi}\right)\hat{z}.$$
 </div>
 
 
