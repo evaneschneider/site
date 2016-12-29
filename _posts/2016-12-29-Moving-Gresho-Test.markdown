@@ -16,7 +16,7 @@ times. I'm using periodic boundaries and a $$40\times40$$ cell grid.
 <video src="{{ site.url }}assets/movies/moving_gresho.mov" width="500" height="250" controls preload></video>
 </div>
 
-\
+<br>
 
 **L1 error**
 

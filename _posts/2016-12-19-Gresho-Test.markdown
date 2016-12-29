@@ -62,7 +62,7 @@ shown.
 <video src="{{ site.url }}assets/movies/gresho_image.mp4" width="500" height="250" controls preload></video>
 </div>
 
-\
+<br>
 
 **L1 error**
 
