@@ -16,7 +16,7 @@ $$g_{x} = -\mathrm{cos}(\phi)\frac{v_{\phi}^2}{r} \quad \mathrm{and} \quad g_{y}
 </div>
 
 where $$\phi$$ is again the angle calculated according to $$\phi= \mathrm{arctan}(\frac{y}{x})$$ and $$r$$ is
-the distance from the center of the vortex. This acceleration is applied to the momentum and total Energy equations  
+the distance from the center of the vortex. The acceleration is applied to the momentum and total Energy equations 
 in an operator-split manner at the end of the hydro update, according to
 
 $$(\rho v_{x})^{n+1} = (\rho v_{x})^{n*} + \Delta t \frac{g_{x}(\rho^n + \rho^{n+1})}{2},$$
