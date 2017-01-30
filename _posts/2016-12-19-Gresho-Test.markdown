@@ -28,7 +28,7 @@ v_{y} = v_{r}\mathrm{sin}(\phi) + v_{\phi}\mathrm{cos}(\phi)$$
 (where $$v_{\phi} = r \frac{d(\phi)}{dt}$$). Since $$v_{r} = 0$$ for the Gresho problem,
 that gives
 <div style="text-align: center">
-$$v_{x} = -v_{\phi}\mathrm{cos}(\phi) \quad \mathrm{and} \quad v_{y} = v_{\phi}\mathrm{cos}(\phi).$$
+$$v_{x} = -v_{\phi}\mathrm{sin}(\phi) \quad \mathrm{and} \quad v_{y} = v_{\phi}\mathrm{cos}(\phi).$$
 </div>
 $$\phi$$ is calculated from $$x$$ and $$y$$ using $$\phi= \mathrm{arctan}(\frac{y}{x})$$ and 
 $$r$$ using $$r^2 = x^2 + y^2$$.
