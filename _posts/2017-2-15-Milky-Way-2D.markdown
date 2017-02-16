@@ -14,9 +14,9 @@ The static potential for my disk will be based on that of the Milky Way, with a 
 ignoring a bulge compenent, and artificially increasing the halo concentration to account for adiabatic 
 contraction of the dark matter halo). Specifically, I'll assume an NFW halo for the dark matter:
 
-$$\Phi(r)_{h} = \frac{-G M_{halo}}{f(c_vir)}\mathrm{ln}(\frac{1+x}{r}),$$
+$$\Phi(r)_{h} = \frac{-G M_{halo}}{f(c_{vir})}\mathrm{ln}(\frac{1+x}{r}),$$
 
-where $$f(xx) = \mathrm{ln}(1+xx) - \frac{xx}{1+xx}$$ and $$x = r / r_{h}$$. $$r_h}$$ is the halo scale 
+where $$f(xx) = \mathrm{ln}(1+xx) - \frac{xx}{1+xx}$$ and $$x = r / r_{h}$$. $$r{_h}$$ is the halo scale 
 length, which I get from the halo concentration, $$c_{vir} = r_{vir} / r_{h}$$, with $$c_{vir} = 20$$ and 
 $$r_{vir} = 261$$ kpc. The total mass of the dark matter halo is set by the viral mass minus the disk mass, 
 $$M_{h} = M_{vir} - M_{d}$$, which I set to $$M_{vir} = 10^{12} M_{\odot}$$ and $$M_{d} = 6.5\times10^{10} 
@@ -27,16 +27,17 @@ $$\Phi(r_{d}) = - \frac{G M_{d}}{(r^2 + (r_{d} + |z_d|)^2},$$
 
 where $$r_{d} = 3.5$$ kpc is the disk scale length and $$z_{d} = 0.2*r_d$$ is the disk scale height. From
 these potentials, I calculate the total radial acceleration in the $$z = 0$$ plane 
-(a_r = -\frac{\delta\Phi(r)}{\delta r}):
+($$a_r = -\frac{\delta\Phi(r)}{\delta r}$$):
 
-$$a(r)_{h} = \frac{G M_{h} f(x)}{f(c_{vir} r^2},$$
+$$a(r)_{h} = \frac{G M_{h} f(x)}{f(c_{vir}) r^2},$$
 
 $$a(r)_{d} = \frac{G M_{d} r}{(r^2 + r_{d}^2)^{\frac{3}{2}}},$$
 
 $$a_{tot} = a_h + a_d.$$
 
 From the radial acceleration, I get the circular velocity due to the combined Kuzmin disk plus 
-NFW halo profile: $$v_{c}^2 = r a_{tot}$$. The circular velocity curves are shown below.
+NFW halo profile: $$v_{c}^2 = r a_{tot}$$. The circular velocity curves are shown below, with the 
+disk component in blue, the halo component in green, and the total in red.
 
 <img src="{{ site.url }}assets/images/circular_velocity.png">
 
