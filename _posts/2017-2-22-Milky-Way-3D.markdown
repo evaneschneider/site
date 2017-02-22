@@ -33,14 +33,12 @@ of $$z$$, exactly as I did in the 2D case.
 **Hydrostatic Equilibrium**
 
 The potential described above gives the circular motion of the gas in the disk. For the 
-disk surface density profile, I will again an exponential in the radial direction:
+disk surface density profile, I will again use an exponential in the radial direction:
 
-$$\Sigma(r) = \Sigma_{0} e^{-\frac{r}{r_{s}}},$$
+$$\Sigma(r) = \frac{M_{g}}{2\pi r_{g}} e^{-\frac{r}{r_{s}}},$$
 
-and I will require that the total mass in the disk is again $$\frac{1}{4}$$ of the stellar mass, so 
-$$\Sigma_{0} = M_{g} / 2\pi r_{g}^2$$, where $$r_{g}$$ is the gas disk scale length. I 
-thus have the boundary conditions required in order to calculate the vertical density profile at each 
-location in radius, as follows.
+where $$r_{g}$$ is the gas disk scale length. I thus have the boundary conditions required in order to 
+calculate the vertical density profile at each location in radius, as follows.
 
 $$\frac{\mathrm{d}P}{\mathrm{d}z} = -\rho g_{z},$$
 
@@ -57,6 +55,6 @@ $$\rho = C e^{\frac{\Phi}{c_{s}^2}}.$$
 All that remains at this point is to solve for the constant, $$C$$. This can be calculated by setting the integral 
 of the density profile over $$z$$ equal to the surface density,
 
-$$\Sigma = \int_{0}^{\inf} C e^{\frac{\Phi}{c_{s}^2}} \mathrm{d}z.$$
+$$\Sigma = \int_{0}^{\infty} C e^{\frac{\Phi}{c_{s}^2}} \mathrm{d}z.$$
 
 Generally, this integral will need to be evaluated numerically.
