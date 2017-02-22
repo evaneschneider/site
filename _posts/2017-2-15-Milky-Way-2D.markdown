@@ -47,7 +47,7 @@ The potential described above gives the motion of the gas in the disk. For the
 disk surface density profile, I'm using an exponential, with a mass $$\frac{1}{4}$$ that of the stellar 
 disk, and a scale length $$r_{s} = 2 r_{d}$$. The surface density profile thus goes as:
 
-$$\Sigma(r) = \frac{M_{g}}{2\pi r_s} e^{-\frac{r}{r_s}}.$$
+$$\Sigma(r) = \frac{M_{g}}{2\pi r_{s}^2} e^{-\frac{r}{r_{s}}}.$$
 
 The surface density should not evolve with time.
 
