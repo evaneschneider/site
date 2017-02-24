@@ -17,7 +17,7 @@ The static potential for the disk will once again be based on the Milky Way. Bec
 symmetric, the NFW halo can thus be expressed in exactly the same way as the 2D case, but for reasons that 
 will become clear momentarily, I will express it in cylindrical coordinates, $$(r, z)$$:
 
-$$\Phi(r, z)_{h} = - \frac{G M_{halo}}{f(c_{vir})}\mathrm{ln}(\frac{1+x}{\sqrt{r^2 + z^2}}).$$
+$$\Phi(r, z)_{h} = - \frac{G M_{halo}}{\sqrt{r^2 + z^2}f(c_{vir})}\mathrm{ln}(1+\frac{\sqrt{r^2 + z^2}}{r_h}).$$
 
 Again, $$f(y) = \mathrm{ln}(1+y) - \frac{y}{1+y}$$, $$x = \sqrt(r^2 + z^2) / r_{h}$$, and  $$r{_h}$$ is the halo scale 
 length (see previous post for variable values).
