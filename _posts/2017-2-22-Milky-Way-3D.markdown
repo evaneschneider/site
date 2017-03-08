@@ -66,11 +66,10 @@ $$\rho = B e^{(\frac{\Phi}{c_{s}^2}+C)}.$$
 To solve for the constants, we need boundary conditions. We can set $$B$$ by saying that 
 $$\rho = \rho_{0}$$ when $$z = 0$$, where $$\rho_{0}$$ is the central density at a given $$r$$. Then we have
 
-$$\rho = \rho_{0} e^{(\frac{\Phi_{0}}{c_{s}^2} - \frac{\Phi}{c_{s}^2})},$$
+$$\rho = \rho_{0} e^{(\frac{\Phi}}{c_{s}^2} - \frac{\Phi_0}{c_{s}^2})},$$
 
-where $$\Phi_{0}$$ is just the value of $$\Phi$$ evaluated at $$z = 0$$. To solve for $$rho_0$$, we apply 
-the additional constraint that the integral of the density profile over $$z$$ must equal to the surface density, 
-which I specified above,
+where $$\Phi_{0}$$ is just the value of $$\Phi$$ evaluated at $$z = 0$$. To solve for $$\rho_0$$, we apply 
+the constraint that the integral of the density profile over $$z$$ must equal the surface density, 
 
 $$\Sigma = \int_{0}^{\infty} \rho_{0} e^{(\frac{\Phi_{0}}{c_{s}^2} - \frac{\Phi}{c_{s}^2})} \mathrm{d}z.$$
 
