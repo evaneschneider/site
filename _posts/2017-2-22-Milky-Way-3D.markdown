@@ -56,16 +56,22 @@ Then, I rearrange and integrate both sides:
 
 $$\frac{\mathrm{d}\rho}{\rho} = -\frac{g_{z}}{c_{s}^2}\mathrm{d}z ,$$
 
-$$\mathrm{ln}(\rho) + C = \frac{\Phi}{c_{s}^2},$$
+$$\mathrm{ln}(\rho) + A = \frac{\Phi}{c_{s}^2} + C,$$
 
 where I have substituted $$\Phi$$ for the integral of $$g_{z}\mathrm{d}z$$. Exponentiating and 
 rewriting the constant of integration, I get
 
-$$\rho = C e^{\frac{\Phi}{c_{s}^2}}.$$
+$$\rho = B e^{(\frac{\Phi}{c_{s}^2}+C)}.$$
 
-All that remains at this point is to solve for the constant, $$C$$. This can be calculated by setting the integral 
-of the density profile over $$z$$ equal to the surface density, which I specified above,
+To solve for the constants, we need boundary conditions. We can set $$B$$ by saying that 
+$$\rho = \rho_{0}$$ when $$z = 0$$, where $$\rho_{0}$$ is the central density at a given $$r$$. Then we have
 
-$$\Sigma = \int_{0}^{\infty} C e^{\frac{\Phi}{c_{s}^2}} \mathrm{d}z.$$
+$$\rho = \rho_{0} e^{(\frac{\Phi_{0}}{c_{s}^2} - \frac{\Phi}{c_{s}^2})},$$
+
+where $$\Phi_{0}$$ is just the value of $$\Phi$$ evaluated at $$z = 0$$. To solve for $$rho_0$$, we apply 
+the additional constraint that the integral of the density profile over $$z$$ must equal to the surface density, 
+which I specified above,
+
+$$\Sigma = \int_{0}^{\infty} \rho_{0} e^{(\frac{\Phi_{0}}{c_{s}^2} - \frac{\Phi}{c_{s}^2})} \mathrm{d}z.$$
 
 Generally, this integral will need to be evaluated numerically.
