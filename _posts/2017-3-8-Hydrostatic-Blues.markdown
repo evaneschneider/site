@@ -36,8 +36,8 @@ in that case:
 
 Not perfect, but it doesn't break, and gets close to achieving hydrostatic balance. Certainly the regions near 
 $$z = 0$$ look pretty good. The trouble here seems to be the outer regions, where I've arbitrarily set a density 
-floor of 1 (roughly $$n_h \approx 10^{-6}$$). The pressure gradient here is 0, but there's still a force due 
-to gravity that is proportional to the density:
+floor of 1 ($$n_h \approx 10^{-6}\mathrm{cm}^{-3}$$). The pressure gradient in the outer regions is 0, 
+but there's still a force due to gravity that is proportional to the density.
 
 <img src="{{ site.url }}assets/images/r_13_balance.png">
 
@@ -45,7 +45,7 @@ Over time, the lack of balance in the transition region propagates further in, c
 cells to drop, and the density of the inner cells to increase. In this case, the densities are low enough that 
 the net effect on the inner regions is small, and the column stays mostly balanced.
 
-In regions further in, where the pressure gradient is less well resolved, the problem gets much more severe. 
+In regions at smaller radii, where the pressure gradient is less well resolved, the problem gets much more severe. 
 Below are two movies showing the evolution of the density in a column with a radius of $$r = 6.9$$kpc, and one at 
 the innermost radius in this simulation, $$r = 0.2$$kpc.
 
@@ -54,9 +54,9 @@ the innermost radius in this simulation, $$r = 0.2$$kpc.
 <video src="{{ site.url }}assets/movies/r_02.mov" width="400" height="400" controls preload></video>
 </div>
 
-These don't run as long, because in both cases, just after the movie ends the code grinds to a halt. Clearly, this 
-is a problem that can cause the code to fail when I evolve the disk in 3D. To better understand exactly what's 
-upsetting the balance, I again plot the pressure gradient and compare it to $$\rho g_{z}$$:
+These don't run as long, because in both cases the code grinds to a halt just after the movie ends. Clearly, this 
+is a problem that could cause the code to break when I evolve the disk in 3D. To better understand exactly what's 
+upsetting the balance, I again plot the pressure gradient and compare it to $$\rho g_{z}$$ for the $$r = 6.9$$kpc case:
 
 <img src="{{ site.url }}assets/images/r_6_balance_64.png">
 
