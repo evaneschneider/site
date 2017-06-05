@@ -12,14 +12,14 @@ here's where things stand currently:
 
 Specific parameters for the M82 model include:
 * A total disk mass of $$10^{10} M_\odot$$, derived by Greco (2012) using stellar rotation data from K-band absorption.
-* A stellar disk scale length of 800 kpc (Mayya 2009)
-* A stellar (thin) disk scale height of 150 kpc (Lim 2013)
+* A stellar disk scale length of 800 pc (Mayya 2009)
+* A stellar (thin) disk scale height of 150 pc (Lim 2013)
 * A virial radius of 53 kpc. This is based on the Kravstov (2013) linear fit between disk half-mass radius, and halo virial radius: $$R_\frac{1}{2} = 0.015 R_{200}$$, using disk scale length as an approximation for half-mass radius.
-* A virial mass of $$5\times10^{10}$$ (this is a guess, roughly based on the $$v_\mathrm{max}$$-halo mass relationship in Maller & Bullock (2004).
+* A virial mass of $$5\times 10^{10}$$ (this is a guess, roughly based on the $$v_\mathrm{max}$$-halo mass relationship in Maller & Bullock (2004).
 * A gas disk mass of 0.25 * total disk mass, and gas disk scale length of twice the stellar disk scale length. These numbers should perhaps be adjusted. Greco (2012) estimates a gas fraction of 40%.
 
 
-The above parameters lead to a central surface density of $$\sim100 M_\odot$$/pc, which is consistent with M82's observed central surface density. M82 also contains a central stellar bar, which considerably affects the shape of the stellar rotation curve in the inner kpc. Below is my fit to the stellar rotation curve of Greco (2012), using only the disk and halo components given above:
+The above parameters lead to a central surface density of $$\sim100 M_\odot / \mathrm{pc}^2$$, which is consistent with M82's observed central surface density. M82 also contains a central stellar bar, which considerably affects the shape of the stellar rotation curve in the inner kpc. Below is my fit to the stellar rotation curve of Greco (2012), using only the disk and halo components given above:
 
 <img src="{{ site.url }}assets/images/m82_rotation_curve.png">
 
@@ -34,7 +34,7 @@ Using Titan, I have evolved the disk above for 400 Myr (approximately 10 rotatio
 <video src="{{ site.url }}assets/movies/m82_eq_T_256.mov" width="400" height="400" controls preload></video>
 </div>
 
-These simulations are adiabatic, using an adiabtic index of 5/3. In order to prevent temperatures in the disk from going below $$10^3$$ K in the outer regions, I had to set the characteristic EOS temperature for the disk gas to $$2\times10^{5}$$ K, which is pretty high and leads to a pretty puffy disk. The characteristic temperature of the halo gas at the cooling radius is $$10^6$$ K.
+These simulations are adiabatic, using an adiabtic index of 5/3. In order to prevent temperatures in the disk from going below $$10^3$$ K in the outer regions, I had to set the characteristic EOS temperature for the disk gas to $$2\times10^{5}$$ K, which is pretty high and leads to a pretty puffy disk. The characteristic temperature of the halo gas at the cooling radius is $$10^6$$ K (I haven't changed that from our MW model, maybe I should...).
 
 # The CC Outflow Model
 
