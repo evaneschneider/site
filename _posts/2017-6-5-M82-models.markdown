@@ -27,7 +27,7 @@ Green is the halo component, orange is the disk, and blue is the sum. The x-axis
 
 # The Equilibrium Model
 
-Using Titan, I have evolved the disk above for 400 Myr (approximately 10 rotation periods). Below is are movies showing the density and temperature projections for a $$256^3$$ simulation. Note that I have tapered the disk surface density to 0 between 4 and 5 kpc to alleviate an initial boundary transient. The simulation uses PPMC, an exact solver, the Van Leer integrator, and no-inflow boundary conditions. 
+Using Titan, I have evolved the disk above for 400 Myr (approximately 10 rotation periods). Below  are movies showing the density and temperature projections for a $$256^3$$ simulation. Note that I have tapered the disk surface density to 0 between 4 and 5 kpc to alleviate an initial boundary transient. The simulation uses PPMC, an exact solver, the Van Leer integrator, and no-inflow boundary conditions. 
 
 <div style="text-align: center">
 <video src="{{ site.url }}assets/movies/m82_eq_256.mov" width="400" height="400" controls preload></video>
@@ -38,7 +38,7 @@ These simulations are adiabatic, using an adiabtic index of 5/3. In order to pre
 
 # The CC Outflow Model
 
-As a first test for driving an outflow, I ran a simulation exactly identical the the one above, but at each timestep, I added mass and energy according to the estimated values we used in Schneider & Robertson (2017) for the Chevalier & Clegg fit to M82. Specifically, within a spherical radius of 300 pc, I set $$\dot{M}_\odot = 2 M_\odot$$/yr, and $$\dot{E} = 10^42$$ erg/s. I ran two versions of this simulation, one at $$128^3$$ resolution and one at $$256^3$$ resolution.
+As a first test for driving an outflow, I ran a simulation exactly identical the the one above, but at each timestep, I added mass and energy according to the estimated values we used in Schneider & Robertson (2017) for the Chevalier & Clegg fit to M82. Specifically, within a spherical radius of 300 pc, I set $$\dot{M}_\odot = 2 M_\odot$$/yr, and $$\dot{E} = 10^{42}$$ erg/s. I ran two versions of this simulation, one at $$128^3$$ resolution and one at $$256^3$$ resolution.
 
 Density and temperature projections for the $$128^3$$ simulation:
 <div style="text-align: center">
