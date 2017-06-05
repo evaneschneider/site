@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Evan's research blog</title>
+    <description>Blogging about stuff</description>
+    <link>http://localhost:4000</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>M82 models</title>
+        
+        
+          <description>&lt;p&gt;At some point, I’ll fill in some of the backstory from the past three months. In the meantime,
+here’s where things stand currently:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;We have a working equilibrium model for the Milky Way with a hot, hydrostatic halo and a rotating disk in vertical hydrostatic equilibrium that is stable for a Gyr.&lt;/li&gt;
+  &lt;li&gt;We have a working equilibrium model for M82 with the same structure.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Mon, 05 Jun 2017 00:00:00 -0700</pubDate>
+        <link>http://localhost:4000/2017/M82-models/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/M82-models/</guid>
+      </item>
+    
+      <item>
+        <title>Hydrostatic Blues</title>
+        
+        
+          <description>&lt;p&gt;In the last post, I described the analytic calculation I’m doing in order to set up a 3D 
+disk in vertical hydrostatic equilibrium with my NFW + Miyamoto-Nagai profile. Here’s a density
+projection of what the resulting disk looks like:&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 08 Mar 2017 00:00:00 -0700</pubDate>
+        <link>http://localhost:4000/2017/Hydrostatic-Blues/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/Hydrostatic-Blues/</guid>
+      </item>
+    
+      <item>
+        <title>Milky Way 3D</title>
+        
+        
+          <description>&lt;p&gt;Once we add a third dimension, the initial conditions for an isothermal disk get a bit more complex.
+In addition to balancing the radial components of the gravitational potential with circular velocity, 
+I now need to balance the vertical acceleration via a pressure gradient, i.e. I need to make sure the 
+disk is in hydrostatic balance. Given that the pressure and density can be related for an isothermal 
+gas via the expression &lt;script type=&quot;math/tex&quot;&gt;P = \rho c_{s}^{2}&lt;/script&gt;, this translates to calculating the vertical density profile 
+at each radial location in the disk.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 22 Feb 2017 00:00:00 -0700</pubDate>
+        <link>http://localhost:4000/2017/Milky-Way-3D/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/Milky-Way-3D/</guid>
+      </item>
+    
+      <item>
+        <title>Milky Way 2D</title>
+        
+        
+          <description>&lt;p&gt;In order to simulate galaxy outflows, we need to start with reasonable approximation of a
+gas disk that is stable over many rotation periods. This post begins what will be a series of 
+tests describing the setup of such a disk. For simplicity, I’ll start with a two-dimensional simulation.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 15 Feb 2017 00:00:00 -0700</pubDate>
+        <link>http://localhost:4000/2017/Milky-Way-2D/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/Milky-Way-2D/</guid>
+      </item>
+    
+      <item>
+        <title>Keplerian Disk</title>
+        
+        
+          <description>&lt;p&gt;So we’ve seen how Cholla does with rotating flows in general, but how about the classic problem
+of a disk in Keplerian rotation? Generally, there are two challenges in simulating such disks 
+with a static grid code: first, the orbital speeds near the center of the disk can get extremely large
+as the resolution of the simulation is increased, and second, advection errors (like those seen in the 
+Gresho test) lead to artificial accretion through the disk.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 06 Feb 2017 00:00:00 -0700</pubDate>
+        <link>http://localhost:4000/2017/Keplerian-Disk/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/Keplerian-Disk/</guid>
+      </item>
+    
+      <item>
+        <title>Modified Gresho Test</title>
+        
+        
+          <description>&lt;p&gt;To test the 2D static potential in Cholla, I’ve created a modified version of the
+Gresho vortex test that balances the centrifugal force created by the angular velocity
+profile with an artificially added centripetal acceleration. The centripetal acceleration
+is added in the same operator-split manner as the gravitational acceleration would be, 
+so it is effectively a test of the 2D static potential in Cholla. This acceleration takes the 
+form&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 30 Jan 2017 00:00:00 -0700</pubDate>
+        <link>http://localhost:4000/2017/Modified-Gresho-Test/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/Modified-Gresho-Test/</guid>
+      </item>
+    
+      <item>
+        <title>Moving Gresho Test</title>
+        
+        
+          <description>&lt;p&gt;The moving Gresho vortex test is identical to the Gresho test describd in the 
+previous post, except that the fluid is given a constant velocity boost
+in the x-direction. Here, I apply a velocity boost of &lt;script type=&quot;math/tex&quot;&gt;v_x = 1.0&lt;/script&gt; and show
+the results at &lt;script type=&quot;math/tex&quot;&gt;t = 3.0&lt;/script&gt;, after the vortex has moved across the domain three
+times. I’m using periodic boundaries and a &lt;script type=&quot;math/tex&quot;&gt;40\times40&lt;/script&gt; cell grid.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 29 Dec 2016 00:00:00 -0700</pubDate>
+        <link>http://localhost:4000/2016/Moving-Gresho-Test/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/Moving-Gresho-Test/</guid>
+      </item>
+    
+      <item>
+        <title>Gresho Test</title>
+        
+        
+          <description>&lt;p&gt;The Gresho vortex test is a notoriously difficult problem for grid-based (and SPH) 
+codes. A rotating vortex is initialized such that the centrifugal force is balanced 
+by the pressure gradient. The solution is time-independent. For these tests, I used
+the initial conditions described in Liska &amp;amp; Wendroff (2003).&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 19 Dec 2016 00:00:00 -0700</pubDate>
+        <link>http://localhost:4000/2016/Gresho-Test/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/Gresho-Test/</guid>
+      </item>
+    
+      <item>
+        <title>Gravity (Part 2)</title>
+        
+        
+          <description>&lt;p&gt;In addition to the operator-split source term update I added last week,&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 14 Dec 2016 00:00:00 -0700</pubDate>
+        <link>http://localhost:4000/2016/Gravity-Part-2/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/Gravity-Part-2/</guid>
+      </item>
+    
+      <item>
+        <title>Gravity (Part 1)</title>
+        
+        
+          <description>&lt;p&gt;The time has come to implement a gravitational potential in &lt;em&gt;Cholla&lt;/em&gt;.
+To do this, I’ll need to couple the gravitational source terms to the
+momentum and energy equations:&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 05 Dec 2016 00:00:00 -0700</pubDate>
+        <link>http://localhost:4000/2016/Gravity-Part-1/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/Gravity-Part-1/</guid>
+      </item>
+    
+  </channel>
+</rss>

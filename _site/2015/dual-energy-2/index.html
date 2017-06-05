@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Evan's research blog - Dual Energy Tests (Part 2)</title>
+  <link rel="shortcut icon" href="http://evaneschneider.github.io/site/assets/images/favicon.ico">
+  <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/style.css">
+  <link rel="alternate" type="application/rss+xml" title="My Blog" href="http://evaneschneider.github.io/site/rss.xml">
+  <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/highlight.css">
+</head>
+<body>
+
+  <nav class="main-nav">
+    
+        <a href="http://evaneschneider.github.io/site/"> <span class="arrow">←</span> Home </a>
+    
+
+    
+        
+            <a href="http://evaneschneider.github.io/site/about">About </a>
+        
+    
+    <a class="cta" href="http://evaneschneider.github.io/site/feed.xml">Subscribe</a>
+</nav>
+
+  
+
+  <section id="wrapper" class="">
+    <article class="post">
+    <header>
+        <h1>Dual Energy Tests (Part 2)</h1>
+        <h2 class="headline">September 30, 2015</h2>
+    </header>
+    <section id="post-body">
+        <p>This post focuses on when the dual energy formalism should have an effect. From Bryan et al., 2014 (B14):
+“It should be stressed that as long as the parameter <script type="math/tex">\eta_1</script> is small enough the dual energy method
+<em>will have no dynamical effect</em>.”</p>
+
+<p>Here, <script type="math/tex">\eta_1</script> refers to the ratio that determines whether a given cell updates its internal energy
+using the conservative update vs. the non-conservative update. 
+As given in B14, Equation 44:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+p =
+\begin{cases}
+\begin{align}
+&\rho(\gamma - 1)(E - \mathbf{v}^2 / 2), &(E - \mathbf{v}^2 / 2)/E > \eta_1, \\
+&\rho(\gamma - 1)e, &(E - \mathbf{v}^2 / 2)/E < \eta_1. \\
+\end{align}
+\end{cases} %]]></script>
+
+<p>For the following tests, we use the Teyssier 2015 (T15) nonconservative update (Equation 161),
+with a centered-difference estimate for the divergence of the velocity:</p>
+
+<script type="math/tex; mode=display">\frac{e^{n+1}_\mathrm{prim} - e^n}{\Delta t} = - \nabla \cdot \mathbf{F}(e)^n - P^n \nabla \cdot \mathbf{u}^n</script>
+
+<p>We are using the B14 switch described above to calculate the internal energy for a given cell.
+We are also using the B14 method to decide when to synchronize the internal energy for a cell
+with the total energy. This is done again according to a ratio of internal to total energy, but
+this ratio takes into account the maximum energy of nearby cells, as well:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+e =
+\begin{cases}
+\begin{align}
+&(E - \mathbf{v}^2 / 2), &\rho(E - \mathbf{v}^2 / 2)/\mathrm{max}(\rho_{j-1}E_{j-1}, \rho_j E_j, \rho_{j+1}E_{j+1} > \eta_2, \\
+&e, &\rho(E - \mathbf{v}^2 / 2)/\mathrm{max}(\rho_{j-1}E_{j-1}, \rho_j E_j, \rho_{j+1}E_{j+1} < \eta_2. \\
+\end{align}
+\end{cases} %]]></script>
+
+<p>Note that in the tests shown below, the bulk velocity is high enough that the total energy is synced
+for every cell each timestep. That is, the ratio of conservatively calculated internal energy to
+maximum nearby total energy is always much less than <script type="math/tex">\eta_2</script>.</p>
+
+<p><strong>The tests</strong></p>
+
+<p>Is the statement above regarding dynamical impact true for Cholla?</p>
+
+<p>The tests shown below consist of a shock tube with periodic boundaries, 
+to allow for high mach number bulk flow.</p>
+
+<script type="math/tex; mode=display">\rho_L = 1.0,\quad v_L = 0.0,\quad p_L = 1.0 \\
+\rho_R = 0.2,\quad v_R = 0.0,\quad p_R = 0.01 \\
+\gamma = 1.4</script>
+
+<p>For the high mach number test, <script type="math/tex">v_L = v_R = 120</script>. The tests are run until <script type="math/tex">t = 0.8</script>,
+on a domain from -3 to 3.</p>
+
+<p><strong>Without Dual Energy</strong></p>
+
+<p>Figure 1: PPMP, exact solver, no dual energy, <script type="math/tex">v_{bulk} = 100 c_s</script>
+<img src="http://localhost:4000assets/images/PPMP_exact_M100.png" /></p>
+
+<p><strong>With Dual Energy</strong></p>
+
+<p>Figure 2: Same as figure one but with dual energy, <script type="math/tex">\eta_1 = 10^{-6}</script>
+<img src="http://localhost:4000assets/images/PPMP_exact_M100_eta6.png" /></p>
+
+<p>As expected, the dual energy formalism has no effect in this case. Practically speaking,
+this is because the internal energy for each cell is reset to the conservatively calculated 
+value at every timestep, NOT because the hydro update is unaffected by a non-conservatively 
+calculated internal energy.</p>
+
+<p>So what happens if we increase <script type="math/tex">\eta_1</script>?</p>
+
+<p>With <script type="math/tex">\eta_1 = 10^{-5}</script> one cell every so often (not every time step) chooses the 
+non-conservative internal energy update. The non-conservative <script type="math/tex">e</script> in these cases is
+always slightly larger than the conservatively calculated <script type="math/tex">e</script>. Nevertheless, there is not
+a discernable dynamic impact.</p>
+
+<p>With <script type="math/tex">\eta_1 = 10^{-4}</script> all cells to the right of the discontinuity (where <script type="math/tex">e = 0.075</script> initially) are
+using the non-conservative update. As the test begins, the two energies are the same for the majority of these, 
+because there is no energy flux or velocity gradient. For the cells within the shock, however,
+the two values differ. At first, the non-conservative update has higher internal energy values, but 
+as the test continues the values are sometimes lower. It seems that the non-conservative internal energy 
+values are suffering from osciallations. Perhaps the instability is a result of the centered-difference approximation?</p>
+
+<p>After time <script type="math/tex">t = 0.1863830</script> the conservatively calculated internal energy is occasionally negative. 
+The test does run to completion without the non-conservative energy update producing negative pressures, 
+but the results are a mess in the regions where the non-conservative update was used.</p>
+
+<p>Figure 3: Same as Figure 1 but with dual energy, <script type="math/tex">\eta_1 = 10^{-4}</script>
+<img src="http://localhost:4000assets/images/PPMP_exact_M100_eta4.png" /></p>
+
+<p>With <script type="math/tex">\eta_1 = 10^{-3}</script> (the value given in B14), all cells are using the non-conservative energy 
+update, and the results are a bit better (but still inferior to the non dual energy case).</p>
+
+<p>Figure 4: Same as Figure 1 but with dual energy, <script type="math/tex">\eta_1 = 10^{-3}</script>
+<img src="http://localhost:4000assets/images/PPMP_exact_M100_eta3.png" /></p>
+
+<p><strong>Is it the way the divergence is approximated?</strong></p>
+
+<p>B14 have a slightly different way of estimating the <script type="math/tex">P \nabla \cdot \mathbf{v}</script> term. They 
+use the velocities at the interface returned by the Riemann solver to approximate the derivative.
+Does using this version help?</p>
+
+<p>Figure 5: Same as Figure 4 but with the B14 internal energy update
+<img src="http://localhost:4000assets/images/PPMP_exact_M100_B14.png" /></p>
+
+<p>The results are strikingly similar to Figure 4. Evidently the Pdv approximation is not the problem.
+Perhaps there is an issue somewhere else in the calculation. The next post will use a high mach 
+advection problem to test this.</p>
+
+
+    </section>
+</article>
+<footer id="post-meta" class="clearfix">
+    <a href="http://twitter.com/navelation">
+        <img class="avatar" src="http://evaneschneider.github.io/site/assets/images/avatar.png">
+        <div>
+            <span class="dark">Evan Schneider</span>
+            <span>Blogging about stuff</span>
+        </div>
+    </a>
+
+    <section id="sharing">
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=/2015/dual-energy-2/ - Dual Energy Tests (Part 2) by @navelation"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+    </section>
+</footer>
+
+<!-- Disqus comments -->
+
+
+<!-- Archive post list -->
+
+
+
+
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://evaneschneider.github.io/site/assets/js/main.js"></script>
+  <script src="http://evaneschneider.github.io/site/assets/js/highlight.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXXX-X', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- Include mathjax support -->
+  <script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+</body>
+</html>
+
+
+

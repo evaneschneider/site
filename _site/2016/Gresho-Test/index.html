@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Evan's research blog - Gresho Test</title>
+  <link rel="shortcut icon" href="http://evaneschneider.github.io/site/assets/images/favicon.ico">
+  <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/style.css">
+  <link rel="alternate" type="application/rss+xml" title="My Blog" href="http://evaneschneider.github.io/site/rss.xml">
+  <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/highlight.css">
+</head>
+<body>
+
+  <nav class="main-nav">
+    
+        <a href="http://evaneschneider.github.io/site/"> <span class="arrow">←</span> Home </a>
+    
+
+    
+        
+            <a href="http://evaneschneider.github.io/site/about">About </a>
+        
+    
+    <a class="cta" href="http://evaneschneider.github.io/site/feed.xml">Subscribe</a>
+</nav>
+
+  
+
+  <section id="wrapper" class="">
+    <article class="post">
+    <header>
+        <h1>Gresho Test</h1>
+        <h2 class="headline">December 19, 2016</h2>
+    </header>
+    <section id="post-body">
+        <p>The Gresho vortex test is a notoriously difficult problem for grid-based (and SPH) 
+codes. A rotating vortex is initialized such that the centrifugal force is balanced 
+by the pressure gradient. The solution is time-independent. For these tests, I used
+the initial conditions described in Liska &amp; Wendroff (2003).</p>
+
+<div style="text-align: center">
+<img src="http://localhost:4000assets/images/gresho_init.png" />
+</div>
+
+<p><strong>Definitions</strong></p>
+
+<p>The velocity in the gresho problem is specified in polar
+coordinates, which I convert to Cartesian to initialize the voretx. Given</p>
+<div style="text-align: center">
+$$x = r \mathrm{cos}(\phi) \quad \mathrm{and} \quad y = r \mathrm{sin}(\phi),$$
+</div>
+<p>I get</p>
+<div style="text-align: center">
+$$v_{x} = v_{r}\mathrm{cos}\phi - v_{\phi} \mathrm{sin}(\phi) \quad \mathrm{and} \quad 
+v_{y} = v_{r}\mathrm{sin}(\phi) + v_{\phi}\mathrm{cos}(\phi)$$
+</div>
+<p>(where <script type="math/tex">v_{\phi} = r \frac{d(\phi)}{dt}</script>). Since <script type="math/tex">v_{r} = 0</script> for the Gresho problem,
+that gives</p>
+<div style="text-align: center">
+$$v_{x} = -v_{\phi}\mathrm{sin}(\phi) \quad \mathrm{and} \quad v_{y} = v_{\phi}\mathrm{cos}(\phi).$$
+</div>
+<p><script type="math/tex">\phi</script> is calculated from <script type="math/tex">x</script> and <script type="math/tex">y</script> using <script type="math/tex">\phi= \mathrm{arctan}(\frac{y}{x})</script> and 
+<script type="math/tex">r</script> using <script type="math/tex">r^2 = x^2 + y^2</script>.</p>
+
+<p>In plotting the data, the conversion goes the other direction, from <script type="math/tex">v_{x}, v_{y}</script> to 
+<script type="math/tex">v_{\phi}</script>. After a similar derivative analysis, I get</p>
+<div style="text-align: center">
+$$v_{\phi} = \sqrt{x^2 + y^2} \frac{x v_y - y v_x}{x^2 + y^2}.$$
+</div>
+
+<p>How about the vorticity? Vorticity is the curl of the velocity field, so in 2D it’s</p>
+<div style="text-align: center">
+$$\omega = \nabla \times v = \left(\frac{\delta(v_y)}{\delta x} - \frac{\delta(v_x)}{\delta y}\right)\hat{z},$$
+</div>
+<p>or in polar coordinates</p>
+<div style="text-align: center">
+$$\omega = \nabla \times v = \frac{1}{r}\left(\frac{\delta(r v_\phi)}{\delta r} - \frac{\delta(v_r)}{\delta\phi}\right)\hat{z}.$$
+</div>
+
+<p><strong>Results</strong></p>
+
+<p>I’m running the test until t = 3.0 on a 40x40 grid with transmissive boundaries, PPMC,
+the exact solver, and CTU. The domain is x = [0, 1], y = [0, 1], with the vortex centered 
+at (x, y) = (0.5, 0.5). The movies below show the evolution in azimuthal velocity (<script type="math/tex">v_\phi</script>), 
+pressure, and vorticity (<script type="math/tex">\omega</script>). For <script type="math/tex">v_\phi</script> and <script type="math/tex">p</script>, both 1D and 2D projections are
+shown.</p>
+
+<div style="text-align: center">
+<video src="http://localhost:4000assets/movies/gresho_line.mp4" width="500" height="250" controls="" preload=""></video>
+<video src="http://localhost:4000assets/movies/gresho_image.mp4" width="500" height="250" controls="" preload=""></video>
+</div>
+
+<p><br /></p>
+
+<p><strong>L1 error</strong></p>
+
+<p>The L1 error is a useful measurement of how well the code is doing, as well as the convergence rate for this test.
+I calculate the L1 error for vorticity and density using the standard definition</p>
+
+<div style="text-align: center">
+$$\delta\mathbf{q} = \frac{1}{N}\sum|\mathbf{q}_i - \mathbf{q}_i^0|,$$
+</div>
+
+<p>where <script type="math/tex">\mathbf{q}_i^0</script> is the initial solution, and <script type="math/tex">N</script> is the total number of points. The L1 errors
+for density and vorticity are 0.14% and 135% on a <script type="math/tex">20\times20</script> grid, and 0.04% and 80% on a <script type="math/tex">40\times40</script> grid.</p>
+
+    </section>
+</article>
+<footer id="post-meta" class="clearfix">
+    <a href="http://twitter.com/navelation">
+        <img class="avatar" src="http://evaneschneider.github.io/site/assets/images/avatar.png">
+        <div>
+            <span class="dark">Evan Schneider</span>
+            <span>Blogging about stuff</span>
+        </div>
+    </a>
+
+    <section id="sharing">
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=/2016/Gresho-Test/ - Gresho Test by @navelation"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+    </section>
+</footer>
+
+<!-- Disqus comments -->
+
+
+<!-- Archive post list -->
+
+
+
+
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://evaneschneider.github.io/site/assets/js/main.js"></script>
+  <script src="http://evaneschneider.github.io/site/assets/js/highlight.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXXX-X', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- Include mathjax support -->
+  <script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+</body>
+</html>
+
+
+

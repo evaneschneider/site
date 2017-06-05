@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Evan's research blog - Hydrostatic Blues</title>
+  <link rel="shortcut icon" href="http://evaneschneider.github.io/site/assets/images/favicon.ico">
+  <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/style.css">
+  <link rel="alternate" type="application/rss+xml" title="My Blog" href="http://evaneschneider.github.io/site/rss.xml">
+  <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/highlight.css">
+</head>
+<body>
+
+  <nav class="main-nav">
+    
+        <a href="http://evaneschneider.github.io/site/"> <span class="arrow">←</span> Home </a>
+    
+
+    
+        
+            <a href="http://evaneschneider.github.io/site/about">About </a>
+        
+    
+    <a class="cta" href="http://evaneschneider.github.io/site/feed.xml">Subscribe</a>
+</nav>
+
+  
+
+  <section id="wrapper" class="">
+    <article class="post">
+    <header>
+        <h1>Hydrostatic Blues</h1>
+        <h2 class="headline">March 8, 2017</h2>
+    </header>
+    <section id="post-body">
+        <p>In the last post, I described the analytic calculation I’m doing in order to set up a 3D 
+disk in vertical hydrostatic equilibrium with my NFW + Miyamoto-Nagai profile. Here’s a density
+projection of what the resulting disk looks like:</p>
+
+<p><img src="http://localhost:4000assets/images/Milky_Way_3D.png" /></p>
+
+<p>Pretty, right? Unfortunately, when I try to evolve this disk, things break pretty quickly. This 
+post is dedicated to figuring out why.</p>
+
+<p>First, I had to confirm that the hydrostatic calculation was the source of my problems. To check this,
+I ran the simulation with vertical gravity turned off. As expected, the disk evolves just fine in this 
+scenario, puffing up vertically as a result of the pressure gradient I’ve implemented. Here’s picture 
+after a little time has passed:</p>
+
+<p><img src="http://localhost:4000assets/images/Milky_Way_puffed.png" /></p>
+
+<p>As soon as I turn on gravity, the simulation goes haywire. Relatively quickly, cells near the center of 
+the disk wind up with negative densities. Given that the central radii are the locations with the steepest 
+density and pressure gradients, this is not altogether surprising.</p>
+
+<p>So, assuming the problem is the failure of hydrostatic balance, what could be causing it? Well, first, the 
+analytic calculation of the pressure gradient could be wrong, or the numerical implementation of that 
+pressure gradient could be wrong. To rule these out, I’ve done a 1D simulation of a single column in z at a 
+radius far enough out in the disk that the pressure gradient is well resolved. Here’s how the density evolves 
+in that case:</p>
+
+<div style="text-align: center">
+<video src="http://localhost:4000assets/movies/r_13.mov" width="400" height="400" controls="" preload=""></video>
+</div>
+
+<p>Not perfect, but it doesn’t break, and gets close to achieving hydrostatic balance. Certainly the regions near 
+<script type="math/tex">z = 0</script> look pretty good. The trouble here seems to be the outer regions, where I’ve arbitrarily set a density 
+floor of 1 (<script type="math/tex">n_h \approx 10^{-6}\mathrm{cm}^{-3}</script>). The pressure gradient in the outer regions is 0, 
+but there’s still a force due to gravity that is proportional to the density.</p>
+
+<p><img src="http://localhost:4000assets/images/r_13_balance.png" /></p>
+
+<p>Over time, the lack of balance in the transition region propagates further in, causing the density of the outer 
+cells to drop, and the density of the inner cells to increase. In this case, the densities are low enough that 
+the net effect on the inner regions is small, and the column stays mostly balanced.</p>
+
+<p>In regions at smaller radii, where the pressure gradient is less well resolved, the problem gets much more severe. 
+Below are two movies showing the evolution of the density in a column with a radius of <script type="math/tex">r = 6.9</script>kpc, and one at 
+the innermost radius in this simulation, <script type="math/tex">r = 0.2</script>kpc.</p>
+
+<div style="text-align: center">
+<video src="http://localhost:4000assets/movies/r_6.mov" width="400" height="400" controls="" preload=""></video>
+<video src="http://localhost:4000assets/movies/r_02.mov" width="400" height="400" controls="" preload=""></video>
+</div>
+
+<p>These don’t run as long, because in both cases the code grinds to a halt just after the movie ends. Clearly, this 
+is a problem that could cause the code to break when I evolve the disk in 3D. To better understand exactly what’s 
+upsetting the balance, I again plot the pressure gradient and compare it to <script type="math/tex">\rho g_{z}</script> for the <script type="math/tex">r = 6.9</script>kpc case:</p>
+
+<p><img src="http://localhost:4000assets/images/r_6_balance_64.png" /></p>
+
+<p>Here, I’ve blown up the region with all the action - just outside <script type="math/tex">z = 2</script> the plot looks identical to the 
+<script type="math/tex">r = 13</script>kpc case. In all the plots above, there are only 62 cells in the <script type="math/tex">z</script>-direction. What happens if I 
+increase the resolution? Well, the code still crunches to a halt. Here’s what the pressure balance plots look like:</p>
+
+<p><img src="http://localhost:4000assets/images/r_6_balance_128.png" />
+<img src="http://localhost:4000assets/images/r_6_balance_256.png" /></p>
+
+<p>Evidently, better resolving the gradient in <script type="math/tex">z</script> doesn’t fix the problem. In fact, it seems to be making it worse.</p>
+
+    </section>
+</article>
+<footer id="post-meta" class="clearfix">
+    <a href="http://twitter.com/navelation">
+        <img class="avatar" src="http://evaneschneider.github.io/site/assets/images/avatar.png">
+        <div>
+            <span class="dark">Evan Schneider</span>
+            <span>Blogging about stuff</span>
+        </div>
+    </a>
+
+    <section id="sharing">
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=/2017/Hydrostatic-Blues/ - Hydrostatic Blues by @navelation"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+    </section>
+</footer>
+
+<!-- Disqus comments -->
+
+
+<!-- Archive post list -->
+
+
+
+
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://evaneschneider.github.io/site/assets/js/main.js"></script>
+  <script src="http://evaneschneider.github.io/site/assets/js/highlight.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXXX-X', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- Include mathjax support -->
+  <script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+</body>
+</html>
+
+
+

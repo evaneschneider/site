@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Evan's research blog - Milky Way 2D</title>
+  <link rel="shortcut icon" href="http://evaneschneider.github.io/site/assets/images/favicon.ico">
+  <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/style.css">
+  <link rel="alternate" type="application/rss+xml" title="My Blog" href="http://evaneschneider.github.io/site/rss.xml">
+  <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/highlight.css">
+</head>
+<body>
+
+  <nav class="main-nav">
+    
+        <a href="http://evaneschneider.github.io/site/"> <span class="arrow">←</span> Home </a>
+    
+
+    
+        
+            <a href="http://evaneschneider.github.io/site/about">About </a>
+        
+    
+    <a class="cta" href="http://evaneschneider.github.io/site/feed.xml">Subscribe</a>
+</nav>
+
+  
+
+  <section id="wrapper" class="">
+    <article class="post">
+    <header>
+        <h1>Milky Way 2D</h1>
+        <h2 class="headline">February 15, 2017</h2>
+    </header>
+    <section id="post-body">
+        <p>In order to simulate galaxy outflows, we need to start with reasonable approximation of a
+gas disk that is stable over many rotation periods. This post begins what will be a series of 
+tests describing the setup of such a disk. For simplicity, I’ll start with a two-dimensional simulation.</p>
+
+<p><strong>A Milky-Way-like static potential</strong></p>
+
+<p>The static potential for my disk will be based on that of the Milky Way, with a few simplifications. (I’m
+ignoring a bulge compenent, and artificially increasing the halo concentration to account for adiabatic 
+contraction of the dark matter halo.) Specifically, I’ll assume an NFW halo for the dark matter:</p>
+
+<script type="math/tex; mode=display">\Phi(r)_{h} = - \frac{G M_{halo}}{r f(c_{vir})}\mathrm{ln}(1+x),</script>
+
+<p>where <script type="math/tex">f(y) = \mathrm{ln}(1+y) - \frac{y}{1+y}</script> and <script type="math/tex">x = r / r_{h}</script>. <script type="math/tex">r{_h}</script> is the halo scale 
+length, which I get from the halo concentration, <script type="math/tex">c_{vir} = r_{vir} / r_{h}</script>, with <script type="math/tex">c_{vir} = 20</script> and 
+<script type="math/tex">r_{vir} = 261</script> kpc. The total mass of the dark matter halo is set by the viral mass minus the disk mass, 
+<script type="math/tex">M_{h} = M_{vir} - M_{d}</script>, which I set to <script type="math/tex">M_{vir} = 10^{12} M_{\odot}</script> and <script type="math/tex">M_{d} = 6.5\times10^{10} 
+M_{\odot}</script>. (Here, <script type="math/tex">M_{d}</script> refers to the stellar disk mass). The potential of the disk follows a 
+Kuzmin profile:</p>
+
+<script type="math/tex; mode=display">\Phi(r_{d}) = - \frac{G M_{d}}{(r^2 + (r_{d} + |z_d|)^2},</script>
+
+<p>where <script type="math/tex">r_{d} = 3.5</script> kpc is the disk scale length and <script type="math/tex">z_{d} = 0.2 r_{d}</script> is the disk scale height. From
+these potentials, I calculate the total radial acceleration in the <script type="math/tex">z = 0</script> plane 
+(<script type="math/tex">a_r = -\frac{\delta\Phi(r)}{\delta r}</script>):</p>
+
+<script type="math/tex; mode=display">a(r)_{h} = \frac{G M_{h} f(x)}{f(c_{vir}) r^2},</script>
+
+<script type="math/tex; mode=display">a(r)_{d} = \frac{G M_{d} r}{(r^2 + r_{d}^2)^{\frac{3}{2}}},</script>
+
+<script type="math/tex; mode=display">a_{tot} = a_h + a_d.</script>
+
+<p>From the radial acceleration, I get the circular velocity due to the combined Kuzmin disk plus 
+NFW halo profile: <script type="math/tex">v_{c}^2 = r a_{tot}</script>. The circular velocity curves for this potential
+are shown below, with the disk component in blue, the halo component in green, and the total in red.</p>
+
+<p><img src="http://localhost:4000assets/images/circular_velocity.png" /></p>
+
+<p><strong>An Exponential Gas Disk</strong></p>
+
+<p>The potential described above gives the motion of the gas in the disk. For the 
+disk surface density profile, I’m using an exponential, with a mass <script type="math/tex">\frac{1}{4}</script> that of the stellar 
+disk, and a scale length <script type="math/tex">r_{s} = 2 r_{d}</script>. The surface density profile thus goes as:</p>
+
+<script type="math/tex; mode=display">\Sigma(r) = \frac{M_{g}}{2\pi r_{s}^2} e^{-\frac{r}{r_{s}}}.</script>
+
+<p>The surface density should not evolve with time.</p>
+
+<p><strong>Results</strong></p>
+
+<p>The total circular velocity curve given above has a value of 225 km/s at a radius of 8 kpc. I’ve run the 
+simulation for 5 orbital periods at this radius, at resolutions of <script type="math/tex">[128\times128]</script>, <script type="math/tex">[256\times256]</script>, 
+and <script type="math/tex">[512\times512]</script>. Movies showing the evolution of the surface density radial profile and circular velocity 
+radial profile are below, as well as an image of the disk (with a dot showing the approximate location of the sun).</p>
+
+<div style="text-align: center">
+<video src="http://localhost:4000assets/movies/sigma_r_128.mov" width="400" height="400" controls="" preload=""></video>
+<video src="http://localhost:4000assets/movies/velocity_r_128.mov" width="400" height="400" controls="" preload=""></video>
+<video src="http://localhost:4000assets/movies/sigma_image_128.mov" width="400" height="400" controls="" preload=""></video>
+</div>
+
+<p><br /></p>
+
+<p><strong>L1 Errors</strong></p>
+
+<p>For the <script type="math/tex">[128\times128]</script> grid, the L1 density error ranges between 1 and 3 percent, with an average of 
+2.3% over the 500 timesteps (where I’ve normalized by the average value of <script type="math/tex">\Sigma</script> across the grid. 
+The L1 veloctiy errors are slightly better, an average of 0.21%. While the L1 errors start out lower for 
+the higher resolution grids, the final average values aren’t that different - 1.9% and 0.18% for the 
+<script type="math/tex">[256\times256]</script> grid, and 1.5% and 0.16% for the <script type="math/tex">[512\times512]</script> grid.</p>
+
+
+    </section>
+</article>
+<footer id="post-meta" class="clearfix">
+    <a href="http://twitter.com/navelation">
+        <img class="avatar" src="http://evaneschneider.github.io/site/assets/images/avatar.png">
+        <div>
+            <span class="dark">Evan Schneider</span>
+            <span>Blogging about stuff</span>
+        </div>
+    </a>
+
+    <section id="sharing">
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=/2017/Milky-Way-2D/ - Milky Way 2D by @navelation"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+    </section>
+</footer>
+
+<!-- Disqus comments -->
+
+
+<!-- Archive post list -->
+
+
+
+
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://evaneschneider.github.io/site/assets/js/main.js"></script>
+  <script src="http://evaneschneider.github.io/site/assets/js/highlight.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXXX-X', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- Include mathjax support -->
+  <script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+</body>
+</html>
+
+
+

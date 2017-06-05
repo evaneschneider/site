@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Evan's research blog - Keplerian Disk</title>
+  <link rel="shortcut icon" href="http://evaneschneider.github.io/site/assets/images/favicon.ico">
+  <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/style.css">
+  <link rel="alternate" type="application/rss+xml" title="My Blog" href="http://evaneschneider.github.io/site/rss.xml">
+  <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/highlight.css">
+</head>
+<body>
+
+  <nav class="main-nav">
+    
+        <a href="http://evaneschneider.github.io/site/"> <span class="arrow">←</span> Home </a>
+    
+
+    
+        
+            <a href="http://evaneschneider.github.io/site/about">About </a>
+        
+    
+    <a class="cta" href="http://evaneschneider.github.io/site/feed.xml">Subscribe</a>
+</nav>
+
+  
+
+  <section id="wrapper" class="">
+    <article class="post">
+    <header>
+        <h1>Keplerian Disk</h1>
+        <h2 class="headline">February 6, 2017</h2>
+    </header>
+    <section id="post-body">
+        <p>So we’ve seen how Cholla does with rotating flows in general, but how about the classic problem
+of a disk in Keplerian rotation? Generally, there are two challenges in simulating such disks 
+with a static grid code: first, the orbital speeds near the center of the disk can get extremely large
+as the resolution of the simulation is increased, and second, advection errors (like those seen in the 
+Gresho test) lead to artificial accretion through the disk.</p>
+
+<p>To set up a rotating gas disk, I’ve followed the initial conditions from Krumholtz et al. (2004). There,
+the potential is set by assuming a single solar mass at the center, and the velocities are Keplerian, <script type="math/tex">v^2 = GM/r</script>.
+The disk is assumed to be 10K and isothermal, with a radius <script type="math/tex">r_{0} = 2\times10^{15}</script> cm and a power-law 
+surface density profile <script type="math/tex">\Sigma = \Sigma_{0}(r_{0}/r)</script>, with <script type="math/tex">\Sigma_{0} = 0.1</script> <script type="math/tex">\mathrm{g}</script> <script type="math/tex">\mathrm{cm}^{-2}</script>.
+Because the disk is in Keplerian rotation, the surface density should not change with time.</p>
+
+<p><strong>Results</strong></p>
+
+<p>The simulation is run for approximately 25 orbits of the cells at the smallest radius, 
+or a single orbit at <script type="math/tex">r = 1\times10^{15}</script> cm. I used a 128x128 grid with custom boundaries set to 
+reproduce the correct velocites. I’m again using PPMC, an exact Riemann solver, and CTU.
+The movies below show the evolution in the surface density profile and velocities as a function of 
+radius, as well as a log-scale image of the surface density. For the radial plots, the exact solution
+is plotted as a black line, while red points show the simulation results. The point plotted on the surface density image
+represents the inferred motion of a particle at that radius, and is merely there to guide the eye.</p>
+
+<div style="text-align: center">
+<video src="http://localhost:4000assets/movies/r_sigma_128.mov" width="400" height="400" controls="" preload=""></video>
+<video src="http://localhost:4000assets/movies/velocity_128.mov" width="400" height="400" controls="" preload=""></video>
+<video src="http://localhost:4000assets/movies/sigma_128.mov" width="400" height="400" controls="" preload=""></video>
+</div>
+
+<p><br /></p>
+
+<p>Clearly, Cholla has the most trouble at the center of the grid, as expected. The average L1 surface density and velocity errors
+by the end of the simulation are about 6% and 0.1%, respectively, where I’ve normalized by the average surface density
+and velocity. However, the errors for points near the center of the disk are much larger, as can be seen in the 
+movies. When I increase the resolution by a factor of two, the simulation breaks. That said, as a test of the 2D potential, I’d say
+this is pretty good (and since I’m not going to be simulating Keplerian disks, I don’t think I need to investigate sink particles
+or other fixes to these issues at this time).</p>
+
+
+    </section>
+</article>
+<footer id="post-meta" class="clearfix">
+    <a href="http://twitter.com/navelation">
+        <img class="avatar" src="http://evaneschneider.github.io/site/assets/images/avatar.png">
+        <div>
+            <span class="dark">Evan Schneider</span>
+            <span>Blogging about stuff</span>
+        </div>
+    </a>
+
+    <section id="sharing">
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=/2017/Keplerian-Disk/ - Keplerian Disk by @navelation"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+    </section>
+</footer>
+
+<!-- Disqus comments -->
+
+
+<!-- Archive post list -->
+
+
+
+
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://evaneschneider.github.io/site/assets/js/main.js"></script>
+  <script src="http://evaneschneider.github.io/site/assets/js/highlight.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXXX-X', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- Include mathjax support -->
+  <script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+</body>
+</html>
+
+
+

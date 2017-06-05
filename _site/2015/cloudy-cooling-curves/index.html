@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Evan's research blog - Cloudy cooling curves</title>
+  <link rel="shortcut icon" href="http://evaneschneider.github.io/site/assets/images/favicon.ico">
+  <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/style.css">
+  <link rel="alternate" type="application/rss+xml" title="My Blog" href="http://evaneschneider.github.io/site/rss.xml">
+  <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/highlight.css">
+</head>
+<body>
+
+  <nav class="main-nav">
+    
+        <a href="http://evaneschneider.github.io/site/"> <span class="arrow">←</span> Home </a>
+    
+
+    
+        
+            <a href="http://evaneschneider.github.io/site/about">About </a>
+        
+    
+    <a class="cta" href="http://evaneschneider.github.io/site/feed.xml">Subscribe</a>
+</nav>
+
+  
+
+  <section id="wrapper" class="">
+    <article class="post">
+    <header>
+        <h1>Cloudy cooling curves</h1>
+        <h2 class="headline">December 10, 2015</h2>
+    </header>
+    <section id="post-body">
+        <p>The following plots show cooling / heating curves generated with
+Cloudy. Spefically, they are the result of modifying the
+hazy_coolingcurve program to take into account the Haardt &amp; Madau 
+background.</p>
+
+<p>The plot below shows the cooling and heating functions for solar metallicty
+gas with three average densities: <script type="math/tex">n_h = 0.1</script>, <script type="math/tex">n_h = 1</script>, and <script type="math/tex">n_h = 10</script>. 
+The default cloudy background is used, which includes the CMB and radio to x-ray
+background (see Hazy). A galactic cosmic ray background is also included, as it 
+dominates the chemistry of the molecular gas.
+<img src="http://localhost:4000assets/images/coolingcurve_solar_CIE.png" /></p>
+
+<p>The following plot modifies the background described above. Instead of the default 
+background, it uses the Haardt &amp; Madau background (HM05). The CMB and cosmic rays 
+are still included.
+<img src="http://localhost:4000assets/images/coolingcurve_solar_PIE.png" /></p>
+
+<p>So, the question is - do we need to include cooling for gas below 
+<script type="math/tex">10^4</script> K? At low densities it won’t be able to cool, so it is probably okay to 
+neglect it (should I include a heating term at these densities?). 
+At densities greater than <script type="math/tex">n_h \approx 0.1</script> the gas is clearly still 
+able to cool, but the efficiency has dropped by 2-3 orders of magnitude, so perhaps the 
+cooling times are long enough that we can still safely ignore cooling in this regime?</p>
+
+    </section>
+</article>
+<footer id="post-meta" class="clearfix">
+    <a href="http://twitter.com/navelation">
+        <img class="avatar" src="http://evaneschneider.github.io/site/assets/images/avatar.png">
+        <div>
+            <span class="dark">Evan Schneider</span>
+            <span>Blogging about stuff</span>
+        </div>
+    </a>
+
+    <section id="sharing">
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=/2015/cloudy-cooling-curves/ - Cloudy cooling curves by @navelation"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+    </section>
+</footer>
+
+<!-- Disqus comments -->
+
+
+<!-- Archive post list -->
+
+
+
+
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://evaneschneider.github.io/site/assets/js/main.js"></script>
+  <script src="http://evaneschneider.github.io/site/assets/js/highlight.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXXX-X', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- Include mathjax support -->
+  <script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+</body>
+</html>
+
+
+
