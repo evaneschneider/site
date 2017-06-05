@@ -38,7 +38,7 @@ These simulations are adiabatic, using an adiabtic index of 5/3. In order to pre
 
 # The CC Outflow Model
 
-As a first test for driving an outflow, I ran a simulation exactly identical the the one above, but at each timestep, I added mass and energy according to the estimated values we used in Schneider & Robertson (2017) for the Chevalier & Clegg fit to M82. Specifically, within a spherical radius of 300 pc, I set $$\dot{M}_\odot = 2 M_\odot$$/yr, and $$\dot{E} = 10^42$$ erg/s. I ran two versions of this simulation, one at $$128^3$$ resolution and one at $$256^3$$ resolution.
+As a first test for driving an outflow, I ran a simulation exactly identical the the one above, but at each timestep, I added mass and energy according to the estimated values we used in Schneider & Robertson (2017) for the Chevalier & Clegg fit to M82. Specifically, within a spherical radius of 300 pc, I set $$\dot{M}_\odot = 2 M_\odot$$/yr, and $$\dot{E} = 10^{42}$$ erg/s. I ran two versions of this simulation, one at $$128^3$$ resolution and one at $$256^3$$ resolution.
 
 Density and temperature projections for the $$128^3$$ simulation:
 <div style="text-align: center">
