@@ -10,14 +10,15 @@ here's where things stand currently:
 * We have a working equilibrium model for M82 with the same structure.
 
 Specific parameters for the M82 model include:
-* A total disk mass of $$10^{10} M_{\odot}$$, derived by Greco (2012) using stellar rotation data from K-band absorption.
+* A total disk mass of $$10^{10} \mathrm{M}_{\odot}$$, derived by Greco (2012) using stellar rotation data from K-band absorption.
 * A stellar disk scale length of 800 pc (Mayya 2009)
 * A stellar (thin) disk scale height of 150 pc (Lim 2013)
 * A virial radius of 53 kpc. This is based on the Kravstov (2013) linear fit between disk half-mass radius and halo virial radius: $$R_{\frac{1}{2}} = 0.015 R_{200}$$, using disk scale length as an approximation for half-mass radius.
-* A virial mass of $$5 \times 10^{10}$$ (this is a guess, roughly based on the $$v_\mathrm{max}$$-halo mass relationship in Maller & Bullock (2004).
-* A gas disk mass of 0.25 * total disk mass, and gas disk scale length of twice the stellar disk scale length. These numbers should perhaps be adjusted. Greco (2012) estimates a gas fraction of 40%.
+* A virial mass of $$5 \times 10^{10} \mathrm{M}_{\odot}$$ (this is a guess, roughly based on the $$v_\mathrm{max}$$-halo mass relationship in Maller & Bullock, 2004).
+* A gas disk mass of 0.25 * total disk mass, and gas disk scale length of twice the stellar disk scale length. These numbers should perhaps be adjusted, as I've just copied them from our MW model. Greco (2012) estimate a gas fraction of 40% for M82.
 
-The above parameters lead to a central surface density of $$\sim 100 M_{\odot} / \mathrm{pc}^2$$, which is consistent with M82's observed central surface density. M82 also contains a central stellar bar, which considerably affects the shape of the stellar rotation curve in the inner kpc. Below is my fit to the stellar rotation data of Greco (2012), using only the disk and halo components given above:
+
+The above parameters lead to a central surface density of $$\sim 100 \mathrm{M}_{\odot} / \mathrm{pc}^2$$, which is consistent with M82's observed central surface density. M82 also contains a central stellar bar, which considerably affects the shape of the stellar rotation curve in the inner kpc. Below is my stellar rotation curve (not a fit) plotted atop the data of Greco (2012), using only the disk and halo components given above:
 
 <img src="{{ site.url }}assets/images/m82_rotation_curve.png">
 
@@ -25,7 +26,7 @@ Green is the halo component, orange is the disk, and blue is the sum. The x-axis
 
 # The Equilibrium Model
 
-Using Titan, I have evolved the disk above for 400 Myr (approximately 10 rotation periods). Below  are movies showing the density and temperature projections for a $$256^3$$ simulation. Note that I have tapered the disk surface density to 0 between 4 and 5 kpc to alleviate an initial boundary transient. The simulation uses PPMC, an exact solver, the Van Leer integrator, and no-inflow boundary conditions. 
+Using Titan, I have evolved the M82 model for 400 Myr (approximately 10 rotation periods). Below  are movies showing density and density-weighted temperature projections for a $$256^3$$ simulation. Note that I have tapered the disk surface density to 0 between 4 and 5 kpc to alleviate an initial boundary transient. The simulation uses PPMC, an exact solver, the Van Leer integrator, and no-inflow boundary conditions. 
 
 <div style="text-align: center">
 <video src="{{ site.url }}assets/movies/m82_eq_256.mov" width="400" height="400" controls preload></video>
