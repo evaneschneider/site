@@ -4,7 +4,7 @@ date:   2017-6-15
 description: Testing several different versions of the CC85 feedback model 
 ---
 
-Recall that in the last post, I tested two outflow models. For a $$256^3$$ simulation, when I used $$R_{*} = 200$$pc, $$\dot{M}_{\odot} = 1 M_{\odot}$$/yr, and $$\dot{E} = 10^{43}$$erg/s (aka CC85 parameters), I was able to generate an outflow, though the simulation crashed after 234 Myr. When I used $$R_{*} = 300$$pc, $$\dot{M}_{\odot} = 2 M_{\odot}$$/yr, and $$\dot{E} = 10^{42}$$erg/s (aka SR17 parameters), no outflow was generated, just a bubble of warm gas near the center.
+Recall that in the last post, I tested two outflow models. For a $$256^3$$ simulation, when I used $$R_{*} = 200$$pc, $$\dot{M}_{\odot} = 1 M_{\odot}$$/yr, and $$\dot{E} = 10^{43}$$erg/s (aka CC85 parameters), I was able to generate an outflow, though the simulation crashed after 327 Myr. When I used $$R_{*} = 300$$pc, $$\dot{M}_{\odot} = 2 M_{\odot}$$/yr, and $$\dot{E} = 10^{42}$$erg/s (aka SR17 parameters), no outflow was generated, just a bubble of warm gas near the center.
 
 In this post, I compare a variety of different parameter combinations to see when I'm able to drive an outflow. Below I summarize all the models and the results:
 * Model 1: constant SR17 parameters; resolution $$128^3$$; outflow
