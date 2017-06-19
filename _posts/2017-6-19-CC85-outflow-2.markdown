@@ -21,8 +21,10 @@ Using the same M82 setup that I've described previously, I've now successfully r
 $$512^3$$ density projection:  
 <div style="text-align: center">
 <video src="{{ site.url }}assets/movies/m82_out_d_512.mov" width="450" height="900" controls preload></video>
+<br>
 $$512^3$$ temperature projection:  
 <video src="{{ site.url }}assets/movies/m82_out_T_512.mov" width="450" height="900" controls preload></video>
+<br>
 $$512^3$$ temperature slices:  
 <video src="{{ site.url }}assets/movies/m82_out_Tslice_512.mov" width="450" height="900" controls preload></video>
 </div>
