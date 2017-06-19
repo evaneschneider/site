@@ -13,10 +13,9 @@ A lot has happened in the last 4 days. To quickly summarize:
 <br>
 I'm dedicating a quick separate post to the first-order flux correction, so I'll skip those bullet points for now. The important part is that the fix seems pretty robust, and so far, has been able to completely eliminate negative temperatures and densities in the simulation. I haven't yet tested it with cooling...
 
-The Simulation
+**The Simulation**
 
 Using the same M82 setup that I've described previously, I've now successfully run three outflow simulations, with the resolution going from $$128^3$$ (78 pc) to $$512^3$$ (19.5 pc). I'm currently running a $$1024^3$$ simulation, but having weird I/O issues on Titan that are holding things up. Movies showing the projected density, projected temperature, and temperature slices of the $$512^3$$ run are below. For the feedback, I used parameters near the middle of the range of acceptable fits in Strickland & Heckman 2009. They are $$R_{*} = 300$$pc, $$\dot{M}_{\odot} = 2 M_{\odot}$$/yr, and $$\dot{E} = 2.6\times10^{42}$$erg/s. This corresponds to $$\beta = 1.4$$, $$\alpha = 0.9$$, and uses their assumed star formation rate of 4.7 $$M_\odot$$/yr.
-
 
 $$512^3$$ density projection:  
 <div style="text-align: center">
