@@ -1,4 +1,7 @@
 ---
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 title:  "Outflow Parameters"
 date:   2017-6-22
 description: An overview of possible parameters for the CC85 outflow model 
