@@ -1,11 +1,12 @@
 ---
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
 title:  "Outflow Parameters"
 date:   2017-6-22
 description: An overview of possible parameters for the CC85 outflow model 
 ---
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
 As I've written previously, the Chevalier & Clegg outflow model is characterized by just three parameters: the starburst radius, $$R_*$$, the mass injection rate, $$\dot{M}$$, and the energy injection rate, $$\dot{E}$$. These parameters can be set for a given star formation rate by specifying how the total mass and energy injection compare to the rates that would naiively be expected from the products of stellar evolution. in previous posts, I've used the term $$\beta$$ to indicate the multiplicative factor that accounts for mass in the hot outflow that is not a product of supernovae and stellar winds, i.e. $$\dot{M}_\mathrm{hot} = \beta_\mathrm{hot} \dot{M}_\mathrm{SN+SW}$$ - this is the usage that appears in Strickland and Heckman (2009). However, by selecting an IMF and making some (reasonable) assumptions about stellar evolution, this $$\beta_\mathrm{hot}$$ can be converted into a slightly different definition of mass loading, i.e. $$\dot{M}_\mathrm{hot} = \beta_\mathrm{SFR} \dot{M}_\mathrm{SFR}$$. In this version, $$\beta_\mathrm{SFR}$$ tells us how the total mass in the hot outflow compares to the star formation rate in the galaxy. A wind that has zero mass-loading (and therefore only contains mass from the byproducts of stellar evolution) would have $$\beta_\mathrm{hot} = 1$$ and $$\beta_\mathrm{SFR} \sim0.25$$ (see discussion in Section 2.1.1 of Veilleux et al. 2005). The same calculation yields an estimate of the energy injected by supernovae and stellar winds as a function of star formation rate, with a typical number of $$\dot{E}_\mathrm{SN} = 3.0\times10^{41}$$ erg $$\mathrm{s}^{-1}$$ $$\alpha \dot{M}_\mathrm{SFR}$$, where the factor $$\alpha$$ accounts for the fraction of the energy that is thermalized in the hot plasma (see Section 2.1 of Thompson et al. 2016).
 
