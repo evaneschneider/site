@@ -14,8 +14,7 @@ Using $$\beta_\mathrm{hot}$$, Strickland & Heckman (2009) estimated values of bo
 
 <img src="{{ site.url }}assets/images/SH09_fig6a.png">
 
-What does this mean for the properties of a cooling outflow in M82? Using Equation 6 from Thompson et al. (2016), I can estimate the radius at which M82's wind should cool, given specific values of $$\alpha$$, $$\beta$$, $$R_*$$, and SFR. The equation reads
-$$r_\mathrm{cool} \simeq 4\mathrm{kpc}$$
+What does this mean for the properties of a cooling outflow in M82? Using Equation 6 from Thompson et al. (2016), I can estimate the radius at which M82's wind should cool, given specific values of $$\alpha$$, $$\beta$$, $$R_*$$, and SFR. The equation reads $$r_\mathrm{cool} \simeq 4\mathrm{kpc}$$
 $$\frac{\alpha^{2.13}}{\beta^{2.92}}$$
 $$R_{0.3}^{1.79}$$
 $$( \frac{\Omega_{4\pi}}{\dot{M}_\mathrm{SFR, 10}} )^{0.789),$$
