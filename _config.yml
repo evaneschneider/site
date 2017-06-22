@@ -5,6 +5,7 @@ aboutPage: true
 
 markdown: kramdown
 highlighter: rouge 
+mathjax: true
 
 paginate: 20
 baseurl: 'http://evaneschneider.github.io/site/' 
