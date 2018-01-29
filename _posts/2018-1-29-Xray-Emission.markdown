@@ -16,9 +16,9 @@ Here's the same map but for the 512-resolution clustered feedback simulation (wh
 
 <img src="{{ site.url }}assets/images/512_cluster_Xrays_60.png">
 
-Here we see much less evidence for collimation. There is also significant assymetry, with the soft X-rays extending farther in radius in the lower half of the simulation volume. The total X-ray luminosity for this simulation is lower, $$L_x = 4.5\times10^{39}$$, though this is still within an order of magnitude of the observations. The overall morphology of the X-ray emission compares favorably to the emission seen in M82. For example, here is an image of M82 in soft X-rays made with Chandra:
+Here we see less evidence for collimation. There is also significant assymetry, with the soft X-rays extending farther in radius in the lower half of the simulation volume. The total X-ray luminosity for this simulation is lower, $$L_x = 4.5\times10^{39}$$, though this is still within an order of magnitude of the observations. The overall morphology of the X-ray emission compares favorably to the emission seen in M82. For example, here is an image of M82 in soft X-rays made with Chandra:
 
-<img src="{{ site.url }}assets/images/m82_xrays.jpg">
+<img src="{{ site.url }}assets/images/m82_xray.jpg">
 
 In the next post I'll explore the radial profiles of the surface brightness for the two models.
 
