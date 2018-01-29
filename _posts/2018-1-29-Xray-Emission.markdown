@@ -10,11 +10,15 @@ I'll start with the analytic cooling function that was used for these simulation
 
 <img src="{{ site.url }}assets/images/512_Xrays_60.png">
 
-Clearly, the soft x-rays are highly collimated in this simulation. Interestingly, in this adiabatic simulation, the collimation is a result of the gas outside the cone actually being too hot to emit in the soft X-ray band. Interestlying, the total soft X-ray luminosity for the entire simulation volume is $$L_x = 2.9\times10^{40}$$, which is suprisingly close to the total oberserved luminosity. For example, Strickland et al. (2004) calculate an observed diffuse soft X-ray luminosity for M82 of $$L_x = 4.3\times10^{40}$$ (see their Table 9).
+Clearly, the soft x-rays are highly collimated in this simulation. The additional features that show up in the x-ray map are from interacting shocks within the simulation volume. At this resolution, the large-scale evolution of the simulation is not yet converged. At higher resolutions, the disk-outflow interface region becomes highly turbulent, leading to a smoother X-ray map (figure coming soon). Interestingly, the soft X-ray luminosity integrated over the entire simulation volume is $$L_x = 2.9\times10^{40}$$, which is suprisingly close to the total oberserved luminosity. For example, Strickland et al. (2004) calculate an observed diffuse soft X-ray luminosity for M82 of $$L_x = 4.3\times10^{40}$$ (see their Table 9).
 
 Here's the same map but for the 512-resolution clustered feedback simulation (which includes cooling), so is actually self-consistent:
 
 <img src="{{ site.url }}assets/images/512_cluster_Xrays_60.png">
 
-Here we see much less evidence for collimation. 
+Here we see much less evidence for collimation. There is also significant assymetry, with the soft X-rays extending farther in radius in the lower half of the simulation volume. The total X-ray luminosity for this simulation is lower, $$L_x = 4.5\times10^{39}$$, though this is still within an order of magnitude of the observations. The overall morphology of the X-ray emission compares favorably to the emission seen in M82. For example, here is an image of M82 in soft X-rays made with Chandra:
+
+<img src="{{ site.url }}assets/images/m82_xrays.jpg">
+
+In the next post I'll explore the radial profiles of the surface brightness for the two models.
 
