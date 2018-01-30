@@ -1,5 +1,5 @@
 ---
-title:  "Flux Corection"
+title:  "Flux Correction"
 date:   2017-6-20
 description: The first-order flux correction in Cholla 
 ---

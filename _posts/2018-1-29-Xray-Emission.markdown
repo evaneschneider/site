@@ -1,5 +1,5 @@
 ---
-title:  "Xray Emission"
+title:  "X-ray Emission"
 date:   2018-1-29
 description: A first look at the soft x-ray emission from the outflow models
 ---
