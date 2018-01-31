@@ -16,4 +16,8 @@ In addition to looking at the surface brightness maps, I can also compare direct
 <img src="{{ site.url }}assets/images/2048_xray_prof.png">
 <img src="{{ site.url }}assets/images/2048_cluster_xray_prof.png">
 
-Note that I've converted Strickland's data by assuming 1 photon in the 0.3 - 2 keV band is approximately $$2\times10^{-9}$$ erg, as suggested in Section 4.3.2. Note also that Strickland's exponential fit was made using only the 0.3 - 1.0 keV band data, which appear to be slightly less peaked than the 1.0 - 2.0 keV data (while my profile covers the full 0.3 - 2.0 keV band). Given that, I'd say both models are looking pretty good. This has some interesting implications for the origin of the soft x-ray emission in M82, which I'll get to in a later post.
+Note that I've converted Strickland's data by assuming 1 photon in the 0.3 - 2 keV band is approximately $$2\times10^{-9}$$ erg, as suggested in Section 4.3.2. Note also that Strickland's exponential fit was made using only the 0.3 - 1.0 keV band data, which appear to be slightly less peaked than the 1.0 - 2.0 keV data (while my profile covers the full 0.3 - 2.0 keV band). For example, below is one of Strickland's M82 datasets with the 0.3 - 1.0 keV data in blue and the 1.0 - 2.0 keV data in orange. 
+
+<img src="{{ site.url }}assets/images/strickland_xray_prof.png">
+
+Given that, I'd say both models are looking pretty good. This has some interesting implications for the origin of the soft x-ray emission in M82, which I'll get to in a later post.
