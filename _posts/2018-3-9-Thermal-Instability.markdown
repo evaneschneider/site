@@ -37,3 +37,8 @@ where $$k_i = 2\pi i / L_\mathrm{box}$$ is the wave number and $$\theta$$ is a r
 <div style="text-align: center">
 <video src="{{ site.url }}assets/movies/TI_temperature.mov" width="256" height="256" controls preload></video>
 </div>
+
+The instability is saturated by $$\sim 75\,\mathrm{Myr}$$, with the mean density in the low density regions of $$n\sim 0.27\,\mathrm{cm}^{-3}$$ while in the high density clouds $$n\sim 27\,\mathrm{cm}^{-3}$$. The corresponding temperatures in the low and high density regions are $$T\sim 80$$ K and $$T\sim 6700$$ K, respectively. Density and temperature slices through the central $$z$$ and $$y$$ planes are shown below.
+
+<img src="{{ site.url }}assets/images/2018-March/dslice_TI_256.png">
+<img src="{{ site.url }}assets/images/2018-March/Tslice_TI_256.png">
