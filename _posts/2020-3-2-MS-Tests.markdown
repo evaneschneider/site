@@ -58,6 +58,7 @@ A quick calculation using the color shows that after 200 Myr there is $$3.45\tim
 I've also done a quick test of what a synthetic absorption line might look like. This is Si absorption for two different ions, projected in the $$z$$ direction and averaged over the whole box. This means the velocities are all perturbations in the $$z$$ direction, but I assume they look relatively similar to the $$y$$ perturbations shown above.
 <img src="{{ site.url }}assets/images/2020-March/Si_absorption_200.png">
 
+
 We can talk more about how I did this versus how the measurement is made, but I'm initially rather encouraged by how similar e.g. the SiII looks like to some of Andy's measurements, for example in this figure:
 <img src="{{ site.url }}assets/images/2020-March/Fox2014_F2_a.png">
 
@@ -66,6 +67,7 @@ Things I like about this setup:
 * Having the clouds run into each other actually creates a nice series of density contrasts - if we allow cooling to lower temperatures, this may end up looking not dissimilar to the actual stream.
 * Using spheres for the clouds will inhibit KH instabilities, as will low resolution. This then will effectively constitute a *minimum* constraint on how much gas could have cooled from the halo and been entrained in the stream.
 
+
 Things that could be improved:
-* The total mass in ionized gas is 40 times lower than Andy's estimate at the moment. In Fox 2014, he quotes $$5\times10^{8}\,M_\odot$$ in neutral gas, and three times that in ionized gas. Now, maybe my clouds are way too small. The current size is actually probably more reflective of the size of the neutral gas clouds. In order to get to $$10^{9}\,M_\odot$$ in ionized gas at these number densities, I'd need clouds that are more like 3.5 kpc in radius.
+* The total mass in ionized gas is 40 times lower than Andy's estimate at the moment. In Fox 2014, he quotes $$5\times10^{8}\,M_\odot$$ in neutral gas, and three times that in ionized gas. Now, maybe my clouds are way too small. The current size is actually probably more reflective of the size of the neutral gas clouds. In order to get to $$10^{9}\,M_\odot$$ in ionized gas at these number densities, I'd need clouds that are more like 3.5 kpc in radius.So, maybe I should do a run with a bigger box and bigger clouds.
 * It may be worth playing around with the setup a little bit more (beyond the size of the clouds). This was just a first try to see what happens!
