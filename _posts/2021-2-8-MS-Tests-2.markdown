@@ -23,7 +23,7 @@ Below are some movies showing the evolution of the color and temperature slices,
 <video src="{{ site.url }}assets/movies/2021-February/Tslice.mov" width="512" height="256" controls preload></video>
 </div>
 <div style="text-align: center">
-<video src="{{ site.url }}assets/movies/2021-February/vxlice.mov" width="512" height="256" controls preload></video>
+<video src="{{ site.url }}assets/movies/2021-February/vxslice.mov" width="512" height="256" controls preload></video>
 </div>
 <div style="text-align: center">
 <video src="{{ site.url }}assets/movies/2021-February/sd_z.mov" width="512" height="256" controls preload></video>
