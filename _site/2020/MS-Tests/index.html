@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> - Magellanic Stream Tests</title>
+  <link rel="shortcut icon" href="http://evaneschneider.github.io/site/assets/images/favicon.ico">
+  <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/style.css">
+  <link rel="alternate" type="application/rss+xml" title="My Blog" href="http://evaneschneider.github.io/site/rss.xml">
+  <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/highlight.css">
+</head>
+<body>
+
+  <nav class="main-nav">
+    
+        <a href="http://evaneschneider.github.io/site/"> <span class="arrow">←</span> Home </a>
+    
+
+    
+        
+            <a href="http://evaneschneider.github.io/site/about">About </a>
+        
+    
+    <a class="cta" href="http://evaneschneider.github.io/site/feed.xml">Subscribe</a>
+</nav>
+
+  
+
+  <section id="wrapper" class="">
+    <article class="post">
+    <header>
+        <h1>Magellanic Stream Tests</h1>
+        <h2 class="headline">March 2, 2020</h2>
+    </header>
+    <section id="post-body">
+        <p>This will be the first in a series of posts dedicated to better understading the origin of gas detected in UV absorption with Magellanic Stream velocities.</p>
+
+<p>First things first, simulation setups. Based on previous discussions, I tried two initial sets of ICs. The first was a standard KH setup, both in 2D and in 3D (a cylinder). I’ll only discuss the 2D version here, since I think we should use a cloud setup, instead. Perturbations were applied to the y veloicites in order to seed an instability. Boundary conditions are periodic on the x borders, and are held steady at the background state on the y boundaries.</p>
+
+<p>Background conditions:
+\(n = 1.68\times10^{-4}, \quad v_x = 0\,\mathrm{km}\,\mathrm{s}^{-1}, \quad T = 3\times10^{6}\,\mathrm{K}\)</p>
+
+<p>Stream conditions:
+\(n = 5.4\times10^{-2}, \quad v_x = -200 \,\mathrm{km}\,\mathrm{s}^{-1}, \quad T = 10^{4}\,\mathrm{K}\)</p>
+
+<p>This constitutes initial pressure equilibrium between the background gas and the stream. Without pressure equilbrium, the stream will quickly either collapse or expand. For now, I’m implementing a temperature floor of \(10^{4}\,\mathrm{K}\); we may want to relax this once we’ve settled on a setup. In addition to evolving the conserved variables, I’m also evolving a color variable that traces the initial state of the gas - 0 for background material, 1 for stream material. Below are the color, density, x-velocity, y-velocity, and temperature for this setup after 200 Myr.</p>
+
+<p><img src="http://evaneschneider.github.io/site/assets/images/2020-March/KH_c_200.png" />
+<img src="http://evaneschneider.github.io/site/assets/images/2020-March/KH_d_200.png" />
+<img src="http://evaneschneider.github.io/site/assets/images/2020-March/KH_vx_200.png" />
+<img src="http://evaneschneider.github.io/site/assets/images/2020-March/KH_vy_200.png" />
+<img src="http://evaneschneider.github.io/site/assets/images/2020-March/KH_T_200.png" /></p>
+
+<p>The velocities in the above plots range from -200 to 200. As you can see, the y velocities are rather extreme - this is partly a result of the 2D nature of the simulation - as the hot gas cools onto the stream, a large velocity gradient is created in the y direction. It turns out this is much less severe in the 3D case (because there is a lot more gas available).</p>
+
+<p>While the original motivation for this setup is its simplicity, it turns out to have some rather significant drawbacks. One is that the total amount of gas in the stream is too large - since the stream is in reality highly fragmented, it’s difficult to have both realistic number densities and realistic spatial extent with this setup. A second is that setting up the perturbations in the 3D case is non-trivial, and a lot of decisions have to be made. For these reasons and others, I propose a different setup…</p>
+
+<h3 id="clouds">Clouds</h3>
+
+<p>A cloud setup is fairly straightforward, and I think will be easier to represent the current stream situation. For the clouds, I’ve done an initial test with spheres, each with a radius of 1 kpc, and the same background / interior physical variables as listed above for the KH setup. I staggered them for this run, but I think we can play with this until we get something we like.</p>
+
+<p><img src="http://evaneschneider.github.io/site/assets/images/2020-March/cloud_c_0.png" />
+<img src="http://evaneschneider.github.io/site/assets/images/2020-March/cloud_d_0.png" />
+<img src="http://evaneschneider.github.io/site/assets/images/2020-March/cloud_vx_0.png" />
+<img src="http://evaneschneider.github.io/site/assets/images/2020-March/cloud_T_0.png" /></p>
+
+<p>This is a 40kpc x 20 kpc box. I’ve run this setup in both 2D and 3D for 200 million years. The velocities in the 2D version are wildly different than the 3D version (for the same reason as in the KH setup), so I’m going to focus on the 3D case for the remainder of this post. Below are movies of the density and temperature projections for 200 Myr of evolution. This simulation is fairly low-res, 512 x 256 x 256 - we’ll probably want to at least double that in the end, but it currently satisfies the minimum resolution quoted by Gronke &amp; Oh 2018 to caputure converged cloud growth from a cooling hot background (8 cells per cloud radius).</p>
+
+<div style="text-align: center">
+<video src="http://evaneschneider.github.io/site/assets/movies/2020-March/d_xy.mov" width="512" height="256" controls="" preload=""></video>
+</div>
+
+<div style="text-align: center">
+<video src="http://evaneschneider.github.io/site/assets/movies/2020-March/T_xy.mov" width="512" height="256" controls="" preload=""></video>
+</div>
+
+<p>After 200 Myr, the slices look like this:</p>
+
+<p><img src="http://evaneschneider.github.io/site/assets/images/2020-March/cloud_c_200.png" />
+<img src="http://evaneschneider.github.io/site/assets/images/2020-March/cloud_d_200.png" />
+<img src="http://evaneschneider.github.io/site/assets/images/2020-March/cloud_vx_200.png" />
+<img src="http://evaneschneider.github.io/site/assets/images/2020-March/cloud_vy_200.png" />
+<img src="http://evaneschneider.github.io/site/assets/images/2020-March/cloud_T_200.png" /></p>
+
+<p>A quick calculation using the color shows that after 200 Myr there is \(3.45\times10^{7}\,M_\odot\) of cool (\(T &lt; 5\times10^{4}\,\mathrm{K}\)) gas, of which \(8\times10^{6}\,M_\odot\) was originally hot background material (or about 20%).</p>
+
+<p>I’ve also done a quick test of what a synthetic absorption line might look like. This is Si absorption for two different ions, projected in the \(z\) direction and averaged over the whole box. This means the velocities are all perturbations in the \(z\) direction, but I assume they look relatively similar to the \(y\) perturbations shown above.
+<img src="http://evaneschneider.github.io/site/assets/images/2020-March/Si_absorption_200.png" /></p>
+
+<p>We can talk more about how I did this versus how the measurement is made, but I’m initially rather encouraged by how similar e.g. the SiII looks like to some of Andy’s measurements, for example in this figure:
+<img src="http://evaneschneider.github.io/site/assets/images/2020-March/Fox2014_F2_a.png" /></p>
+
+<p>Things I like about this setup:</p>
+<ul>
+  <li>It’s easy to give the stream the sort of two-filament nature that is observed (Putman 2003).</li>
+  <li>Having the clouds run into each other actually creates a nice series of density contrasts - if we allow cooling to lower temperatures, this may end up looking not dissimilar to the actual stream.</li>
+  <li>Using spheres for the clouds will inhibit KH instabilities, as will low resolution. This then will effectively constitute a <em>minimum</em> constraint on how much gas could have cooled from the halo and been entrained in the stream.</li>
+</ul>
+
+<p>Things that could be improved:</p>
+<ul>
+  <li>The total mass in ionized gas is 40 times lower than Andy’s estimate at the moment. In Fox 2014, he quotes \(5\times10^{8}\,M_\odot\) in neutral gas, and three times that in ionized gas. Now, maybe my clouds are way too small. The current size is actually probably more reflective of the size of the neutral gas clouds. In order to get to \(10^{9}\,M_\odot\) in ionized gas at these number densities, I’d need clouds that are more like 3.5 kpc in radius.So, maybe I should do a run with a bigger box and bigger clouds.</li>
+  <li>It may be worth playing around with the setup a little bit more (beyond the size of the clouds). This was just a first try to see what happens!</li>
+</ul>
+
+    </section>
+</article>
+<footer id="post-meta" class="clearfix">
+    <a href="http://twitter.com/navelation">
+        <img class="avatar" src="http://evaneschneider.github.io/site/assets/images/avatar.png">
+        <div>
+            <span class="dark">Evan Schneider</span>
+            <span>Blogging about stuff</span>
+        </div>
+    </a>
+
+    <section id="sharing">
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=/2020/MS-Tests/ - Magellanic Stream Tests by @navelation"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+    </section>
+</footer>
+
+<!-- Disqus comments -->
+
+
+<!-- Archive post list -->
+
+
+
+
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://evaneschneider.github.io/site/assets/js/main.js"></script>
+  <script src="http://evaneschneider.github.io/site/assets/js/highlight.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXXX-X', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- Include mathjax support -->
+  <script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+</body>
+</html>
+
+
+

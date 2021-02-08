@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Evan's research blog - Dual Energy Tests (Part 2)</title>
+  <title> - Dual Energy Tests (Part 2)</title>
   <link rel="shortcut icon" href="http://evaneschneider.github.io/site/assets/images/favicon.ico">
   <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/style.css">
   <link rel="alternate" type="application/rss+xml" title="My Blog" href="http://evaneschneider.github.io/site/rss.xml">
@@ -36,44 +36,42 @@
     </header>
     <section id="post-body">
         <p>This post focuses on when the dual energy formalism should have an effect. From Bryan et al., 2014 (B14):
-“It should be stressed that as long as the parameter <script type="math/tex">\eta_1</script> is small enough the dual energy method
+“It should be stressed that as long as the parameter \(\eta_1\) is small enough the dual energy method
 <em>will have no dynamical effect</em>.”</p>
 
-<p>Here, <script type="math/tex">\eta_1</script> refers to the ratio that determines whether a given cell updates its internal energy
+<p>Here, \(\eta_1\) refers to the ratio that determines whether a given cell updates its internal energy
 using the conservative update vs. the non-conservative update. 
 As given in B14, Equation 44:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-p =
+\[p =
 \begin{cases}
 \begin{align}
-&\rho(\gamma - 1)(E - \mathbf{v}^2 / 2), &(E - \mathbf{v}^2 / 2)/E > \eta_1, \\
-&\rho(\gamma - 1)e, &(E - \mathbf{v}^2 / 2)/E < \eta_1. \\
+&amp;\rho(\gamma - 1)(E - \mathbf{v}^2 / 2), &amp;(E - \mathbf{v}^2 / 2)/E &gt; \eta_1, \\
+&amp;\rho(\gamma - 1)e, &amp;(E - \mathbf{v}^2 / 2)/E &lt; \eta_1. \\
 \end{align}
-\end{cases} %]]></script>
+\end{cases}\]
 
 <p>For the following tests, we use the Teyssier 2015 (T15) nonconservative update (Equation 161),
 with a centered-difference estimate for the divergence of the velocity:</p>
 
-<script type="math/tex; mode=display">\frac{e^{n+1}_\mathrm{prim} - e^n}{\Delta t} = - \nabla \cdot \mathbf{F}(e)^n - P^n \nabla \cdot \mathbf{u}^n</script>
+\[\frac{e^{n+1}_\mathrm{prim} - e^n}{\Delta t} = - \nabla \cdot \mathbf{F}(e)^n - P^n \nabla \cdot \mathbf{u}^n\]
 
 <p>We are using the B14 switch described above to calculate the internal energy for a given cell.
 We are also using the B14 method to decide when to synchronize the internal energy for a cell
 with the total energy. This is done again according to a ratio of internal to total energy, but
 this ratio takes into account the maximum energy of nearby cells, as well:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-e =
+\[e =
 \begin{cases}
 \begin{align}
-&(E - \mathbf{v}^2 / 2), &\rho(E - \mathbf{v}^2 / 2)/\mathrm{max}(\rho_{j-1}E_{j-1}, \rho_j E_j, \rho_{j+1}E_{j+1} > \eta_2, \\
-&e, &\rho(E - \mathbf{v}^2 / 2)/\mathrm{max}(\rho_{j-1}E_{j-1}, \rho_j E_j, \rho_{j+1}E_{j+1} < \eta_2. \\
+&amp;(E - \mathbf{v}^2 / 2), &amp;\rho(E - \mathbf{v}^2 / 2)/\mathrm{max}(\rho_{j-1}E_{j-1}, \rho_j E_j, \rho_{j+1}E_{j+1} &gt; \eta_2, \\
+&amp;e, &amp;\rho(E - \mathbf{v}^2 / 2)/\mathrm{max}(\rho_{j-1}E_{j-1}, \rho_j E_j, \rho_{j+1}E_{j+1} &lt; \eta_2. \\
 \end{align}
-\end{cases} %]]></script>
+\end{cases}\]
 
 <p>Note that in the tests shown below, the bulk velocity is high enough that the total energy is synced
 for every cell each timestep. That is, the ratio of conservatively calculated internal energy to
-maximum nearby total energy is always much less than <script type="math/tex">\eta_2</script>.</p>
+maximum nearby total energy is always much less than \(\eta_2\).</p>
 
 <p><strong>The tests</strong></p>
 
@@ -82,63 +80,63 @@ maximum nearby total energy is always much less than <script type="math/tex">\et
 <p>The tests shown below consist of a shock tube with periodic boundaries, 
 to allow for high mach number bulk flow.</p>
 
-<script type="math/tex; mode=display">\rho_L = 1.0,\quad v_L = 0.0,\quad p_L = 1.0 \\
+\[\rho_L = 1.0,\quad v_L = 0.0,\quad p_L = 1.0 \\
 \rho_R = 0.2,\quad v_R = 0.0,\quad p_R = 0.01 \\
-\gamma = 1.4</script>
+\gamma = 1.4\]
 
-<p>For the high mach number test, <script type="math/tex">v_L = v_R = 120</script>. The tests are run until <script type="math/tex">t = 0.8</script>,
+<p>For the high mach number test, \(v_L = v_R = 120\). The tests are run until \(t = 0.8\),
 on a domain from -3 to 3.</p>
 
 <p><strong>Without Dual Energy</strong></p>
 
-<p>Figure 1: PPMP, exact solver, no dual energy, <script type="math/tex">v_{bulk} = 100 c_s</script>
-<img src="http://localhost:4000assets/images/PPMP_exact_M100.png" /></p>
+<p>Figure 1: PPMP, exact solver, no dual energy, \(v_{bulk} = 100 c_s\)
+<img src="http://evaneschneider.github.io/site/assets/images/PPMP_exact_M100.png" /></p>
 
 <p><strong>With Dual Energy</strong></p>
 
-<p>Figure 2: Same as figure one but with dual energy, <script type="math/tex">\eta_1 = 10^{-6}</script>
-<img src="http://localhost:4000assets/images/PPMP_exact_M100_eta6.png" /></p>
+<p>Figure 2: Same as figure one but with dual energy, \(\eta_1 = 10^{-6}\)
+<img src="http://evaneschneider.github.io/site/assets/images/PPMP_exact_M100_eta6.png" /></p>
 
 <p>As expected, the dual energy formalism has no effect in this case. Practically speaking,
 this is because the internal energy for each cell is reset to the conservatively calculated 
 value at every timestep, NOT because the hydro update is unaffected by a non-conservatively 
 calculated internal energy.</p>
 
-<p>So what happens if we increase <script type="math/tex">\eta_1</script>?</p>
+<p>So what happens if we increase \(\eta_1\)?</p>
 
-<p>With <script type="math/tex">\eta_1 = 10^{-5}</script> one cell every so often (not every time step) chooses the 
-non-conservative internal energy update. The non-conservative <script type="math/tex">e</script> in these cases is
-always slightly larger than the conservatively calculated <script type="math/tex">e</script>. Nevertheless, there is not
+<p>With \(\eta_1 = 10^{-5}\) one cell every so often (not every time step) chooses the 
+non-conservative internal energy update. The non-conservative \(e\) in these cases is
+always slightly larger than the conservatively calculated \(e\). Nevertheless, there is not
 a discernable dynamic impact.</p>
 
-<p>With <script type="math/tex">\eta_1 = 10^{-4}</script> all cells to the right of the discontinuity (where <script type="math/tex">e = 0.075</script> initially) are
+<p>With \(\eta_1 = 10^{-4}\) all cells to the right of the discontinuity (where \(e = 0.075\) initially) are
 using the non-conservative update. As the test begins, the two energies are the same for the majority of these, 
 because there is no energy flux or velocity gradient. For the cells within the shock, however,
 the two values differ. At first, the non-conservative update has higher internal energy values, but 
 as the test continues the values are sometimes lower. It seems that the non-conservative internal energy 
 values are suffering from osciallations. Perhaps the instability is a result of the centered-difference approximation?</p>
 
-<p>After time <script type="math/tex">t = 0.1863830</script> the conservatively calculated internal energy is occasionally negative. 
+<p>After time \(t = 0.1863830\) the conservatively calculated internal energy is occasionally negative. 
 The test does run to completion without the non-conservative energy update producing negative pressures, 
 but the results are a mess in the regions where the non-conservative update was used.</p>
 
-<p>Figure 3: Same as Figure 1 but with dual energy, <script type="math/tex">\eta_1 = 10^{-4}</script>
-<img src="http://localhost:4000assets/images/PPMP_exact_M100_eta4.png" /></p>
+<p>Figure 3: Same as Figure 1 but with dual energy, \(\eta_1 = 10^{-4}\)
+<img src="http://evaneschneider.github.io/site/assets/images/PPMP_exact_M100_eta4.png" /></p>
 
-<p>With <script type="math/tex">\eta_1 = 10^{-3}</script> (the value given in B14), all cells are using the non-conservative energy 
+<p>With \(\eta_1 = 10^{-3}\) (the value given in B14), all cells are using the non-conservative energy 
 update, and the results are a bit better (but still inferior to the non dual energy case).</p>
 
-<p>Figure 4: Same as Figure 1 but with dual energy, <script type="math/tex">\eta_1 = 10^{-3}</script>
-<img src="http://localhost:4000assets/images/PPMP_exact_M100_eta3.png" /></p>
+<p>Figure 4: Same as Figure 1 but with dual energy, \(\eta_1 = 10^{-3}\)
+<img src="http://evaneschneider.github.io/site/assets/images/PPMP_exact_M100_eta3.png" /></p>
 
 <p><strong>Is it the way the divergence is approximated?</strong></p>
 
-<p>B14 have a slightly different way of estimating the <script type="math/tex">P \nabla \cdot \mathbf{v}</script> term. They 
+<p>B14 have a slightly different way of estimating the \(P \nabla \cdot \mathbf{v}\) term. They 
 use the velocities at the interface returned by the Riemann solver to approximate the derivative.
 Does using this version help?</p>
 
 <p>Figure 5: Same as Figure 4 but with the B14 internal energy update
-<img src="http://localhost:4000assets/images/PPMP_exact_M100_B14.png" /></p>
+<img src="http://evaneschneider.github.io/site/assets/images/PPMP_exact_M100_B14.png" /></p>
 
 <p>The results are strikingly similar to Figure 4. Evidently the Pdv approximation is not the problem.
 Perhaps there is an issue somewhere else in the calculation. The next post will use a high mach 

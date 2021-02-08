@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Evan's research blog - Gresho Test</title>
+  <title> - Gresho Test</title>
   <link rel="shortcut icon" href="http://evaneschneider.github.io/site/assets/images/favicon.ico">
   <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/style.css">
   <link rel="alternate" type="application/rss+xml" title="My Blog" href="http://evaneschneider.github.io/site/rss.xml">
@@ -41,7 +41,7 @@ by the pressure gradient. The solution is time-independent. For these tests, I u
 the initial conditions described in Liska &amp; Wendroff (2003).</p>
 
 <div style="text-align: center">
-<img src="http://localhost:4000assets/images/gresho_init.png" />
+<img src="http://evaneschneider.github.io/site/assets/images/gresho_init.png" />
 </div>
 
 <p><strong>Definitions</strong></p>
@@ -56,16 +56,16 @@ $$x = r \mathrm{cos}(\phi) \quad \mathrm{and} \quad y = r \mathrm{sin}(\phi),$$
 $$v_{x} = v_{r}\mathrm{cos}\phi - v_{\phi} \mathrm{sin}(\phi) \quad \mathrm{and} \quad 
 v_{y} = v_{r}\mathrm{sin}(\phi) + v_{\phi}\mathrm{cos}(\phi)$$
 </div>
-<p>(where <script type="math/tex">v_{\phi} = r \frac{d(\phi)}{dt}</script>). Since <script type="math/tex">v_{r} = 0</script> for the Gresho problem,
+<p>(where \(v_{\phi} = r \frac{d(\phi)}{dt}\)). Since \(v_{r} = 0\) for the Gresho problem,
 that gives</p>
 <div style="text-align: center">
 $$v_{x} = -v_{\phi}\mathrm{sin}(\phi) \quad \mathrm{and} \quad v_{y} = v_{\phi}\mathrm{cos}(\phi).$$
 </div>
-<p><script type="math/tex">\phi</script> is calculated from <script type="math/tex">x</script> and <script type="math/tex">y</script> using <script type="math/tex">\phi= \mathrm{arctan}(\frac{y}{x})</script> and 
-<script type="math/tex">r</script> using <script type="math/tex">r^2 = x^2 + y^2</script>.</p>
+<p>\(\phi\) is calculated from \(x\) and \(y\) using \(\phi= \mathrm{arctan}(\frac{y}{x})\) and 
+\(r\) using \(r^2 = x^2 + y^2\).</p>
 
-<p>In plotting the data, the conversion goes the other direction, from <script type="math/tex">v_{x}, v_{y}</script> to 
-<script type="math/tex">v_{\phi}</script>. After a similar derivative analysis, I get</p>
+<p>In plotting the data, the conversion goes the other direction, from \(v_{x}, v_{y}\) to 
+\(v_{\phi}\). After a similar derivative analysis, I get</p>
 <div style="text-align: center">
 $$v_{\phi} = \sqrt{x^2 + y^2} \frac{x v_y - y v_x}{x^2 + y^2}.$$
 </div>
@@ -83,13 +83,13 @@ $$\omega = \nabla \times v = \frac{1}{r}\left(\frac{\delta(r v_\phi)}{\delta r} 
 
 <p>I’m running the test until t = 3.0 on a 40x40 grid with transmissive boundaries, PPMC,
 the exact solver, and CTU. The domain is x = [0, 1], y = [0, 1], with the vortex centered 
-at (x, y) = (0.5, 0.5). The movies below show the evolution in azimuthal velocity (<script type="math/tex">v_\phi</script>), 
-pressure, and vorticity (<script type="math/tex">\omega</script>). For <script type="math/tex">v_\phi</script> and <script type="math/tex">p</script>, both 1D and 2D projections are
+at (x, y) = (0.5, 0.5). The movies below show the evolution in azimuthal velocity (\(v_\phi\)), 
+pressure, and vorticity (\(\omega\)). For \(v_\phi\) and \(p\), both 1D and 2D projections are
 shown.</p>
 
 <div style="text-align: center">
-<video src="http://localhost:4000assets/movies/gresho_line.mp4" width="500" height="250" controls="" preload=""></video>
-<video src="http://localhost:4000assets/movies/gresho_image.mp4" width="500" height="250" controls="" preload=""></video>
+<video src="http://evaneschneider.github.io/site/assets/movies/gresho_line.mp4" width="500" height="250" controls="" preload=""></video>
+<video src="http://evaneschneider.github.io/site/assets/movies/gresho_image.mp4" width="500" height="250" controls="" preload=""></video>
 </div>
 
 <p><br /></p>
@@ -103,8 +103,8 @@ I calculate the L1 error for vorticity and density using the standard definition
 $$\delta\mathbf{q} = \frac{1}{N}\sum|\mathbf{q}_i - \mathbf{q}_i^0|,$$
 </div>
 
-<p>where <script type="math/tex">\mathbf{q}_i^0</script> is the initial solution, and <script type="math/tex">N</script> is the total number of points. The L1 errors
-for density and vorticity are 0.14% and 135% on a <script type="math/tex">20\times20</script> grid, and 0.04% and 80% on a <script type="math/tex">40\times40</script> grid.</p>
+<p>where \(\mathbf{q}_i^0\) is the initial solution, and \(N\) is the total number of points. The L1 errors
+for density and vorticity are 0.14% and 135% on a \(20\times20\) grid, and 0.04% and 80% on a \(40\times40\) grid.</p>
 
     </section>
 </article>

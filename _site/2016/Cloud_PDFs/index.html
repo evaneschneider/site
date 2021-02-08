@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Evan's research blog - Cloud PDFs</title>
+  <title> - Cloud PDFs</title>
   <link rel="shortcut icon" href="http://evaneschneider.github.io/site/assets/images/favicon.ico">
   <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/style.css">
   <link rel="alternate" type="application/rss+xml" title="My Blog" href="http://evaneschneider.github.io/site/rss.xml">
@@ -40,8 +40,8 @@ to find a way of scaling the raw data from the Mach 5 isothermal turbulence
 simulation data. Below are a png and pdf showing an excised region from the unscaled
 (but smoothed) data.</p>
 
-<p><img src="http://localhost:4000assets/images/cloud.png" />
-<img src="http://localhost:4000assets/images/cloud_PDF.png" /></p>
+<p><img src="http://evaneschneider.github.io/site/assets/images/cloud.png" />
+<img src="http://evaneschneider.github.io/site/assets/images/cloud_PDF.png" /></p>
 
 <p>I’m only plotting and fitting to the cloud data (not the wind), and I’ve not tapered
 the edge of the cloud, because I want statistics for the underlying 
@@ -50,19 +50,19 @@ gaussian. As expected for isothermal supersonic turbulence, a log-normal distrib
 data well.</p>
 
 <p>We can compare the statistics for this region to a larger region of the turbulence
-simulation from which it is excised. Below is a pdf created using the <script type="math/tex">256^3</script>
+simulation from which it is excised. Below is a pdf created using the \(256^3\)
 region of the turbulence simulation that the cloud is taken from, without smoothing
-(the entire turbulence simulation was <script type="math/tex">1024^3</script>). Comparing the two, one can see 
+(the entire turbulence simulation was \(1024^3\)). Comparing the two, one can see 
 that we have chosen a slightly overdense region for the cloud ICs.
-<img src="http://localhost:4000assets/images/turbulence_PDF.png" /></p>
+<img src="http://evaneschneider.github.io/site/assets/images/turbulence_PDF.png" /></p>
 
 <p>We’d like to match the cloud ICs to the sphere ICs as best we can, in terms of mean density and 
 (if possible) cloud mass. What happens if I apply a linear scaling to the cloud density distribution 
 shown in the first figure? Below is a PDF created by multiplying the original turbulence data 
 by a constant factor (in this case 0.4), in order to match the mean density and initial mass of 
-the <script type="math/tex">n_h = 1</script> sphere simulation.</p>
+the \(n_h = 1\) sphere simulation.</p>
 
-<p><img src="http://localhost:4000assets/images/scaled_PDF.png" /></p>
+<p><img src="http://evaneschneider.github.io/site/assets/images/scaled_PDF.png" /></p>
 
 <p>The mean of the distribution has shifted, but the width stays the same.</p>
 

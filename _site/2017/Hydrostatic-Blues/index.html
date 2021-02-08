@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Evan's research blog - Hydrostatic Blues</title>
+  <title> - Hydrostatic Blues</title>
   <link rel="shortcut icon" href="http://evaneschneider.github.io/site/assets/images/favicon.ico">
   <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/style.css">
   <link rel="alternate" type="application/rss+xml" title="My Blog" href="http://evaneschneider.github.io/site/rss.xml">
@@ -39,7 +39,7 @@
 disk in vertical hydrostatic equilibrium with my NFW + Miyamoto-Nagai profile. Here’s a density
 projection of what the resulting disk looks like:</p>
 
-<p><img src="http://localhost:4000assets/images/Milky_Way_3D.png" /></p>
+<p><img src="http://evaneschneider.github.io/site/assets/images/Milky_Way_3D.png" /></p>
 
 <p>Pretty, right? Unfortunately, when I try to evolve this disk, things break pretty quickly. This 
 post is dedicated to figuring out why.</p>
@@ -49,7 +49,7 @@ I ran the simulation with vertical gravity turned off. As expected, the disk evo
 scenario, puffing up vertically as a result of the pressure gradient I’ve implemented. Here’s picture 
 after a little time has passed:</p>
 
-<p><img src="http://localhost:4000assets/images/Milky_Way_puffed.png" /></p>
+<p><img src="http://evaneschneider.github.io/site/assets/images/Milky_Way_puffed.png" /></p>
 
 <p>As soon as I turn on gravity, the simulation goes haywire. Relatively quickly, cells near the center of 
 the disk wind up with negative densities. Given that the central radii are the locations with the steepest 
@@ -62,43 +62,43 @@ radius far enough out in the disk that the pressure gradient is well resolved. H
 in that case:</p>
 
 <div style="text-align: center">
-<video src="http://localhost:4000assets/movies/r_13.mov" width="400" height="400" controls="" preload=""></video>
+<video src="http://evaneschneider.github.io/site/assets/movies/r_13.mov" width="400" height="400" controls="" preload=""></video>
 </div>
 
 <p>Not perfect, but it doesn’t break, and gets close to achieving hydrostatic balance. Certainly the regions near 
-<script type="math/tex">z = 0</script> look pretty good. The trouble here seems to be the outer regions, where I’ve arbitrarily set a density 
-floor of 1 (<script type="math/tex">n_h \approx 10^{-6}\mathrm{cm}^{-3}</script>). The pressure gradient in the outer regions is 0, 
+\(z = 0\) look pretty good. The trouble here seems to be the outer regions, where I’ve arbitrarily set a density 
+floor of 1 (\(n_h \approx 10^{-6}\mathrm{cm}^{-3}\)). The pressure gradient in the outer regions is 0, 
 but there’s still a force due to gravity that is proportional to the density.</p>
 
-<p><img src="http://localhost:4000assets/images/r_13_balance.png" /></p>
+<p><img src="http://evaneschneider.github.io/site/assets/images/r_13_balance.png" /></p>
 
 <p>Over time, the lack of balance in the transition region propagates further in, causing the density of the outer 
 cells to drop, and the density of the inner cells to increase. In this case, the densities are low enough that 
 the net effect on the inner regions is small, and the column stays mostly balanced.</p>
 
 <p>In regions at smaller radii, where the pressure gradient is less well resolved, the problem gets much more severe. 
-Below are two movies showing the evolution of the density in a column with a radius of <script type="math/tex">r = 6.9</script>kpc, and one at 
-the innermost radius in this simulation, <script type="math/tex">r = 0.2</script>kpc.</p>
+Below are two movies showing the evolution of the density in a column with a radius of \(r = 6.9\)kpc, and one at 
+the innermost radius in this simulation, \(r = 0.2\)kpc.</p>
 
 <div style="text-align: center">
-<video src="http://localhost:4000assets/movies/r_6.mov" width="400" height="400" controls="" preload=""></video>
-<video src="http://localhost:4000assets/movies/r_02.mov" width="400" height="400" controls="" preload=""></video>
+<video src="http://evaneschneider.github.io/site/assets/movies/r_6.mov" width="400" height="400" controls="" preload=""></video>
+<video src="http://evaneschneider.github.io/site/assets/movies/r_02.mov" width="400" height="400" controls="" preload=""></video>
 </div>
 
 <p>These don’t run as long, because in both cases the code grinds to a halt just after the movie ends. Clearly, this 
 is a problem that could cause the code to break when I evolve the disk in 3D. To better understand exactly what’s 
-upsetting the balance, I again plot the pressure gradient and compare it to <script type="math/tex">\rho g_{z}</script> for the <script type="math/tex">r = 6.9</script>kpc case:</p>
+upsetting the balance, I again plot the pressure gradient and compare it to \(\rho g_{z}\) for the \(r = 6.9\)kpc case:</p>
 
-<p><img src="http://localhost:4000assets/images/r_6_balance_64.png" /></p>
+<p><img src="http://evaneschneider.github.io/site/assets/images/r_6_balance_64.png" /></p>
 
-<p>Here, I’ve blown up the region with all the action - just outside <script type="math/tex">z = 2</script> the plot looks identical to the 
-<script type="math/tex">r = 13</script>kpc case. In all the plots above, there are only 62 cells in the <script type="math/tex">z</script>-direction. What happens if I 
+<p>Here, I’ve blown up the region with all the action - just outside \(z = 2\) the plot looks identical to the 
+\(r = 13\)kpc case. In all the plots above, there are only 62 cells in the \(z\)-direction. What happens if I 
 increase the resolution? Well, the code still crunches to a halt. Here’s what the pressure balance plots look like:</p>
 
-<p><img src="http://localhost:4000assets/images/r_6_balance_128.png" />
-<img src="http://localhost:4000assets/images/r_6_balance_256.png" /></p>
+<p><img src="http://evaneschneider.github.io/site/assets/images/r_6_balance_128.png" />
+<img src="http://evaneschneider.github.io/site/assets/images/r_6_balance_256.png" /></p>
 
-<p>Evidently, better resolving the gradient in <script type="math/tex">z</script> doesn’t fix the problem. In fact, it seems to be making it worse.</p>
+<p>Evidently, better resolving the gradient in \(z\) doesn’t fix the problem. In fact, it seems to be making it worse.</p>
 
     </section>
 </article>

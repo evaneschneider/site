@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Evan's research blog - Keplerian Disk</title>
+  <title> - Keplerian Disk</title>
   <link rel="shortcut icon" href="http://evaneschneider.github.io/site/assets/images/favicon.ico">
   <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/style.css">
   <link rel="alternate" type="application/rss+xml" title="My Blog" href="http://evaneschneider.github.io/site/rss.xml">
@@ -42,15 +42,15 @@ as the resolution of the simulation is increased, and second, advection errors (
 Gresho test) lead to artificial accretion through the disk.</p>
 
 <p>To set up a rotating gas disk, I’ve followed the initial conditions from Krumholtz et al. (2004). There,
-the potential is set by assuming a single solar mass at the center, and the velocities are Keplerian, <script type="math/tex">v^2 = GM/r</script>.
-The disk is assumed to be 10K and isothermal, with a radius <script type="math/tex">r_{0} = 2\times10^{15}</script> cm and a power-law 
-surface density profile <script type="math/tex">\Sigma = \Sigma_{0}(r_{0}/r)</script>, with <script type="math/tex">\Sigma_{0} = 0.1</script> <script type="math/tex">\mathrm{g}</script> <script type="math/tex">\mathrm{cm}^{-2}</script>.
+the potential is set by assuming a single solar mass at the center, and the velocities are Keplerian, \(v^2 = GM/r\).
+The disk is assumed to be 10K and isothermal, with a radius \(r_{0} = 2\times10^{15}\) cm and a power-law 
+surface density profile \(\Sigma = \Sigma_{0}(r_{0}/r)\), with \(\Sigma_{0} = 0.1\) \(\mathrm{g}\) \(\mathrm{cm}^{-2}\).
 Because the disk is in Keplerian rotation, the surface density should not change with time.</p>
 
 <p><strong>Results</strong></p>
 
 <p>The simulation is run for approximately 25 orbits of the cells at the smallest radius, 
-or a single orbit at <script type="math/tex">r = 1\times10^{15}</script> cm. I used a 128x128 grid with custom boundaries set to 
+or a single orbit at \(r = 1\times10^{15}\) cm. I used a 128x128 grid with custom boundaries set to 
 reproduce the correct velocites. I’m again using PPMC, an exact Riemann solver, and CTU.
 The movies below show the evolution in the surface density profile and velocities as a function of 
 radius, as well as a log-scale image of the surface density. For the radial plots, the exact solution
@@ -58,9 +58,9 @@ is plotted as a black line, while red points show the simulation results. The po
 represents the inferred motion of a particle at that radius, and is merely there to guide the eye.</p>
 
 <div style="text-align: center">
-<video src="http://localhost:4000assets/movies/r_sigma_128.mov" width="400" height="400" controls="" preload=""></video>
-<video src="http://localhost:4000assets/movies/velocity_128.mov" width="400" height="400" controls="" preload=""></video>
-<video src="http://localhost:4000assets/movies/sigma_128.mov" width="400" height="400" controls="" preload=""></video>
+<video src="http://evaneschneider.github.io/site/assets/movies/r_sigma_128.mov" width="400" height="400" controls="" preload=""></video>
+<video src="http://evaneschneider.github.io/site/assets/movies/velocity_128.mov" width="400" height="400" controls="" preload=""></video>
+<video src="http://evaneschneider.github.io/site/assets/movies/sigma_128.mov" width="400" height="400" controls="" preload=""></video>
 </div>
 
 <p><br /></p>

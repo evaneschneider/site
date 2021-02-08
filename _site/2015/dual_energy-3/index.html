@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Evan's research blog - Dual Energy Tests (Part 3)</title>
+  <title> - Dual Energy Tests (Part 3)</title>
   <link rel="shortcut icon" href="http://evaneschneider.github.io/site/assets/images/favicon.ico">
   <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/style.css">
   <link rel="alternate" type="application/rss+xml" title="My Blog" href="http://evaneschneider.github.io/site/rss.xml">
@@ -42,25 +42,25 @@ moving across a periodic grid).</p>
 
 <p><strong>The tests</strong></p>
 
-<p>In the following tests, the pressure is <script type="math/tex">p = 0.01</script> everywhere,
-<script type="math/tex">\gamma = \frac{5}{3}</script>, and density is <script type="math/tex">\rho = 1.0 * A</script>, where 
-<script type="math/tex">A = 1.5</script> in the middle section of the grid, and <script type="math/tex">A = 1.0</script> elsewhere.
-<script type="math/tex">c_s = \sqrt{\frac{\gamma * p}{\rho}}</script> ranges from 0.105 in the high density
+<p>In the following tests, the pressure is \(p = 0.01\) everywhere,
+\(\gamma = \frac{5}{3}\), and density is \(\rho = 1.0 * A\), where 
+\(A = 1.5\) in the middle section of the grid, and \(A = 1.0\) elsewhere.
+\(c_s = \sqrt{\frac{\gamma * p}{\rho}}\) ranges from 0.105 in the high density
 regions to 0.129 in the high density regions.</p>
 
-<p>The domain goes from <script type="math/tex">x = [0, 1]</script>. For the low mach number test, <script type="math/tex">v = 1.0</script>,
-so the mach number is <script type="math/tex">M \approx 8</script>. For the high mach number test, <script type="math/tex">v = 100</script>,
-so the mach number is <script type="math/tex">M \approx 800</script>. The tests are run until <script type="math/tex">t = 1.0</script>,
+<p>The domain goes from \(x = [0, 1]\). For the low mach number test, \(v = 1.0\),
+so the mach number is \(M \approx 8\). For the high mach number test, \(v = 100\),
+so the mach number is \(M \approx 800\). The tests are run until \(t = 1.0\),
 such that the low velocity test crosses the grid once, and the high velocity test
 crosses the grid 100 times.</p>
 
 <p><strong>Without Dual Energy</strong></p>
 
-<p>Figure 1: PPMP, exact solver, no dual energy, <script type="math/tex">v \approx 8 c_s</script>
-<img src="http://localhost:4000assets/images/PPMP_exact_M8_node.png" /></p>
+<p>Figure 1: PPMP, exact solver, no dual energy, \(v \approx 8 c_s\)
+<img src="http://evaneschneider.github.io/site/assets/images/PPMP_exact_M8_node.png" /></p>
 
-<p>Figure 2: Same as Figure 1 but with <script type="math/tex">v \approx 800 c_s</script>
-<img src="http://localhost:4000assets/images/PPMP_exact_M800_node.png" /></p>
+<p>Figure 2: Same as Figure 1 but with \(v \approx 800 c_s\)
+<img src="http://evaneschneider.github.io/site/assets/images/PPMP_exact_M800_node.png" /></p>
 
 <p>PPMP fares quite well on this test, even at high mach number (not surprising,
 given that’s what it was designed to do). But what happens if we turn on the
@@ -69,14 +69,14 @@ Enzo dual energy switch?</p>
 <p><strong>With Dual Energy</strong></p>
 
 <p>At low mach number, the switch doesn’t activate dual energy, and the results 
-are identical to Figure 1. At high mach number <script type="math/tex">(v = 100 \approx 800 c_s)</script>, the 
+are identical to Figure 1. At high mach number \((v = 100 \approx 800 c_s)\), the 
 switch kicks in, and the results are a mess.</p>
 
 <p>Figure 3: Same as Figure 2 but with dual energy
-<img src="http://localhost:4000assets/images/PPMP_exact_M800_de.png" /></p>
+<img src="http://evaneschneider.github.io/site/assets/images/PPMP_exact_M800_de.png" /></p>
 
 <p>Figure 4: Same as Figure 4 but with PPMC 
-<img src="http://localhost:4000assets/images/PPMC_exact_M800_de.png" /></p>
+<img src="http://evaneschneider.github.io/site/assets/images/PPMC_exact_M800_de.png" /></p>
 
 <p><strong>The Internal Energy Update</strong></p>
 

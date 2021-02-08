@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Evan's research blog - PPM tests</title>
+  <title> - PPM tests</title>
   <link rel="shortcut icon" href="http://evaneschneider.github.io/site/assets/images/favicon.ico">
   <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/style.css">
   <link rel="alternate" type="application/rss+xml" title="My Blog" href="http://evaneschneider.github.io/site/rss.xml">
@@ -46,32 +46,31 @@ in the high mach number square wave test.</p>
 same tests, but with the velocity reversed.</p>
 
 <p>Figure 1a: PPMP, exact solver, dual energy
-<img src="http://localhost:4000assets/images/PPMP_exact_M800_de.png" /></p>
+<img src="http://evaneschneider.github.io/site/assets/images/PPMP_exact_M800_de.png" /></p>
 
 <p>Figure 1b: PPMP, exact solver, dual energy, reversed velocity
-<img src="http://localhost:4000assets/images/PPMP_exact_M800_de_reverse.png" /></p>
+<img src="http://evaneschneider.github.io/site/assets/images/PPMP_exact_M800_de_reverse.png" /></p>
 
 <p>Figure 2a: PPMC, exact solver, dual energy
-<img src="http://localhost:4000assets/images/PPMC_exact_M800_de.png" /></p>
+<img src="http://evaneschneider.github.io/site/assets/images/PPMC_exact_M800_de.png" /></p>
 
 <p>Figure 2b: PPMC, exact solver, dual energy, reversed velocity
-<img src="http://localhost:4000assets/images/PPMC_exact_M800_de_reverse.png" /></p>
+<img src="http://evaneschneider.github.io/site/assets/images/PPMC_exact_M800_de_reverse.png" /></p>
 
 <p>The behavior is very similar for the reversed tests, but clearly not identical. 
 In particular, the pressure in the PPMP tests is underestimated in one direction 
 but not the other.</p>
 
 <p>Instead of using the advected internal energy to calculate the 
-flux (<script type="math/tex">F(e) = \bar{\rho}\bar{v}\bar{e}</script>, with <script type="math/tex">\bar{e} = e_{L}</script> if <script type="math/tex">\bar{v} > 0</script>, 
-<script type="math/tex">\bar{e} = e_{R}</script> if <script type="math/tex">% <![CDATA[
-\bar{v} < 0 %]]></script>), what happens if I use the sampled pressure 
-(<script type="math/tex">F(e) = \bar{p}\bar{v} / (\gamma - 1)</script>)?</p>
+flux (\(F(e) = \bar{\rho}\bar{v}\bar{e}\), with \(\bar{e} = e_{L}\) if \(\bar{v} &gt; 0\), 
+\(\bar{e} = e_{R}\) if \(\bar{v} &lt; 0\)), what happens if I use the sampled pressure 
+(\(F(e) = \bar{p}\bar{v} / (\gamma - 1)\))?</p>
 
 <p>Figure 3a: PPMP, exact solver, dual energy, sampled e
-<img src="http://localhost:4000assets/images/PPMP_exact_M800_se.png" /></p>
+<img src="http://evaneschneider.github.io/site/assets/images/PPMP_exact_M800_se.png" /></p>
 
 <p>Figure 3b: PPMc, exact solver, dual energy, sampled e
-<img src="http://localhost:4000assets/images/PPMC_exact_M800_se.png" /></p>
+<img src="http://evaneschneider.github.io/site/assets/images/PPMC_exact_M800_se.png" /></p>
 
 <p>This certainly helps, but I’m not sure it would work in a scenario where dual energy 
 is actually needed.</p>

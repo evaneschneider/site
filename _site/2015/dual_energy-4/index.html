@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Evan's research blog - Dual Energy Tests (Part 4)</title>
+  <title> - Dual Energy Tests (Part 4)</title>
   <link rel="shortcut icon" href="http://evaneschneider.github.io/site/assets/images/favicon.ico">
   <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/style.css">
   <link rel="alternate" type="application/rss+xml" title="My Blog" href="http://evaneschneider.github.io/site/rss.xml">
@@ -44,16 +44,16 @@ already violated. So, what happened in the first timestep to cause a velocity gr
 
 <p>As before, I use the Teyssier equation to update the internal energy:</p>
 
-<script type="math/tex; mode=display">\frac{e^{n+1}_\mathrm{prim} - e^n}{\Delta t} = - \nabla \cdot \mathbf{F}(e)^n - P^n \nabla \cdot \mathbf{u}^n</script>
+\[\frac{e^{n+1}_\mathrm{prim} - e^n}{\Delta t} = - \nabla \cdot \mathbf{F}(e)^n - P^n \nabla \cdot \mathbf{u}^n\]
 
-<p>Note: <script type="math/tex">e</script> in this equation is actually <script type="math/tex">\rho e_{int}</script> in cholla notation. In practice, this equation
+<p>Note: \(e\) in this equation is actually \(\rho e_{int}\) in cholla notation. In practice, this equation
 is represented in cholla as</p>
 
-<script type="math/tex; mode=display">\rho^{n+1} e^{n+1} = \rho^n e^n + \frac{\Delta t}{\Delta x}(\bar{\rho}_{i-\frac{1}{2}}\bar{v}_{i-\frac{1}{2}}\bar{e}_{i-\frac{1}{2}} - \bar{\rho}_{i+\frac{1}{2}}\bar{v}_{i+\frac{1}{2}}\bar{e}_{i+\frac{1}{2}}) + \frac{\Delta t}{2 \Delta x} P^n (v^n_{i-1} - v^n_{i+1})</script>
+\[\rho^{n+1} e^{n+1} = \rho^n e^n + \frac{\Delta t}{\Delta x}(\bar{\rho}_{i-\frac{1}{2}}\bar{v}_{i-\frac{1}{2}}\bar{e}_{i-\frac{1}{2}} - \bar{\rho}_{i+\frac{1}{2}}\bar{v}_{i+\frac{1}{2}}\bar{e}_{i+\frac{1}{2}}) + \frac{\Delta t}{2 \Delta x} P^n (v^n_{i-1} - v^n_{i+1})\]
 
-<p>Here, bars over a variable indicate that it is the sampled value from the Riemann solver. For <script type="math/tex">\bar{e}</script> 
+<p>Here, bars over a variable indicate that it is the sampled value from the Riemann solver. For \(\bar{e}\) 
 this just means an advected term. Because the flux term is density weighted, and the sampled velocities are equal,
-<em>the flux terms should be identical</em>, and <script type="math/tex">\rho e</script> should
+<em>the flux terms should be identical</em>, and \(\rho e\) should
 remain constant across all cells.</p>
 
 <p>This seems to be where the method is failing. In the first time step, the net flux is 0
@@ -63,7 +63,7 @@ end of the first timestep reflects the slight perturbation. This gets translated
 perturbation in the pressure for the next timestep (since all the velocities remained equal at the 
 end of the first timestep), and things spiral out of control from there.</p>
 
-<p>So, is there a way to prevent the perturbation in <script type="math/tex">\rho e_{int}</script>, or is it endemic to the method, 
+<p>So, is there a way to prevent the perturbation in \(\rho e_{int}\), or is it endemic to the method, 
 and a better solution is to prevent the switch from activating in this scenario? The Teyssier switch, 
 for example, would never activate in the square wave test, no matter how fast the mach number.</p>
 

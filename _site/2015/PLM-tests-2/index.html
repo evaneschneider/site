@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Evan's research blog - PLM tests (Part 2)</title>
+  <title> - PLM tests (Part 2)</title>
   <link rel="shortcut icon" href="http://evaneschneider.github.io/site/assets/images/favicon.ico">
   <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/style.css">
   <link rel="alternate" type="application/rss+xml" title="My Blog" href="http://evaneschneider.github.io/site/rss.xml">
@@ -44,11 +44,11 @@ or b) at least come up with a switch that does not degrade the solution?</p>
 which isn’t a scenario we expect dual energy to improve. However, we certainly don’t 
 want to employ a dual energy method that makes the solution worse:</p>
 
-<p>Figure 1: PLMC, exact solver, no dual energy, <script type="math/tex">v \approx 800 c_s</script>
-<img src="http://localhost:4000assets/images/PLMC_exact_M800_node.png" /></p>
+<p>Figure 1: PLMC, exact solver, no dual energy, \(v \approx 800 c_s\)
+<img src="http://evaneschneider.github.io/site/assets/images/PLMC_exact_M800_node.png" /></p>
 
 <p>Figure 2: Same as Figure 1 but with dual energy
-<img src="http://localhost:4000assets/images/PLMC_exact_M800_de.png" /></p>
+<img src="http://evaneschneider.github.io/site/assets/images/PLMC_exact_M800_de.png" /></p>
 
 <p>Note: Previous versions of Figure 2 looked worse - I found a bug in the
 internal energy PLMC reconstruction that was allowing non-monotonic 
@@ -59,7 +59,7 @@ reconstructions.</p>
 <p>First, what happens if we get rid of the total energy synchronization?</p>
 
 <p>Figure 3: Same as Figure 2 but without the total energy sync
-<img src="http://localhost:4000assets/images/PLMC_de_nosync.png" /></p>
+<img src="http://evaneschneider.github.io/site/assets/images/PLMC_de_nosync.png" /></p>
 
 <p>Now the internal energy update has no effect on the hydrodynamics, so the 
 perturbations in the velocity disappear. Similalry, the perturbations in the 
@@ -67,7 +67,7 @@ pressure as calculated from the total energy (not shown) also vanish, but the
 pressure as calculated from the internal energy (shown above) is as bad as 
 Figure 2, or maybe worse. The internal energy is not very different
 between Figure 2 and Figure 3, despite the fact that the inputs to 
-the internal energy update (the P, <script type="math/tex">v_{i-1}</script>, <script type="math/tex">v_{i+1}</script> terms, etc.) should 
+the internal energy update (the P, \(v_{i-1}\), \(v_{i+1}\) terms, etc.) should 
 be different now that they are not getting perturbed. This is probably just because 
 the perturbations are small in scale.</p>
 

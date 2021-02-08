@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Evan's research blog - Cloudy cooling curves</title>
+  <title> - Cloudy cooling curves</title>
   <link rel="shortcut icon" href="http://evaneschneider.github.io/site/assets/images/favicon.ico">
   <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/style.css">
   <link rel="alternate" type="application/rss+xml" title="My Blog" href="http://evaneschneider.github.io/site/rss.xml">
@@ -41,21 +41,21 @@ hazy_coolingcurve program to take into account the Haardt &amp; Madau
 background.</p>
 
 <p>The plot below shows the cooling and heating functions for solar metallicty
-gas with three average densities: <script type="math/tex">n_h = 0.1</script>, <script type="math/tex">n_h = 1</script>, and <script type="math/tex">n_h = 10</script>. 
+gas with three average densities: \(n_h = 0.1\), \(n_h = 1\), and \(n_h = 10\). 
 The default cloudy background is used, which includes the CMB and radio to x-ray
 background (see Hazy). A galactic cosmic ray background is also included, as it 
 dominates the chemistry of the molecular gas.
-<img src="http://localhost:4000assets/images/coolingcurve_solar_CIE.png" /></p>
+<img src="http://evaneschneider.github.io/site/assets/images/coolingcurve_solar_CIE.png" /></p>
 
 <p>The following plot modifies the background described above. Instead of the default 
 background, it uses the Haardt &amp; Madau background (HM05). The CMB and cosmic rays 
 are still included.
-<img src="http://localhost:4000assets/images/coolingcurve_solar_PIE.png" /></p>
+<img src="http://evaneschneider.github.io/site/assets/images/coolingcurve_solar_PIE.png" /></p>
 
 <p>So, the question is - do we need to include cooling for gas below 
-<script type="math/tex">10^4</script> K? At low densities it won’t be able to cool, so it is probably okay to 
+\(10^4\) K? At low densities it won’t be able to cool, so it is probably okay to 
 neglect it (should I include a heating term at these densities?). 
-At densities greater than <script type="math/tex">n_h \approx 0.1</script> the gas is clearly still 
+At densities greater than \(n_h \approx 0.1\) the gas is clearly still 
 able to cool, but the efficiency has dropped by 2-3 orders of magnitude, so perhaps the 
 cooling times are long enough that we can still safely ignore cooling in this regime?</p>
 

@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Evan's research blog - Cloudy Cooling in Cholla</title>
+  <title> - Cloudy Cooling in Cholla</title>
   <link rel="shortcut icon" href="http://evaneschneider.github.io/site/assets/images/favicon.ico">
   <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/style.css">
   <link rel="alternate" type="application/rss+xml" title="My Blog" href="http://evaneschneider.github.io/site/rss.xml">
@@ -36,36 +36,36 @@
     </header>
     <section id="post-body">
         <p>The plot below shows cooling / heating curves generated with
-Cloudy for three different densities: <script type="math/tex">n_h = 0.001</script>, <script type="math/tex">n_h = 1</script>, and <script type="math/tex">n_h = 1000</script>.
+Cloudy for three different densities: \(n_h = 0.001\), \(n_h = 1\), and \(n_h = 1000\).
 Cosmic rays, the CMB, and the Haardt &amp; Madau background (HM05)
 are included. The gas was assumed to have solar metallicty (GASS10).</p>
 
-<p><img src="http://localhost:4000assets/images/coolingcurve_HM_PIE.png" /></p>
+<p><img src="http://evaneschneider.github.io/site/assets/images/coolingcurve_HM_PIE.png" /></p>
 
 <p>Based on these curves, a reasonable approach is to do a 2D interpolation (and include heating) 
-for temperatures below <script type="math/tex">10^{5}</script> K. Above this temperature, only a 1D
+for temperatures below \(10^{5}\) K. Above this temperature, only a 1D
 interpolation is needed to calculate the cooling rate.</p>
 
 <p>The figure below shows the results of this approach, using a standalone version of
-the CPU cooling function in Cholla. Below temperatures of <script type="math/tex">10^5</script> K, a 2D interpolation 
+the CPU cooling function in Cholla. Below temperatures of \(10^5\) K, a 2D interpolation 
 is done, with lookup tables
 calculated using Cloudy and the settings described above. The red data points shown are the same as
-the cooling curves in the plot above. The blue lines that appear below <script type="math/tex">10^5</script> K are 
+the cooling curves in the plot above. The blue lines that appear below \(10^5\) K are 
 the result of the 2D interpolation. Above this temperature Cholla uses the 1D spline described
 in a previous post.</p>
 
-<p><img src="http://localhost:4000assets/images/spline2d_coolingcurve.png" /></p>
+<p><img src="http://evaneschneider.github.io/site/assets/images/spline2d_coolingcurve.png" /></p>
 
 <p>I have also tested the behavior of the cooling function in Cholla. Both the heating and cooling functions 
 have a density dependence, with a different temperature equilibrium for gas of different densities. This 
 behavior can be seen in the plots below, which show the temperature as a function of time for gas of 
-two different densities, <script type="math/tex">n_h = 1.0</script> and <script type="math/tex">n_h = 0.001</script> (corresponding to the first and second plots).
-The higher density gas cools faster due to the <script type="math/tex">n^2</script> dependence of the cooling rate, and equilibrates at 
-just above <script type="math/tex">10^3</script> K. The lower density gas equilibrates at a much higher temperature.</p>
+two different densities, \(n_h = 1.0\) and \(n_h = 0.001\) (corresponding to the first and second plots).
+The higher density gas cools faster due to the \(n^2\) dependence of the cooling rate, and equilibrates at 
+just above \(10^3\) K. The lower density gas equilibrates at a much higher temperature.</p>
 
-<p><img src="http://localhost:4000assets/images/cooling_n0.png" /></p>
+<p><img src="http://evaneschneider.github.io/site/assets/images/cooling_n0.png" /></p>
 
-<p><img src="http://localhost:4000assets/images/cooling_nm3.png" /></p>
+<p><img src="http://evaneschneider.github.io/site/assets/images/cooling_nm3.png" /></p>
 
 
     </section>

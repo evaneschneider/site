@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Evan's research blog - Dual Energy Tests (Part 1)</title>
+  <title> - Dual Energy Tests (Part 1)</title>
   <link rel="shortcut icon" href="http://evaneschneider.github.io/site/assets/images/favicon.ico">
   <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/style.css">
   <link rel="alternate" type="application/rss+xml" title="My Blog" href="http://evaneschneider.github.io/site/rss.xml">
@@ -39,20 +39,20 @@
 
 <p>From Teyssier 2015, the nonconservative internal energy update (Equation 161):</p>
 
-<script type="math/tex; mode=display">\frac{e^{n+1}_{\mathrm{prim}} - e^n}{\Delta t} = - \nabla \cdot \mathbf{F}(e)^n - P^n \nabla \cdot \mathbf{u}^n</script>
+\[\frac{e^{n+1}_{\mathrm{prim}} - e^n}{\Delta t} = - \nabla \cdot \mathbf{F}(e)^n - P^n \nabla \cdot \mathbf{u}^n\]
 
 <p>From Bryan et al. 2014, the nonconservative internal energy update (Equation 43):</p>
 
-<script type="math/tex; mode=display">\rho^{n+1}_j e^{n+1}_j = \rho^n_j e^n_j + \frac{\Delta t}{\Delta x_j} (\bar{\rho}_{j + \frac{1}{2}} \bar{v}_{j + \frac{1}{2}} \bar{e}_{j + \frac{1}{2}} - \bar{\rho}_{j - \frac{1}{2}} \bar{v}_{j - \frac{1}{2}} \bar{e}_{j - \frac{1}{2}}) - \frac{\Delta t}{\Delta x_j} p^n_j (\bar{v}_{j + \frac{1}{2}} - \bar{v}_{j - \frac{1}{2}})</script>
+\[\rho^{n+1}_j e^{n+1}_j = \rho^n_j e^n_j + \frac{\Delta t}{\Delta x_j} (\bar{\rho}_{j + \frac{1}{2}} \bar{v}_{j + \frac{1}{2}} \bar{e}_{j + \frac{1}{2}} - \bar{\rho}_{j - \frac{1}{2}} \bar{v}_{j - \frac{1}{2}} \bar{e}_{j - \frac{1}{2}}) - \frac{\Delta t}{\Delta x_j} p^n_j (\bar{v}_{j + \frac{1}{2}} - \bar{v}_{j - \frac{1}{2}})\]
 
 <p><strong>The switch</strong></p>
 
 <p>We need to decide when to use the nonconservative internal energy update, 
 instead of the conservatively calculated internal energy, 
-<script type="math/tex">e_{\mathrm{int}} = e_T - 0.5\mathbf{v}\cdot\mathbf{v}.</script></p>
+\(e_{\mathrm{int}} = e_T - 0.5\mathbf{v}\cdot\mathbf{v}.\)</p>
 
-<p>Note: in Cholla notation, <script type="math/tex">E = \rho e_T</script>, so <script type="math/tex">e_{\mathrm{int}} = \frac{p}{\rho (\gamma - 1.0)}</script>.
-Cholla tracks <script type="math/tex">E</script> and <script type="math/tex">\rho e_{\mathrm{int}}</script>.</p>
+<p>Note: in Cholla notation, \(E = \rho e_T\), so \(e_{\mathrm{int}} = \frac{p}{\rho (\gamma - 1.0)}\).
+Cholla tracks \(E\) and \(\rho e_{\mathrm{int}}\).</p>
 
 <p>In Teyssier 2015, the switch is calculated using an estimate for the truncation error of the method.</p>
 
@@ -63,19 +63,19 @@ Cholla tracks <script type="math/tex">E</script> and <script type="math/tex">\rh
 <p>The tests shown below consist of a shock tube with periodic boundaries, 
 to allow for high mach number bulk flow.</p>
 
-<script type="math/tex; mode=display">\rho_L = 1.0,\quad v_L = 0.0,\quad p_L = 1.0 \\
+\[\rho_L = 1.0,\quad v_L = 0.0,\quad p_L = 1.0 \\
 \rho_R = 0.2,\quad v_R = 0.0,\quad p_R = 0.01 \\
-\gamma = 1.4</script>
+\gamma = 1.4\]
 
-<p>For the high mach number test, <script type="math/tex">v_L = v_R = 120</script>.</p>
+<p>For the high mach number test, \(v_L = v_R = 120\).</p>
 
 <p><strong>Without Dual Energy</strong></p>
 
 <p>Figure 1: PPMP, exact Riemann solver, CTU
-<img src="http://localhost:4000assets/images/PPMP_exact.png" /></p>
+<img src="http://evaneschneider.github.io/site/assets/images/PPMP_exact.png" /></p>
 
-<p>Figure 2: same as Figure 1, but with bulk velocity <script type="math/tex">v_{bulk} = 100 c_s</script>
-<img src="http://localhost:4000assets/images/PPMP_exact_M100.png" /></p>
+<p>Figure 2: same as Figure 1, but with bulk velocity \(v_{bulk} = 100 c_s\)
+<img src="http://evaneschneider.github.io/site/assets/images/PPMP_exact_M100.png" /></p>
 
     </section>
 </article>

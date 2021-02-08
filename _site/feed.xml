@@ -1,171 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <title>Evan's research blog</title>
+    <title></title>
     <description>Blogging about stuff</description>
-    <link>http://localhost:4000</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://evaneschneider.github.io/site/</link>
+    <atom:link href="http://evaneschneider.github.io/site//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>M82 models</title>
+        <title>Magellanic Stream Tests</title>
         
         
-          <description>&lt;p&gt;At some point, I’ll fill in some of the backstory from the past three months. In the meantime,
-here’s where things stand currently:&lt;/p&gt;
+          <description>&lt;p&gt;I’ve restarted these tests. As I said in the last post, I think a cloud setup in 3D is the way to go, but we’ve got some decisions to make regarding initial cloud size, runtime, velocity, etc. Here’s an example to get us started.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 08 Feb 2021 00:00:00 -0500</pubDate>
+        <link>http://evaneschneider.github.io/site//2021/MS-Tests-2/</link>
+        <guid isPermaLink="true">http://evaneschneider.github.io/site//2021/MS-Tests-2/</guid>
+      </item>
+    
+      <item>
+        <title>Magellanic Stream Tests</title>
+        
+        
+          <description>&lt;p&gt;This will be the first in a series of posts dedicated to better understading the origin of gas detected in UV absorption with Magellanic Stream velocities.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 02 Mar 2020 00:00:00 -0500</pubDate>
+        <link>http://evaneschneider.github.io/site//2020/MS-Tests/</link>
+        <guid isPermaLink="true">http://evaneschneider.github.io/site//2020/MS-Tests/</guid>
+      </item>
+    
+      <item>
+        <title>Thermal Instability</title>
+        
+        
+          <description>&lt;p&gt;In this post, I’ll describe how I’ve set up two-phase ISM initial conditions for a future superbubble test. At present, the method mostly follows the description given in Kim &amp;amp; Ostriker (2015).&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 09 Feb 2018 00:00:00 -0500</pubDate>
+        <link>http://evaneschneider.github.io/site//2018/Thermal-Instability/</link>
+        <guid isPermaLink="true">http://evaneschneider.github.io/site//2018/Thermal-Instability/</guid>
+      </item>
+    
+      <item>
+        <title>X-ray Profiles</title>
+        
+        
+          <description>&lt;p&gt;In the last post, I showed soft x-ray (0.3 - 2 keV) surface brightness maps for two of my outflow simulations at \(512\times512\times1024\) (20 pc) resolution. I’ve now made the same maps for the full \(2048\times2048\times4096\) (5 pc) resolution simulations. Here they are at 60 Myr for the isotropic feedback model (adiabatic sim), and for the clustered feedback model (radiative sim):&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 31 Jan 2018 00:00:00 -0500</pubDate>
+        <link>http://evaneschneider.github.io/site//2018/Xray-Profiles/</link>
+        <guid isPermaLink="true">http://evaneschneider.github.io/site//2018/Xray-Profiles/</guid>
+      </item>
+    
+      <item>
+        <title>X-ray Emission</title>
+        
+        
+          <description>&lt;p&gt;In an attempt to connect the outflow simulations I’ve been doing to observations, I’ve decided to try to model the x-ray emission from the hot plasma and compare it to what’s seen in M82. I’ll start with a simple model for the diffuse soft x-ray emission. Briefly, for a given cell in the simulation, I’ve got a density \(\rho\), that I can convert to a number density, \(n\), by assuming that the gas is ionized, so \(n = \rho / \mu m_p\), where \(\mu = 0.6\) and \(m_p\) is the mass of a proton. Given this number density, I can also calculate a volume-averaged temperature for the gas in the cell, \(T = e (\gamma - 1.0) / n k_B\), where \(e\) is the internal energy density (tracked in the dual-energy version of Cholla), \(\gamma\) is the adiabatic index (assumed to be 5/3), and \(k_B\) is the Boltzmann constant. I can then calculate the total radiative luminosity from the cell via a cooling function \(\Lambda\).&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 29 Jan 2018 00:00:00 -0500</pubDate>
+        <link>http://evaneschneider.github.io/site//2018/Xray-Emission/</link>
+        <guid isPermaLink="true">http://evaneschneider.github.io/site//2018/Xray-Emission/</guid>
+      </item>
+    
+      <item>
+        <title>Outflow Parameters</title>
+        
+        
+          <description>&lt;p&gt;The Chevalier &amp;amp; Clegg outflow model is characterized by just three parameters: the starburst radius, \(R_*\), the mass injection rate, \(\dot{M}\), and the energy injection rate, \(\dot{E}\). These parameters can be set for a given star formation rate by specifying how the total mass and energy injection compare to the rates that would be expected from the products of stellar evolution. In previous posts, I’ve used the term \(\beta\) to indicate the multiplicative factor that accounts for mass in the hot outflow that is not a product of supernovae and stellar winds, i.e. \(\dot{M}_\mathrm{hot} = \beta_\mathrm{hot} \dot{M}_\mathrm{SN+SW}\) - this is the usage that appears in Strickland and Heckman (2009). However, by selecting an IMF and making some (reasonable) assumptions about stellar evolution, this \(\beta_\mathrm{hot}\) can be converted into a different definition of mass loading, i.e. \(\dot{M}_\mathrm{hot} = \beta_\mathrm{SFR} \dot{M}_\mathrm{SFR}\). In this version, \(\beta_\mathrm{SFR}\) tells us how the total mass in the hot outflow compares to the star formation rate in the galaxy. A wind that has zero mass-loading (and therefore only contains mass from the byproducts of stellar evolution) would have \(\beta_\mathrm{hot} = 1\) and \(\beta_\mathrm{SFR} \sim0.25\) (see discussion in Section 2.1.1 of Veilleux et al. 2005 or results from Starburst 99 models in Leitherer 1999). The same calculation yields an estimate of the energy injected by supernovae and stellar winds as a function of star formation rate, with a typical number of \(\dot{E}_\mathrm{SN} = 3.0\times10^{41}\) erg \(\mathrm{s}^{-1}\) \(\alpha \dot{M}_\mathrm{SFR}\), where the factor \(\alpha\) accounts for the fraction of the energy that is thermalized in the hot plasma (see Section 2.1 of Thompson et al. 2016).&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 22 Jun 2017 00:00:00 -0400</pubDate>
+        <link>http://evaneschneider.github.io/site//2017/Outflow-Parameters/</link>
+        <guid isPermaLink="true">http://evaneschneider.github.io/site//2017/Outflow-Parameters/</guid>
+      </item>
+    
+      <item>
+        <title>Flux Correction</title>
+        
+        
+          <description>&lt;p&gt;This post is dedicated to describing the simple but effective first-order flux correction I mentioned in my last post. When using one of Cholla’s unsplit integrators (CTU or Van Leer), simulations that involve extreme temperature/density contrasts and/or high mach numbers have a tendency to cause the code to crash. Typically, these sorts of crashes start when the high-order flux update of the conserved variables yields a negative pressure. These pressure errors then propagate, eventully leading to negative densities or total energies (or NANs) that cause the code to crash. In a previous effort to solve this problem, I introduced a dual-energy update in Cholla, described in a series of posts starting &lt;a href=&quot;http://evaneschneider.github.io/site/2015/dual-energy-1/&quot;&gt;here&lt;/a&gt;, that allows the code to separately track and update the internal energy of the cells, and uses this non-conservative energy estimate if the total energy yields a negative pressure. While the dual-energy update did help, it was not able to completely solve the problem.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Tue, 20 Jun 2017 00:00:00 -0400</pubDate>
+        <link>http://evaneschneider.github.io/site//2017/Flux-Correction/</link>
+        <guid isPermaLink="true">http://evaneschneider.github.io/site//2017/Flux-Correction/</guid>
+      </item>
+    
+      <item>
+        <title>CC85 outflow (for real)</title>
+        
+        
+          <description>&lt;p&gt;A lot has happened in the last 4 days. To quickly summarize:&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;We have a working equilibrium model for the Milky Way with a hot, hydrostatic halo and a rotating disk in vertical hydrostatic equilibrium that is stable for a Gyr.&lt;/li&gt;
-  &lt;li&gt;We have a working equilibrium model for M82 with the same structure.&lt;/li&gt;
+  &lt;li&gt;Once I started injecting the correct amount of mass and energy, the code started breaking.&lt;/li&gt;
+  &lt;li&gt;I implemented a first-order flux correction to deal with the negative pressures.&lt;/li&gt;
+  &lt;li&gt;Combined with the dual-energy scheme, the first order flux correction works!&lt;/li&gt;
+  &lt;li&gt;I’ve successfully run several models of M82 with a Chevalier &amp;amp; Clegg style outflow.&lt;/li&gt;
+  &lt;li&gt;The simulations are awesome.&lt;br /&gt;
+&lt;br /&gt;
+I’m dedicating a quick separate post to the first-order flux correction, so I’ll skip those bullet points for now. The important part is that the fix seems pretty robust, and so far, has been able to completely eliminate negative temperatures and densities in the simulation. I haven’t yet tested it with cooling…
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;strong&gt;The Simulation&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 </description>
         
-        <pubDate>Mon, 05 Jun 2017 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2017/M82-models/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/M82-models/</guid>
+        <pubDate>Mon, 19 Jun 2017 00:00:00 -0400</pubDate>
+        <link>http://evaneschneider.github.io/site//2017/CC85-outflow-2/</link>
+        <guid isPermaLink="true">http://evaneschneider.github.io/site//2017/CC85-outflow-2/</guid>
       </item>
     
       <item>
-        <title>Hydrostatic Blues</title>
+        <title>More outflow models</title>
         
         
-          <description>&lt;p&gt;In the last post, I described the analytic calculation I’m doing in order to set up a 3D 
-disk in vertical hydrostatic equilibrium with my NFW + Miyamoto-Nagai profile. Here’s a density
-projection of what the resulting disk looks like:&lt;/p&gt;
+          <description>&lt;p&gt;Recall that in the last post, I tested two outflow models. For a \(256^3\) simulation, when I used \(R_{*} = 200\)pc, \(\dot{M}_{\odot} = 1 M_{\odot}\)/yr, and \(\dot{E} = 10^{43}\)erg/s (aka CC85 parameters), I was able to generate an outflow, though the simulation crashed after 327 Myr. When I used \(R_{*} = 300\)pc, \(\dot{M}_{\odot} = 2 M_{\odot}\)/yr, and \(\dot{E} = 10^{42}\)erg/s (aka SR17 parameters), no outflow was generated, just a bubble of warm gas near the center.&lt;/p&gt;
 
 </description>
         
-        <pubDate>Wed, 08 Mar 2017 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2017/Hydrostatic-Blues/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/Hydrostatic-Blues/</guid>
+        <pubDate>Thu, 15 Jun 2017 00:00:00 -0400</pubDate>
+        <link>http://evaneschneider.github.io/site//2017/More-Outflow-Models/</link>
+        <guid isPermaLink="true">http://evaneschneider.github.io/site//2017/More-Outflow-Models/</guid>
       </item>
     
       <item>
-        <title>Milky Way 3D</title>
+        <title>CC85 outflow</title>
         
         
-          <description>&lt;p&gt;Once we add a third dimension, the initial conditions for an isothermal disk get a bit more complex.
-In addition to balancing the radial components of the gravitational potential with circular velocity, 
-I now need to balance the vertical acceleration via a pressure gradient, i.e. I need to make sure the 
-disk is in hydrostatic balance. Given that the pressure and density can be related for an isothermal 
-gas via the expression &lt;script type=&quot;math/tex&quot;&gt;P = \rho c_{s}^{2}&lt;/script&gt;, this translates to calculating the vertical density profile 
-at each radial location in the disk.&lt;/p&gt;
+          <description>&lt;p&gt;At the end of the last post, I showed an M82 simulation with mass and energy input that failed to drive an outflow. The model parameters were set to match the CC85 model we used in our 2017 paper: \(R_{*} = 300\)pc, \(\dot{M}_{\odot} = 2 M_{\odot}\)/yr, and \(\dot{E} = 10^{42}\)erg/s. At all times during the simulation, a small bubble of heated disk gas can be seen near the starburst region, but the bubble never propagates into the halo.&lt;/p&gt;
 
 </description>
         
-        <pubDate>Wed, 22 Feb 2017 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2017/Milky-Way-3D/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/Milky-Way-3D/</guid>
-      </item>
-    
-      <item>
-        <title>Milky Way 2D</title>
-        
-        
-          <description>&lt;p&gt;In order to simulate galaxy outflows, we need to start with reasonable approximation of a
-gas disk that is stable over many rotation periods. This post begins what will be a series of 
-tests describing the setup of such a disk. For simplicity, I’ll start with a two-dimensional simulation.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Wed, 15 Feb 2017 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2017/Milky-Way-2D/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/Milky-Way-2D/</guid>
-      </item>
-    
-      <item>
-        <title>Keplerian Disk</title>
-        
-        
-          <description>&lt;p&gt;So we’ve seen how Cholla does with rotating flows in general, but how about the classic problem
-of a disk in Keplerian rotation? Generally, there are two challenges in simulating such disks 
-with a static grid code: first, the orbital speeds near the center of the disk can get extremely large
-as the resolution of the simulation is increased, and second, advection errors (like those seen in the 
-Gresho test) lead to artificial accretion through the disk.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Mon, 06 Feb 2017 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2017/Keplerian-Disk/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/Keplerian-Disk/</guid>
-      </item>
-    
-      <item>
-        <title>Modified Gresho Test</title>
-        
-        
-          <description>&lt;p&gt;To test the 2D static potential in Cholla, I’ve created a modified version of the
-Gresho vortex test that balances the centrifugal force created by the angular velocity
-profile with an artificially added centripetal acceleration. The centripetal acceleration
-is added in the same operator-split manner as the gravitational acceleration would be, 
-so it is effectively a test of the 2D static potential in Cholla. This acceleration takes the 
-form&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Mon, 30 Jan 2017 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2017/Modified-Gresho-Test/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/Modified-Gresho-Test/</guid>
-      </item>
-    
-      <item>
-        <title>Moving Gresho Test</title>
-        
-        
-          <description>&lt;p&gt;The moving Gresho vortex test is identical to the Gresho test describd in the 
-previous post, except that the fluid is given a constant velocity boost
-in the x-direction. Here, I apply a velocity boost of &lt;script type=&quot;math/tex&quot;&gt;v_x = 1.0&lt;/script&gt; and show
-the results at &lt;script type=&quot;math/tex&quot;&gt;t = 3.0&lt;/script&gt;, after the vortex has moved across the domain three
-times. I’m using periodic boundaries and a &lt;script type=&quot;math/tex&quot;&gt;40\times40&lt;/script&gt; cell grid.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Thu, 29 Dec 2016 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2016/Moving-Gresho-Test/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/Moving-Gresho-Test/</guid>
-      </item>
-    
-      <item>
-        <title>Gresho Test</title>
-        
-        
-          <description>&lt;p&gt;The Gresho vortex test is a notoriously difficult problem for grid-based (and SPH) 
-codes. A rotating vortex is initialized such that the centrifugal force is balanced 
-by the pressure gradient. The solution is time-independent. For these tests, I used
-the initial conditions described in Liska &amp;amp; Wendroff (2003).&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Mon, 19 Dec 2016 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2016/Gresho-Test/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/Gresho-Test/</guid>
-      </item>
-    
-      <item>
-        <title>Gravity (Part 2)</title>
-        
-        
-          <description>&lt;p&gt;In addition to the operator-split source term update I added last week,&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Wed, 14 Dec 2016 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2016/Gravity-Part-2/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/Gravity-Part-2/</guid>
-      </item>
-    
-      <item>
-        <title>Gravity (Part 1)</title>
-        
-        
-          <description>&lt;p&gt;The time has come to implement a gravitational potential in &lt;em&gt;Cholla&lt;/em&gt;.
-To do this, I’ll need to couple the gravitational source terms to the
-momentum and energy equations:&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Mon, 05 Dec 2016 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2016/Gravity-Part-1/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/Gravity-Part-1/</guid>
+        <pubDate>Mon, 12 Jun 2017 00:00:00 -0400</pubDate>
+        <link>http://evaneschneider.github.io/site//2017/CC85-outflow/</link>
+        <guid isPermaLink="true">http://evaneschneider.github.io/site//2017/CC85-outflow/</guid>
       </item>
     
   </channel>

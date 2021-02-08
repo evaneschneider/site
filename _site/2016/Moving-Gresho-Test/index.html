@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Evan's research blog - Moving Gresho Test</title>
+  <title> - Moving Gresho Test</title>
   <link rel="shortcut icon" href="http://evaneschneider.github.io/site/assets/images/favicon.ico">
   <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/style.css">
   <link rel="alternate" type="application/rss+xml" title="My Blog" href="http://evaneschneider.github.io/site/rss.xml">
@@ -37,21 +37,21 @@
     <section id="post-body">
         <p>The moving Gresho vortex test is identical to the Gresho test describd in the 
 previous post, except that the fluid is given a constant velocity boost
-in the x-direction. Here, I apply a velocity boost of <script type="math/tex">v_x = 1.0</script> and show
-the results at <script type="math/tex">t = 3.0</script>, after the vortex has moved across the domain three
-times. I’m using periodic boundaries and a <script type="math/tex">40\times40</script> cell grid.</p>
+in the x-direction. Here, I apply a velocity boost of \(v_x = 1.0\) and show
+the results at \(t = 3.0\), after the vortex has moved across the domain three
+times. I’m using periodic boundaries and a \(40\times40\) cell grid.</p>
 
 <div style="text-align: center">
-<img src="http://localhost:4000assets/images/moving_gresho_final.png" />
+<img src="http://evaneschneider.github.io/site/assets/images/moving_gresho_final.png" />
 
-<video src="http://localhost:4000assets/movies/moving_gresho.mov" width="500" height="250" controls="" preload=""></video>
+<video src="http://evaneschneider.github.io/site/assets/movies/moving_gresho.mov" width="500" height="250" controls="" preload=""></video>
 </div>
 
 <p><br /></p>
 
 <p><strong>L1 error</strong></p>
 
-<p>The L1 errors at <script type="math/tex">t = 3.0</script> are 0.9% for density and 167% for vorticity. I’m not sure why
+<p>The L1 errors at \(t = 3.0\) are 0.9% for density and 167% for vorticity. I’m not sure why
 the vorticity errors are so high in comparison to the ppm results in Liska &amp; Wendroff,
 but I think it may have to do with the accuracy of my vorticity calculation. Looking at the
 initial conditions (shown in the previous post), the vorticity is already off from the exact solution by a lot. 

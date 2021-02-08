@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> - CC85 outflow (for real)</title>
+  <link rel="shortcut icon" href="http://evaneschneider.github.io/site/assets/images/favicon.ico">
+  <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/style.css">
+  <link rel="alternate" type="application/rss+xml" title="My Blog" href="http://evaneschneider.github.io/site/rss.xml">
+  <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/highlight.css">
+</head>
+<body>
+
+  <nav class="main-nav">
+    
+        <a href="http://evaneschneider.github.io/site/"> <span class="arrow">←</span> Home </a>
+    
+
+    
+        
+            <a href="http://evaneschneider.github.io/site/about">About </a>
+        
+    
+    <a class="cta" href="http://evaneschneider.github.io/site/feed.xml">Subscribe</a>
+</nav>
+
+  
+
+  <section id="wrapper" class="">
+    <article class="post">
+    <header>
+        <h1>CC85 outflow (for real)</h1>
+        <h2 class="headline">June 19, 2017</h2>
+    </header>
+    <section id="post-body">
+        <p>A lot has happened in the last 4 days. To quickly summarize:</p>
+<ul>
+  <li>Once I started injecting the correct amount of mass and energy, the code started breaking.</li>
+  <li>I implemented a first-order flux correction to deal with the negative pressures.</li>
+  <li>Combined with the dual-energy scheme, the first order flux correction works!</li>
+  <li>I’ve successfully run several models of M82 with a Chevalier &amp; Clegg style outflow.</li>
+  <li>The simulations are awesome.<br />
+<br />
+I’m dedicating a quick separate post to the first-order flux correction, so I’ll skip those bullet points for now. The important part is that the fix seems pretty robust, and so far, has been able to completely eliminate negative temperatures and densities in the simulation. I haven’t yet tested it with cooling…
+<br />
+<br />
+<strong>The Simulation</strong></li>
+</ul>
+
+<p>Using the same M82 setup that I’ve described previously, I’ve now successfully run three outflow simulations, with the resolution going from \(128^3\) (78 pc) to \(512^3\) (19.5 pc). I’m currently running a \(1024^3\) simulation, but having weird I/O issues on Titan that are holding things up. Movies showing the projected density, projected temperature, and temperature slices of the \(512^3\) run are below. For the feedback, I used parameters near the middle of the range of acceptable fits in Strickland &amp; Heckman 2009. They are \(R_{*} = 300\)pc, \(\dot{M}_{\odot} = 2 M_{\odot}\)/yr, and \(\dot{E} = 2.6\times10^{42}\)erg/s. This corresponds to \(\beta = 1.4\), \(\alpha = 0.9\), and uses their assumed star formation rate of 4.7 \(M_\odot\)/yr.</p>
+
+<p>\(512^3\) density projection:</p>
+<div style="text-align: center">
+<video src="http://evaneschneider.github.io/site/assets/movies/m82_out_d_512.mov" width="450" height="900" controls="" preload=""></video>
+<br />
+$$512^3$$ temperature projection:  
+<video src="http://evaneschneider.github.io/site/assets/movies/m82_out_T_512.mov" width="450" height="900" controls="" preload=""></video>
+<br />
+$$512^3$$ temperature slices:  
+<video src="http://evaneschneider.github.io/site/assets/movies/m82_out_Tslice_512.mov" width="450" height="900" controls="" preload=""></video>
+</div>
+<p><br />
+I haven’t had time to do a whole lot of analysis, but I did check how well the outflow matches the analytic model along the z-axis, where it looks relatively unperturbed. The result is: strikingly well. Here’s a plot showing various physical parameters with both the simulation data and the analytic solution:</p>
+
+<p><img src="http://evaneschneider.github.io/site/assets/images/m82_zprofiles_512.png" /></p>
+
+<p>Once the outflow is established, the simulation data is very stable along the z-axis (which is why you can’t even see the 50 Myr line), and the match with the CC85 analytic solution is spot on.</p>
+
+    </section>
+</article>
+<footer id="post-meta" class="clearfix">
+    <a href="http://twitter.com/navelation">
+        <img class="avatar" src="http://evaneschneider.github.io/site/assets/images/avatar.png">
+        <div>
+            <span class="dark">Evan Schneider</span>
+            <span>Blogging about stuff</span>
+        </div>
+    </a>
+
+    <section id="sharing">
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=/2017/CC85-outflow-2/ - CC85 outflow (for real) by @navelation"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+    </section>
+</footer>
+
+<!-- Disqus comments -->
+
+
+<!-- Archive post list -->
+
+
+
+
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://evaneschneider.github.io/site/assets/js/main.js"></script>
+  <script src="http://evaneschneider.github.io/site/assets/js/highlight.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXXX-X', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- Include mathjax support -->
+  <script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+</body>
+</html>
+
+
+

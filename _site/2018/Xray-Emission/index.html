@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> - X-ray Emission</title>
+  <link rel="shortcut icon" href="http://evaneschneider.github.io/site/assets/images/favicon.ico">
+  <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/style.css">
+  <link rel="alternate" type="application/rss+xml" title="My Blog" href="http://evaneschneider.github.io/site/rss.xml">
+  <link rel="stylesheet" href="http://evaneschneider.github.io/site/assets/css/highlight.css">
+</head>
+<body>
+
+  <nav class="main-nav">
+    
+        <a href="http://evaneschneider.github.io/site/"> <span class="arrow">←</span> Home </a>
+    
+
+    
+        
+            <a href="http://evaneschneider.github.io/site/about">About </a>
+        
+    
+    <a class="cta" href="http://evaneschneider.github.io/site/feed.xml">Subscribe</a>
+</nav>
+
+  
+
+  <section id="wrapper" class="">
+    <article class="post">
+    <header>
+        <h1>X-ray Emission</h1>
+        <h2 class="headline">January 29, 2018</h2>
+    </header>
+    <section id="post-body">
+        <p>In an attempt to connect the outflow simulations I’ve been doing to observations, I’ve decided to try to model the x-ray emission from the hot plasma and compare it to what’s seen in M82. I’ll start with a simple model for the diffuse soft x-ray emission. Briefly, for a given cell in the simulation, I’ve got a density \(\rho\), that I can convert to a number density, \(n\), by assuming that the gas is ionized, so \(n = \rho / \mu m_p\), where \(\mu = 0.6\) and \(m_p\) is the mass of a proton. Given this number density, I can also calculate a volume-averaged temperature for the gas in the cell, \(T = e (\gamma - 1.0) / n k_B\), where \(e\) is the internal energy density (tracked in the dual-energy version of Cholla), \(\gamma\) is the adiabatic index (assumed to be 5/3), and \(k_B\) is the Boltzmann constant. I can then calculate the total radiative luminosity from the cell via a cooling function \(\Lambda\).</p>
+
+<p>I’ll start with the analytic cooling function that was used for these simulations, which is a fit to a CIE curve made with Cloudy assuming solar abundances. I can then create a surface brightness map for the soft X-rays by integrating \(n^2 \Lambda\) along the line of sight for a given projection in my simulation. Only cells with temperatures in the soft X-ray band are included in the integration. I convert from temperature to energy by assuming \(E = \frac{3}{2} k_B T\), as appropriate for a monatomic gas. This results in a brightness in \(\mathrm{erg}\,\mathrm{s}^{-1}\,\mathrm{cm}^{-2}\). Dividing by \(4\pi\) steradian gives a surface brightness. The resulting surfaxe brightness map for the \(512\times 512 \times 1024\) adiabatic simulation at 60 Myr with central injection feedback looks like this:</p>
+
+<p><img src="http://evaneschneider.github.io/site/assets/images/512_Xrays_60.png" /></p>
+
+<p>Clearly, the soft x-rays are highly collimated in this simulation. The additional features that show up in the x-ray map are from interacting shocks within the simulation volume. At this resolution, the large-scale evolution of the simulation is not yet converged. At higher resolutions, the disk-outflow interface region becomes highly turbulent, leading to more filamentary structures (figure coming soon). Interestingly, the soft X-ray luminosity integrated over the entire simulation volume is \(L_x = 2.9\times10^{40}\), which is suprisingly close to the total oberserved luminosity. For example, Strickland et al. (2004) calculate an observed diffuse soft X-ray luminosity for M82 of \(L_x = 4.3\times10^{40}\) (see their Table 9).</p>
+
+<p>Here’s the surface brightness map for the 512-resolution clustered feedback simulation (which includes cooling), so is actually self-consistent:</p>
+
+<p><img src="http://evaneschneider.github.io/site/assets/images/512_cluster_Xrays_60.png" /></p>
+
+<p>Here we see less collimation. There is also significant assymetry, with the soft X-rays extending farther in radius in the lower half of the simulation volume. The total X-ray luminosity for this simulation is lower, \(L_x = 4.5\times10^{39}\), though this is still within an order of magnitude of the observations. (Also, as noted above, these values are not converged - see the next post for results of the higher resolution simulations.) The overall morphology of the X-ray emission compares favorably to the emission seen in M82. For example, here is an image of M82 in soft X-rays made with Chandra:</p>
+
+<p><img src="http://evaneschneider.github.io/site/assets/images/m82_xray.jpg" /></p>
+
+<p>In the next post I’ll explore the radial profiles of the surface brightness for the two models.</p>
+
+
+    </section>
+</article>
+<footer id="post-meta" class="clearfix">
+    <a href="http://twitter.com/navelation">
+        <img class="avatar" src="http://evaneschneider.github.io/site/assets/images/avatar.png">
+        <div>
+            <span class="dark">Evan Schneider</span>
+            <span>Blogging about stuff</span>
+        </div>
+    </a>
+
+    <section id="sharing">
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=/2018/Xray-Emission/ - X-ray Emission by @navelation"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+    </section>
+</footer>
+
+<!-- Disqus comments -->
+
+
+<!-- Archive post list -->
+
+
+
+
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://evaneschneider.github.io/site/assets/js/main.js"></script>
+  <script src="http://evaneschneider.github.io/site/assets/js/highlight.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXXX-X', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- Include mathjax support -->
+  <script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+</body>
+</html>
+
+
+
