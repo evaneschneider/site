@@ -47,49 +47,49 @@ highly robust and produces results that are competitive with an exact solver.</p
 <p>So, let’s look at some tests. First the standard Sod shock tube, using PPMC.</p>
 
 <p>Exact:
-<img src="http://evaneschneider.github.io/site/assets/images/sod_exact.png" />
+<img src="http://localhost:4000assets/images/sod_exact.png" />
 HLLC:
-<img src="http://evaneschneider.github.io/site/assets/images/sod_hllc.png" />
+<img src="http://localhost:4000assets/images/sod_hllc.png" />
 Roe:
-<img src="http://evaneschneider.github.io/site/assets/images/sod_roe.png" /></p>
+<img src="http://localhost:4000assets/images/sod_roe.png" /></p>
 
 <p>How about a strong shock?
 Exact:
-<img src="http://evaneschneider.github.io/site/assets/images/strong_shock_exact.png" />
+<img src="http://localhost:4000assets/images/strong_shock_exact.png" />
 HLLC:
-<img src="http://evaneschneider.github.io/site/assets/images/strong_shock_hllc.png" />
+<img src="http://localhost:4000assets/images/strong_shock_hllc.png" />
 Roe:
-<img src="http://evaneschneider.github.io/site/assets/images/strong_shock_roe.png" /></p>
+<img src="http://localhost:4000assets/images/strong_shock_roe.png" /></p>
 
 <p>Maybe a little worse on the internal energy, but I’d say they all handle that one okay, as well.
 Now let’s try a \(400\times400\) implosion test. Again using PPMC, also with
 and without CTU.</p>
 
 <p>Exact, \(t = 0.045\), without CTU (but with a CFL number = 0.1):
-<img src="http://evaneschneider.github.io/site/assets/images/implosion_early_exact.png" /></p>
+<img src="http://localhost:4000assets/images/implosion_early_exact.png" /></p>
 
 <p>HLLC, \(t = 0.045\), without CTU (but with a CFL number = 0.1):
-<img src="http://evaneschneider.github.io/site/assets/images/implosion_early_hllc.png" /></p>
+<img src="http://localhost:4000assets/images/implosion_early_hllc.png" /></p>
 
 <p>Roe, \(t = 0.045\), without CTU (but with a CFL number = 0.1):
-<img src="http://evaneschneider.github.io/site/assets/images/implosion_early_roe.png" /></p>
+<img src="http://localhost:4000assets/images/implosion_early_roe.png" /></p>
 
 <p>Exact, \(t = 2.5\), without CTU (but with a CFL number = 0.1):
-<img src="http://evaneschneider.github.io/site/assets/images/implosion_late_exact.png" /></p>
+<img src="http://localhost:4000assets/images/implosion_late_exact.png" /></p>
 
 <p>HLLC, \(t = 2.5\), without CTU (but with a CFL number = 0.1):
-<img src="http://evaneschneider.github.io/site/assets/images/implosion_late_hllc.png" /></p>
+<img src="http://localhost:4000assets/images/implosion_late_hllc.png" /></p>
 
 <p>Roe, \(t = 2.5\), without CTU (but with a CFL number = 0.1):
-<img src="http://evaneschneider.github.io/site/assets/images/implosion_late_hllc.png" /></p>
+<img src="http://localhost:4000assets/images/implosion_late_hllc.png" /></p>
 
 <p>The results look <em>strikingly</em> similar.</p>
 
 <p>Here’s the same implosion test at \(t = 2.5\) with HLLC, CTU, and a CFL number = 0.4:
-<img src="http://evaneschneider.github.io/site/assets/images/implosion_late_hllc_CTU.png" /></p>
+<img src="http://localhost:4000assets/images/implosion_late_hllc_CTU.png" /></p>
 
 <p>And at \(t = 2.5\) with HLLC, VL, and a CFL number = 0.4: 
-<img src="http://evaneschneider.github.io/site/assets/images/implosion_late_hllc_VL.png" /></p>
+<img src="http://localhost:4000assets/images/implosion_late_hllc_VL.png" /></p>
 
 <p>Interestingly, all these tests look better at late times than the PPMP test from the last post, 
 even without CTU. Additionaly, the VL test looks more symmetric, although it is still not <em>exactly</em>
@@ -99,7 +99,7 @@ It doesn’t seem to be related to the Riemann solver.</p>
 <p>UPDATE: It looks like the problem was the CFL number.</p>
 
 <p>At \(t = 2.5\) with PPMP, HLLC, and no CTU (but with a CFL number 0.1):
-<img src="http://evaneschneider.github.io/site/assets/images/implosion_late_PPMP_hllc.png" /></p>
+<img src="http://localhost:4000assets/images/implosion_late_PPMP_hllc.png" /></p>
 
 
     </section>

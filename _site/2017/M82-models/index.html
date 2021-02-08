@@ -54,7 +54,7 @@ here’s where things stand currently:</p>
 
 <p>The above parameters lead to a central surface density of \(\sim 100 \mathrm{M}_{\odot} / \mathrm{pc}^2\), which is consistent with M82’s observed central surface density. M82 also contains a central stellar bar, which considerably affects the shape of the stellar rotation curve in the inner kpc. Below is my stellar rotation curve (not a fit) plotted atop the data of Greco (2012), using only the disk and halo components given above:</p>
 
-<p><img src="http://evaneschneider.github.io/site/assets/images/m82_rotation_curve.png" /></p>
+<p><img src="http://localhost:4000assets/images/m82_rotation_curve.png" /></p>
 
 <p>Green is the halo component, orange is the disk, and blue is the sum. The x-axis is in kpc, and the y-axis is in km/s.</p>
 
@@ -63,8 +63,8 @@ here’s where things stand currently:</p>
 <p>Using Titan, I have evolved the M82 model for 400 Myr (approximately 10 rotation periods). Below  are movies showing density and density-weighted temperature projections for a \(256^3\) simulation. Note that I have tapered the disk surface density to 0 between 4 and 5 kpc to alleviate an initial boundary transient. The simulation uses PPMC, the exact Riemann solver, the Van Leer integrator, and no-inflow boundary conditions.</p>
 
 <div style="text-align: center">
-<video src="http://evaneschneider.github.io/site/assets/movies/m82_eq_256.mov" width="400" height="800" controls="" preload=""></video>
-<video src="http://evaneschneider.github.io/site/assets/movies/m82_eq_T_256.mov" width="400" height="800" controls="" preload=""></video>
+<video src="http://localhost:4000assets/movies/m82_eq_256.mov" width="400" height="800" controls="" preload=""></video>
+<video src="http://localhost:4000assets/movies/m82_eq_T_256.mov" width="400" height="800" controls="" preload=""></video>
 </div>
 
 <p>These simulations use an adiabtic index of 5/3. In order to prevent temperatures in the disk from going below \(10^{3}\) K in the outer regions, I had to set the characteristic EOS temperature for the disk gas to \(2 \times 10^{5}\) K, which is pretty high and leads to a rather puffy disk. The characteristic temperature of the halo gas at the cooling radius is \(10^{6}\) K (I haven’t changed that from our MW model, maybe I should…).</p>
@@ -75,22 +75,22 @@ here’s where things stand currently:</p>
 
 <p>Density and temperature projections for the \(128^3\) simulation:</p>
 <div style="text-align: center">
-<video src="http://evaneschneider.github.io/site/assets/movies/m82_out_128.mov" width="400" height="800" controls="" preload=""></video>
-<video src="http://evaneschneider.github.io/site/assets/movies/m82_out_T_128.mov" width="400" height="800" controls="" preload=""></video>
+<video src="http://localhost:4000assets/movies/m82_out_128.mov" width="400" height="800" controls="" preload=""></video>
+<video src="http://localhost:4000assets/movies/m82_out_T_128.mov" width="400" height="800" controls="" preload=""></video>
 </div>
 
 <p>Density and temperature projections for the \(256^3\) simulation:</p>
 <div style="text-align: center">
-<video src="http://evaneschneider.github.io/site/assets/movies/m82_out_256.mov" width="400" height="800" controls="" preload=""></video>
-<video src="http://evaneschneider.github.io/site/assets/movies/m82_out_T_256.mov" width="400" height="800" controls="" preload=""></video>
+<video src="http://localhost:4000assets/movies/m82_out_256.mov" width="400" height="800" controls="" preload=""></video>
+<video src="http://localhost:4000assets/movies/m82_out_T_256.mov" width="400" height="800" controls="" preload=""></video>
 </div>
 
 <p>Only the lower resolution simulation successfully drives an outflow. This is also clearly visible in temperature slices through the central y and z planes of each simulation.</p>
 
 <p>\(128^3\):
-<img src="http://evaneschneider.github.io/site/assets/images/m82_out_Tslice_300_128.png" />
+<img src="http://localhost:4000assets/images/m82_out_Tslice_300_128.png" />
 \(256^3\):
-<img src="http://evaneschneider.github.io/site/assets/images/m82_out_Tslice_300_256.png" /></p>
+<img src="http://localhost:4000assets/images/m82_out_Tslice_300_256.png" /></p>
 
 <p>Neither simulation results in the creation of very hot gas in the central starburst reason, which is presumably why driving an outflow is difficult. Perhaps I should have expected this, given that there is a large and important difference between these simulations and the Chevalier &amp; Clegg model. CC85 assumes that the mass and thermal energy in the starburst region is set by the added mass and energy from the supernovae, while my simulation contains a large amount of gas in this region to which I’m adding the mass and energy. As a result, the gas density is much higher, and the gas would require a lot more energy to reach the temperatures predicted by the CC85 model.</p>
 

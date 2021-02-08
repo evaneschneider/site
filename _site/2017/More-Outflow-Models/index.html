@@ -52,13 +52,13 @@
 
 <p>Model 5, temperature projection:</p>
 <div style="text-align: center">
-<video src="http://evaneschneider.github.io/site/assets/movies/m82_out_T_SH09_256.mov" width="400" height="800" controls="" preload=""></video>  
+<video src="http://localhost:4000assets/movies/m82_out_T_SH09_256.mov" width="400" height="800" controls="" preload=""></video>  
 
 Model 6, temperature projection:  
-<video src="http://evaneschneider.github.io/site/assets/movies/m82_out_T_ramp2_256.mov" width="400" height="800" controls="" preload=""></video>  
+<video src="http://localhost:4000assets/movies/m82_out_T_ramp2_256.mov" width="400" height="800" controls="" preload=""></video>  
 
 Model 7, temperature projection:  
-<video src="http://evaneschneider.github.io/site/assets/movies/m82_out_T_ramp2_512.mov" width="400" height="800" controls="" preload=""></video>  
+<video src="http://localhost:4000assets/movies/m82_out_T_ramp2_512.mov" width="400" height="800" controls="" preload=""></video>  
 </div>
 
 <p>At this point, two things are becoming obvious. First, models that succeed in driving outflows also tend to crash. The crashes always happen in the halo, generally where outflowing gas is mixing with halo gas. This isn’t that surprising, since we’re dealing with large density / temperature gradients and high velocities and mach numbers. All of these simulations are producing negative temperatures at times. I’m currently running a dual-energy version of Model 3 to see if that fixes the problem.</p>
@@ -66,9 +66,9 @@ Model 7, temperature projection:
 <p>The second issue is that as the resolution is increased, creating an outflow is getting more difficult. This one I need to unpack a little. Looking at the temperature slices, the reason I’m not getting outflows is fairly obvious - at higher resolution, I don’t generate high temperature gas. For example, compare these two temperature slices from Model 6 and Model 7.</p>
 
 <p>Resolution \(256^3\):
-<img src="http://evaneschneider.github.io/site/assets/images/m82_ramp2_Tslice_256.png" />
+<img src="http://localhost:4000assets/images/m82_ramp2_Tslice_256.png" />
 Resolution \(512^3\):
-<img src="http://evaneschneider.github.io/site/assets/images/m82_ramp2_Tslice_512.png" /></p>
+<img src="http://localhost:4000assets/images/m82_ramp2_Tslice_512.png" /></p>
 
 <p>The central temperatures are obviously different, despite the fact that I’m dumping the same amount of mass and energy into an equal volume in each. (It’s also worth noting that for both of them, the central temperatures are well below what is predicted by the CC85 analytic solution, so it’s not surprising that I’m not getting outflowing gas). I admit I’m puzzled by this behavior, but I’m trying to understand it as follows. Let’s say we have a volume of a certain size, V. Then let’s say we have two simulations of that volume, one with a single cell, and one with 8 cells (double the resolution). Now, we’ve specified that each volume has to contain the same amount of mass, so the average density must be the same. Now let’s consider what happens when we want to add a specific amount of energy to the volume. The total energy per unit time is constant, \(\dot{E}\). For the single cell simulation, I divide \(\dot{E}\) by the total volume, V, and multiply by the timestep, dt, and now I have the energy density I need to add to the total energy in the cell. For the 8 cell volume, I first divide \(\dot{E}\) by the number of cells over which I’m distributing the energy, then divide by the total volume, V, to convert to energy density. Given that the average density of the cells in the 8 cell volume is the same as the single cell, and temperature just goes as E/n, this will obviously result in a temperature that is lower by a factor of 8 in the multi-cell volume.</p>
 

@@ -45,10 +45,10 @@ which isn’t a scenario we expect dual energy to improve. However, we certainly
 want to employ a dual energy method that makes the solution worse:</p>
 
 <p>Figure 1: PLMC, exact solver, no dual energy, \(v \approx 800 c_s\)
-<img src="http://evaneschneider.github.io/site/assets/images/PLMC_exact_M800_node.png" /></p>
+<img src="http://localhost:4000assets/images/PLMC_exact_M800_node.png" /></p>
 
 <p>Figure 2: Same as Figure 1 but with dual energy
-<img src="http://evaneschneider.github.io/site/assets/images/PLMC_exact_M800_de.png" /></p>
+<img src="http://localhost:4000assets/images/PLMC_exact_M800_de.png" /></p>
 
 <p>Note: Previous versions of Figure 2 looked worse - I found a bug in the
 internal energy PLMC reconstruction that was allowing non-monotonic 
@@ -59,7 +59,7 @@ reconstructions.</p>
 <p>First, what happens if we get rid of the total energy synchronization?</p>
 
 <p>Figure 3: Same as Figure 2 but without the total energy sync
-<img src="http://evaneschneider.github.io/site/assets/images/PLMC_de_nosync.png" /></p>
+<img src="http://localhost:4000assets/images/PLMC_de_nosync.png" /></p>
 
 <p>Now the internal energy update has no effect on the hydrodynamics, so the 
 perturbations in the velocity disappear. Similalry, the perturbations in the 

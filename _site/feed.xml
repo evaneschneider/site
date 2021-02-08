@@ -3,8 +3,8 @@
   <channel>
     <title></title>
     <description>Blogging about stuff</description>
-    <link>http://evaneschneider.github.io/site/</link>
-    <atom:link href="http://evaneschneider.github.io/site//feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:4000</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>Magellanic Stream Tests</title>
@@ -15,8 +15,8 @@
 </description>
         
         <pubDate>Mon, 08 Feb 2021 00:00:00 -0500</pubDate>
-        <link>http://evaneschneider.github.io/site//2021/MS-Tests-2/</link>
-        <guid isPermaLink="true">http://evaneschneider.github.io/site//2021/MS-Tests-2/</guid>
+        <link>http://localhost:4000/2021/MS-Tests-2/</link>
+        <guid isPermaLink="true">http://localhost:4000/2021/MS-Tests-2/</guid>
       </item>
     
       <item>
@@ -28,8 +28,8 @@
 </description>
         
         <pubDate>Mon, 02 Mar 2020 00:00:00 -0500</pubDate>
-        <link>http://evaneschneider.github.io/site//2020/MS-Tests/</link>
-        <guid isPermaLink="true">http://evaneschneider.github.io/site//2020/MS-Tests/</guid>
+        <link>http://localhost:4000/2020/MS-Tests/</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/MS-Tests/</guid>
       </item>
     
       <item>
@@ -41,8 +41,8 @@
 </description>
         
         <pubDate>Fri, 09 Feb 2018 00:00:00 -0500</pubDate>
-        <link>http://evaneschneider.github.io/site//2018/Thermal-Instability/</link>
-        <guid isPermaLink="true">http://evaneschneider.github.io/site//2018/Thermal-Instability/</guid>
+        <link>http://localhost:4000/2018/Thermal-Instability/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/Thermal-Instability/</guid>
       </item>
     
       <item>
@@ -54,8 +54,8 @@
 </description>
         
         <pubDate>Wed, 31 Jan 2018 00:00:00 -0500</pubDate>
-        <link>http://evaneschneider.github.io/site//2018/Xray-Profiles/</link>
-        <guid isPermaLink="true">http://evaneschneider.github.io/site//2018/Xray-Profiles/</guid>
+        <link>http://localhost:4000/2018/Xray-Profiles/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/Xray-Profiles/</guid>
       </item>
     
       <item>
@@ -67,8 +67,8 @@
 </description>
         
         <pubDate>Mon, 29 Jan 2018 00:00:00 -0500</pubDate>
-        <link>http://evaneschneider.github.io/site//2018/Xray-Emission/</link>
-        <guid isPermaLink="true">http://evaneschneider.github.io/site//2018/Xray-Emission/</guid>
+        <link>http://localhost:4000/2018/Xray-Emission/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/Xray-Emission/</guid>
       </item>
     
       <item>
@@ -80,21 +80,21 @@
 </description>
         
         <pubDate>Thu, 22 Jun 2017 00:00:00 -0400</pubDate>
-        <link>http://evaneschneider.github.io/site//2017/Outflow-Parameters/</link>
-        <guid isPermaLink="true">http://evaneschneider.github.io/site//2017/Outflow-Parameters/</guid>
+        <link>http://localhost:4000/2017/Outflow-Parameters/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/Outflow-Parameters/</guid>
       </item>
     
       <item>
         <title>Flux Correction</title>
         
         
-          <description>&lt;p&gt;This post is dedicated to describing the simple but effective first-order flux correction I mentioned in my last post. When using one of Chollaâ€™s unsplit integrators (CTU or Van Leer), simulations that involve extreme temperature/density contrasts and/or high mach numbers have a tendency to cause the code to crash. Typically, these sorts of crashes start when the high-order flux update of the conserved variables yields a negative pressure. These pressure errors then propagate, eventully leading to negative densities or total energies (or NANs) that cause the code to crash. In a previous effort to solve this problem, I introduced a dual-energy update in Cholla, described in a series of posts starting &lt;a href=&quot;http://evaneschneider.github.io/site/2015/dual-energy-1/&quot;&gt;here&lt;/a&gt;, that allows the code to separately track and update the internal energy of the cells, and uses this non-conservative energy estimate if the total energy yields a negative pressure. While the dual-energy update did help, it was not able to completely solve the problem.&lt;/p&gt;
+          <description>&lt;p&gt;This post is dedicated to describing the simple but effective first-order flux correction I mentioned in my last post. When using one of Chollaâ€™s unsplit integrators (CTU or Van Leer), simulations that involve extreme temperature/density contrasts and/or high mach numbers have a tendency to cause the code to crash. Typically, these sorts of crashes start when the high-order flux update of the conserved variables yields a negative pressure. These pressure errors then propagate, eventully leading to negative densities or total energies (or NANs) that cause the code to crash. In a previous effort to solve this problem, I introduced a dual-energy update in Cholla, described in a series of posts starting &lt;a href=&quot;http://localhost:40002015/dual-energy-1/&quot;&gt;here&lt;/a&gt;, that allows the code to separately track and update the internal energy of the cells, and uses this non-conservative energy estimate if the total energy yields a negative pressure. While the dual-energy update did help, it was not able to completely solve the problem.&lt;/p&gt;
 
 </description>
         
         <pubDate>Tue, 20 Jun 2017 00:00:00 -0400</pubDate>
-        <link>http://evaneschneider.github.io/site//2017/Flux-Correction/</link>
-        <guid isPermaLink="true">http://evaneschneider.github.io/site//2017/Flux-Correction/</guid>
+        <link>http://localhost:4000/2017/Flux-Correction/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/Flux-Correction/</guid>
       </item>
     
       <item>
@@ -118,8 +118,8 @@ Iâ€™m dedicating a quick separate post to the first-order flux correction, so Iâ
 </description>
         
         <pubDate>Mon, 19 Jun 2017 00:00:00 -0400</pubDate>
-        <link>http://evaneschneider.github.io/site//2017/CC85-outflow-2/</link>
-        <guid isPermaLink="true">http://evaneschneider.github.io/site//2017/CC85-outflow-2/</guid>
+        <link>http://localhost:4000/2017/CC85-outflow-2/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/CC85-outflow-2/</guid>
       </item>
     
       <item>
@@ -131,8 +131,8 @@ Iâ€™m dedicating a quick separate post to the first-order flux correction, so Iâ
 </description>
         
         <pubDate>Thu, 15 Jun 2017 00:00:00 -0400</pubDate>
-        <link>http://evaneschneider.github.io/site//2017/More-Outflow-Models/</link>
-        <guid isPermaLink="true">http://evaneschneider.github.io/site//2017/More-Outflow-Models/</guid>
+        <link>http://localhost:4000/2017/More-Outflow-Models/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/More-Outflow-Models/</guid>
       </item>
     
       <item>
@@ -144,8 +144,8 @@ Iâ€™m dedicating a quick separate post to the first-order flux correction, so Iâ
 </description>
         
         <pubDate>Mon, 12 Jun 2017 00:00:00 -0400</pubDate>
-        <link>http://evaneschneider.github.io/site//2017/CC85-outflow/</link>
-        <guid isPermaLink="true">http://evaneschneider.github.io/site//2017/CC85-outflow/</guid>
+        <link>http://localhost:4000/2017/CC85-outflow/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/CC85-outflow/</guid>
       </item>
     
   </channel>

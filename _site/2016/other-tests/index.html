@@ -41,24 +41,24 @@ at the bottom of <a href="http://evaneschneider.github.io/site/2016/KH_test/">th
 post</a>.</p>
 
 <p>With the cfl number set to 0.4:
-<img src="http://evaneschneider.github.io/site/assets/images/circle_wind_cross_pattern.png" /></p>
+<img src="http://localhost:4000assets/images/circle_wind_cross_pattern.png" /></p>
 
 <p>With the cfl number set to 0.25:
-<img src="http://evaneschneider.github.io/site/assets/images/circle_wind_normal.png" /></p>
+<img src="http://localhost:4000assets/images/circle_wind_normal.png" /></p>
 
 <p>However, the implosion test at late times doesn’t look great with this integration
 scheme:
-<img src="http://evaneschneider.github.io/site/assets/images/PPMP_implosion_late.png" /></p>
+<img src="http://localhost:4000assets/images/PPMP_implosion_late.png" /></p>
 
 <p>The unsplit methods do much better with this test, but the predictor-corrector scheme (VL)
 still doesn’t preserve symmetry. (This is an old problem, and as far as I could tell
 was not due to a bug, just something strange happening on the GPU).</p>
 
-<p><img src="http://evaneschneider.github.io/site/assets/images/PPMP_VL_implosion_late.png" /></p>
+<p><img src="http://localhost:4000assets/images/PPMP_VL_implosion_late.png" /></p>
 
 <p>That said, I <em>was</em> able to run a 2D cloud-wind test with the VL integrator (with dual energy
 and the H correction), and the result looks far more symmetric than the PPM-only integration.
-<img src="http://evaneschneider.github.io/site/assets/images/circle_wind_PPMP_VL_hcorrect.png" /></p>
+<img src="http://localhost:4000assets/images/circle_wind_PPMP_VL_hcorrect.png" /></p>
 
 
     </section>

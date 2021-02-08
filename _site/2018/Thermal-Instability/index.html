@@ -51,7 +51,7 @@
 
 <p>(Note that in their paper, the coefficient on the second term is 14, but this seems to be a typo.) At temperatures above \(10^4\) K, I use a piecewise parabolic fit to a CIE cooling function calculated with Cloudy for solar metallicty gas, and neglect heating. That function is defined in the appendix of Schneider &amp; Robertson (2018). The combined cooling functions are plotted below:</p>
 
-<p><img src="http://evaneschneider.github.io/site/assets/images/2018-March/cooling_curve.png" /></p>
+<p><img src="http://localhost:4000assets/images/2018-March/cooling_curve.png" /></p>
 
 <p>Below 10 K, I only include heating (this improves stability of the code while the thermal instability is developing). As in previous simulations, I limit the hydro timestep such that any given cell can lose a maximum of 10% of its thermal energy in a given timestep. I also use subcyling of the cooling timestep to ensure a robust solution to the explicit integration scheme. The cooling substep is limited such that the temperature changes by 1% (or less) in a single substep.</p>
 
@@ -62,17 +62,17 @@
 <p>where \(k_i = 2\pi i / L_\mathrm{box}\) is the wave number, \(A\) is the amplitude of the perturbations, and \(\theta\) is a random phase. As stated above, I use \(i_\mathrm{max} = j_\mathrm{max} = k_\mathrm{max} = 4\) for the simulations in this post. I set \(\rho_0\) such that the average number density \(n = 2\), and the initial pressure \(p / k_\mathrm{B} = 2348\,\mathrm{K}\,\mathrm{cm}^{-3}\). The amplitude of the initial perturbations is 10%. Below are movies showing the development of the instability in the density and temperature projections. The box size is \(L_\mathrm{box} = 100\) pc, and the resolution is \(256^3\).</p>
 
 <div style="text-align: center">
-<video src="http://evaneschneider.github.io/site/assets/movies/TI_density.mov" width="256" height="256" controls="" preload=""></video>
+<video src="http://localhost:4000assets/movies/TI_density.mov" width="256" height="256" controls="" preload=""></video>
 </div>
 
 <div style="text-align: center">
-<video src="http://evaneschneider.github.io/site/assets/movies/TI_temperature.mov" width="256" height="256" controls="" preload=""></video>
+<video src="http://localhost:4000assets/movies/TI_temperature.mov" width="256" height="256" controls="" preload=""></video>
 </div>
 
 <p>The instability is saturated by \(\sim 75\,\mathrm{Myr}\), with the mean density in the low density regions of \(n\sim 0.27\,\mathrm{cm}^{-3}\) while in the high density clouds \(n\sim 27\,\mathrm{cm}^{-3}\). The corresponding temperatures in the low and high density regions are \(T\sim 80\) K and \(T\sim 6700\) K, respectively. Density and temperature slices through the central \(z\) and \(y\) planes are shown below.</p>
 
-<p><img src="http://evaneschneider.github.io/site/assets/images/2018-March/dslice_TI_256.png" />
-<img src="http://evaneschneider.github.io/site/assets/images/2018-March/Tslice_TI_256.png" /></p>
+<p><img src="http://localhost:4000assets/images/2018-March/dslice_TI_256.png" />
+<img src="http://localhost:4000assets/images/2018-March/Tslice_TI_256.png" /></p>
 
     </section>
 </article>

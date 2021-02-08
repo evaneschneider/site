@@ -90,12 +90,12 @@ on a domain from -3 to 3.</p>
 <p><strong>Without Dual Energy</strong></p>
 
 <p>Figure 1: PPMP, exact solver, no dual energy, \(v_{bulk} = 100 c_s\)
-<img src="http://evaneschneider.github.io/site/assets/images/PPMP_exact_M100.png" /></p>
+<img src="http://localhost:4000assets/images/PPMP_exact_M100.png" /></p>
 
 <p><strong>With Dual Energy</strong></p>
 
 <p>Figure 2: Same as figure one but with dual energy, \(\eta_1 = 10^{-6}\)
-<img src="http://evaneschneider.github.io/site/assets/images/PPMP_exact_M100_eta6.png" /></p>
+<img src="http://localhost:4000assets/images/PPMP_exact_M100_eta6.png" /></p>
 
 <p>As expected, the dual energy formalism has no effect in this case. Practically speaking,
 this is because the internal energy for each cell is reset to the conservatively calculated 
@@ -121,13 +121,13 @@ The test does run to completion without the non-conservative energy update produ
 but the results are a mess in the regions where the non-conservative update was used.</p>
 
 <p>Figure 3: Same as Figure 1 but with dual energy, \(\eta_1 = 10^{-4}\)
-<img src="http://evaneschneider.github.io/site/assets/images/PPMP_exact_M100_eta4.png" /></p>
+<img src="http://localhost:4000assets/images/PPMP_exact_M100_eta4.png" /></p>
 
 <p>With \(\eta_1 = 10^{-3}\) (the value given in B14), all cells are using the non-conservative energy 
 update, and the results are a bit better (but still inferior to the non dual energy case).</p>
 
 <p>Figure 4: Same as Figure 1 but with dual energy, \(\eta_1 = 10^{-3}\)
-<img src="http://evaneschneider.github.io/site/assets/images/PPMP_exact_M100_eta3.png" /></p>
+<img src="http://localhost:4000assets/images/PPMP_exact_M100_eta3.png" /></p>
 
 <p><strong>Is it the way the divergence is approximated?</strong></p>
 
@@ -136,7 +136,7 @@ use the velocities at the interface returned by the Riemann solver to approximat
 Does using this version help?</p>
 
 <p>Figure 5: Same as Figure 4 but with the B14 internal energy update
-<img src="http://evaneschneider.github.io/site/assets/images/PPMP_exact_M100_B14.png" /></p>
+<img src="http://localhost:4000assets/images/PPMP_exact_M100_B14.png" /></p>
 
 <p>The results are strikingly similar to Figure 4. Evidently the Pdv approximation is not the problem.
 Perhaps there is an issue somewhere else in the calculation. The next post will use a high mach 

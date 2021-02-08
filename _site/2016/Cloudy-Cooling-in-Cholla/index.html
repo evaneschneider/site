@@ -40,7 +40,7 @@ Cloudy for three different densities: \(n_h = 0.001\), \(n_h = 1\), and \(n_h = 
 Cosmic rays, the CMB, and the Haardt &amp; Madau background (HM05)
 are included. The gas was assumed to have solar metallicty (GASS10).</p>
 
-<p><img src="http://evaneschneider.github.io/site/assets/images/coolingcurve_HM_PIE.png" /></p>
+<p><img src="http://localhost:4000assets/images/coolingcurve_HM_PIE.png" /></p>
 
 <p>Based on these curves, a reasonable approach is to do a 2D interpolation (and include heating) 
 for temperatures below \(10^{5}\) K. Above this temperature, only a 1D
@@ -54,7 +54,7 @@ the cooling curves in the plot above. The blue lines that appear below \(10^5\) 
 the result of the 2D interpolation. Above this temperature Cholla uses the 1D spline described
 in a previous post.</p>
 
-<p><img src="http://evaneschneider.github.io/site/assets/images/spline2d_coolingcurve.png" /></p>
+<p><img src="http://localhost:4000assets/images/spline2d_coolingcurve.png" /></p>
 
 <p>I have also tested the behavior of the cooling function in Cholla. Both the heating and cooling functions 
 have a density dependence, with a different temperature equilibrium for gas of different densities. This 
@@ -63,9 +63,9 @@ two different densities, \(n_h = 1.0\) and \(n_h = 0.001\) (corresponding to the
 The higher density gas cools faster due to the \(n^2\) dependence of the cooling rate, and equilibrates at 
 just above \(10^3\) K. The lower density gas equilibrates at a much higher temperature.</p>
 
-<p><img src="http://evaneschneider.github.io/site/assets/images/cooling_n0.png" /></p>
+<p><img src="http://localhost:4000assets/images/cooling_n0.png" /></p>
 
-<p><img src="http://evaneschneider.github.io/site/assets/images/cooling_nm3.png" /></p>
+<p><img src="http://localhost:4000assets/images/cooling_nm3.png" /></p>
 
 
     </section>
