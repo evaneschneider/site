@@ -1,7 +1,7 @@
 ---
 title:  "Magellanic Stream Tests"
 date:   2020-3-2
-description: Testing Sythetic Absorption in a Magellanic Stream Setup
+description: Testing Synthetic Absorption in a Magellanic Stream Setup
 ---
 
 This will be the first in a series of posts dedicated to better understading the origin of gas detected in UV absorption with Magellanic Stream velocities.

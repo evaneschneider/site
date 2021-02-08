@@ -1,0 +1,33 @@
+---
+title:  "Magellanic Stream Tests"
+date:   2021-2-8
+description: A Different Magellanic Stream Setup
+---
+
+I've restarted these tests. As I said in the last post, I think a cloud setup in 3D is the way to go, but we've got some decisions to make regarding initial cloud size, runtime, velocity, etc. Here's an example to get us started.
+
+Initial background conditions:
+$$n = 1.68\times10^{-4}, \quad v_x = 0\,\mathrm{km}\,\mathrm{s}^{-1}, \quad T = 3\times10^{6}\,\mathrm{K}$$
+
+Initial Cloud conditions:
+$$n = 5.4\times10^{-2}, \quad v_x = -200 \,\mathrm{km}\,\mathrm{s}^{-1}, \quad T = 10^{4}\,\mathrm{K}$$
+
+This constitutes initial pressure equilibrium between the background gas and the clouds. For now, I'm implementing a temperature floor of $$10^{4}\,\mathrm{K}$$; we may want to relax this once we've settled on a setup. In addition to evolving the conserved variables, I'm also evolving a color variable that traces the initial state of the gas - 0 for background material, 1 for stream material. This simulation started with 4 clouds with initial radii of 3.5 kpc, for an initial cloud mass of $$3.6\times10^{8}}\,M_\odot$$. I ran it in a $$40\times40\times80\,\mathrm{kpc}$$ box, with a resolution of 512 x 256 x 256, which just covers the Gronke\&Oh criterion of 8 cells per cloud radius to see converged mass growth.
+
+Below are some movies showing the evolution of the color and temperature slices, and a surface density projection, for 1 Gyr of evolution.
+
+<div style="text-align: center">
+<video src="{{ site.url }}assets/movies/2021-February/cslice.mp4" width="512" height="256" controls preload></video>
+</div>
+<div style="text-align: center">
+<video src="{{ site.url }}assets/movies/2021-February/Tslice.mp4" width="512" height="256" controls preload></video>
+</div>
+<div style="text-align: center">
+<video src="{{ site.url }}assets/movies/2021-February/sd_z.mp4" width="512" height="256" controls preload></video>
+</div>
+
+And here is a plot of the mass growth over time.
+
+<img src="{{ site.url }}assets/images/2021-February/entrainment.png">
+
+
