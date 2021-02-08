@@ -12,7 +12,7 @@ $$n = 1.68\times10^{-4}, \quad v_x = 0\,\mathrm{km}\,\mathrm{s}^{-1}, \quad T = 
 Initial cloud conditions:
 $$n = 5.4\times10^{-2}, \quad v_x = -200 \,\mathrm{km}\,\mathrm{s}^{-1}, \quad T = 10^{4}\,\mathrm{K}$$
 
-This constitutes initial pressure equilibrium between the background gas and the clouds. For now, I'm implementing a temperature floor of $$10^{4}\,\mathrm{K}$$. In addition to the conserved variables, I'm also evolving a color variable that traces the initial state of the gas - 0 for background material, 1 for stream material. This simulation started with 4 clouds with initial radii of 3.5 kpc, for an initial cloud mass of $$3.6\times10^{8}\,M_\odot$$. I ran it in a $$40\times40\times80\,\mathrm{kpc}$$ box, with a resolution of 512 x 256 x 256, which just covers the Gronke & Oh (2019) criterion of 8 cells per cloud radius to see converged mass growth.
+This constitutes initial pressure equilibrium between the background gas and the clouds. For now, I'm implementing a temperature floor of $$10^{4}\,\mathrm{K}$$. In addition to the conserved variables, I'm also evolving a color variable that traces the initial state of the gas - 0 for background material, 1 for stream material. This simulation started with 4 clouds with initial radii of 3 kpc, for an initial cloud mass of $$3.6\times10^{8}\,M_\odot$$. I ran it in a $$40\times40\times80\,\mathrm{kpc}$$ box, with a resolution of 512 x 256 x 256, which just covers the Gronke & Oh (2019) criterion of 8 cells per cloud radius to see converged mass growth.
 
 Below are some movies showing the evolution of the color and temperature slices, and a surface density projection, for 1 Gyr of evolution.
 
